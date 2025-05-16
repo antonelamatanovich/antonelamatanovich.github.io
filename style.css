@@ -80,9 +80,9 @@ body.dark a:hover {
   cursor: pointer;
   font-weight: 600;
   color: #7b3fbf;
-  transition: color 0.3s ease, border-bottom-color 0.3s ease, box-shadow 0.3s ease;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
   padding: 4px 0;
-  border-bottom: 1px dashed transparent;
+  /* isprekidana crta uklonjena */
   display: inline-block;
   width: 100%;
   text-align: left;
@@ -92,17 +92,17 @@ body.dark a:hover {
 
 .project-toggle:focus-visible {
   box-shadow: 0 2px 6px rgba(123, 63, 191, 0.6);
-  border-bottom-color: #7b3fbf;
+  /* border-bottom removed */
 }
 
 .project-toggle:hover {
   color: #a379d6;
-  border-bottom-color: #a379d6;
+  /* border-bottom-color removed */
 }
 
 .project-toggle.open {
   color: #4e2a91;
-  border-bottom-color: #4e2a91;
+  /* border-bottom-color removed */
 }
 
 body.dark .project-toggle {
@@ -111,30 +111,23 @@ body.dark .project-toggle {
 
 body.dark .project-toggle.open {
   color: #fff;
-  border-bottom-color: #fff;
+  /* border-bottom-color removed */
 }
 
-/* smooth expand with max-height animation */
+/* smooth expand */
 .project-details {
   max-height: 0;
   overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
   opacity: 0;
   padding-left: 0;
   border-left: none;
-  transition:
-    max-height 0.5s ease,
-    opacity 0.5s ease,
-    padding-left 0.3s ease,
-    border-left-color 0.5s ease;
-  pointer-events: none;
 }
 
 .project-details.open {
-  max-height: 1000px; /* dovoljno visoko da možeš sadržaj */
   opacity: 1;
   padding-left: 15px;
   border-left: 3px solid #7b3fbf;
-  pointer-events: auto;
 }
 
 body.dark .project-details {

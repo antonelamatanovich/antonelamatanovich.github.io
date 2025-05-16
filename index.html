@@ -16,8 +16,8 @@
       <h2>projects</h2>
       <ul class="projects-list">
         <li>
-          <button class="project-toggle">Insect's Delegate: Brumble's Journey – Quest 3 VR Experience</button>
-          <div class="project-details">
+          <button class="project-toggle" aria-expanded="false">Insect's Delegate: Brumble's Journey – Quest 3 VR Experience</button>
+          <div class="project-details" hidden>
             <p>This virtual reality experience was created during the Winter Semester 2024, under Project 3: Discover Space and Time...</p>
             <p>Our team created an experience to educate young audiences...</p>
             <p><strong>Team members:</strong> Jacopo Perilli, Lara Heß, Mutlu Yakubov, Antonela Matanović, Himanshu Dahiya</p>
@@ -52,8 +52,18 @@
       const details = toggle.nextElementSibling;
 
       toggle.addEventListener('click', () => {
-        toggle.classList.toggle('open');
-        details.classList.toggle('open');
+        const isOpen = details.classList.contains('open');
+
+        toggle.classList.toggle('open', !isOpen);
+        details.classList.toggle('open', !isOpen);
+
+        if (isOpen) {
+          details.setAttribute('hidden', '');
+          toggle.setAttribute('aria-expanded', 'false');
+        } else {
+          details.removeAttribute('hidden');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   </script>

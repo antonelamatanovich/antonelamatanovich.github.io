@@ -13,6 +13,11 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+body.dark {
+  background: #1a132b;
+  color: #e6ddff;
+}
+
 main {
   max-width: 600px;
   margin: auto;
@@ -47,6 +52,10 @@ h2 {
   background-color: #f3eaff;
 }
 
+body.dark .projects-list li:hover {
+  background-color: #2e1f4d;
+}
+
 a {
   color: #7e3cff;
   text-decoration: none;
@@ -55,6 +64,14 @@ a {
 a:hover {
   text-decoration: underline;
   color: #5a2ecc;
+}
+
+body.dark a {
+  color: #c8a3ff;
+}
+
+body.dark a:hover {
+  color: #ffffff;
 }
 
 /* toggle button styling */
@@ -88,6 +105,15 @@ a:hover {
   border-bottom-color: #4e2a91;
 }
 
+body.dark .project-toggle {
+  color: #dabfff;
+}
+
+body.dark .project-toggle.open {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
 /* smooth expand */
 .project-details {
   max-height: 0;
@@ -99,10 +125,13 @@ a:hover {
 }
 
 .project-details.open {
-  max-height: 800px;
   opacity: 1;
   padding-left: 15px;
   border-left: 3px solid #7b3fbf;
+}
+
+body.dark .project-details {
+  border-left-color: #dabfff;
 }
 
 .project-details p {
@@ -110,11 +139,19 @@ a:hover {
   font-size: 0.95rem;
 }
 
+body.dark .project-details p {
+  color: #e6ddffcc;
+}
+
 .project-details img {
   max-width: 100%;
   margin-top: 15px;
   border-radius: 6px;
   box-shadow: 0 0 8px rgba(123, 63, 191, 0.3);
+}
+
+body.dark .project-details img {
+  box-shadow: 0 0 8px #dabfff66;
 }
 
 .video-container {
@@ -127,6 +164,10 @@ a:hover {
   box-shadow: 0 0 10px rgba(123, 63, 191, 0.4);
 }
 
+body.dark .video-container {
+  box-shadow: 0 0 10px #dabfff55;
+}
+
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -134,45 +175,38 @@ a:hover {
   width: 100%;
   height: 100%;
   border: none;
+  transition: filter 0.3s ease;
 }
 
-/* dark mode support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #1a132b;
-    color: #e6ddff;
-  }
+body.dark .video-container iframe {
+  filter: brightness(0.9);
+}
 
-  a {
-    color: #c8a3ff;
-  }
+/* Light/Dark mode toggle button */
+#theme-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #7b3fbf;
+  color: #7b3fbf;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  margin-bottom: 30px;
+}
 
-  a:hover {
-    color: #ffffff;
-  }
+#theme-toggle:hover {
+  background-color: #7b3fbf;
+  color: white;
+}
 
-  .projects-list li:hover {
-    background-color: #2e1f4d;
-  }
+body.dark #theme-toggle {
+  border-color: #dabfff;
+  color: #dabfff;
+}
 
-  .project-toggle {
-    color: #dabfff;
-  }
-
-  .project-toggle.open {
-    color: #fff;
-    border-bottom-color: #fff;
-  }
-
-  .project-details p {
-    color: #e6ddffcc;
-  }
-
-  .project-details {
-    border-left-color: #dabfff;
-  }
-
-  .video-container iframe {
-    filter: brightness(0.9);
-  }
+body.dark #theme-toggle:hover {
+  background-color: #dabfff;
+  color: #1a132b;
 }

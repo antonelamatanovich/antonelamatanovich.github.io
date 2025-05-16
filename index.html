@@ -2,70 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>antonela matanović</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main>
     <h1>antonela matanović</h1>
-    <p>vr/ar design student · frankfurt</p>
 
-    <section>
-      <h2>projects</h2>
-      <ul class="projects-list">
-        <li>
-          <button class="project-toggle" aria-expanded="false">Insect's Delegate: Brumble's Journey – Quest 3 VR Experience</button>
-          <div class="project-details" hidden>
-            <p>This virtual reality experience was created during the Winter Semester 2024, under Project 3: Discover Space and Time...</p>
-            <p>Our team created an experience to educate young audiences...</p>
-            <p><strong>Team members:</strong> Jacopo Perilli, Lara Heß, Mutlu Yakubov, Antonela Matanović, Himanshu Dahiya</p>
-            <img src="images/main image.png" alt="Cover Image" />
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="Insect's Delegate: Brumble's Journey – Trailer" allowfullscreen></iframe>
-            </div>
-          </div>
-        </li>
-        <li><strong>Blade of the Dawn</strong> – 3D RPG Game</li>
-        <li><strong>Coralis</strong> – Quest 3 VR Experience</li>
-        <li><strong>VR Home</strong> – Quest 3 VR Experience</li>
-        <li><strong>Tuzla 360</strong> – 360° Video</li>
-      </ul>
+    <h2>projekti</h2>
+
+    <button class="project-toggle" aria-expanded="false" aria-controls="project1-details" id="project1-toggle">
+      bird garden
+    </button>
+    <section class="project-details" id="project1-details" hidden>
+      <p>some text...</p>
     </section>
 
-    <section>
-      <h2>contact</h2>
-      <p>
-        <a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a><br />
-        +49 1575 4761393<br />
-        <a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank" rel="noopener noreferrer">linkedin</a><br />
-        <a href="https://github.com/antonelamatanovich" target="_blank" rel="noopener noreferrer">github</a>
-      </p>
+    <button class="project-toggle" aria-expanded="false" aria-controls="project2-details" id="project2-toggle">
+      insect's delegate: brumble's journey
+    </button>
+    <section class="project-details" id="project2-details" hidden>
+      <p>some other text...</p>
     </section>
+
   </main>
 
-  <script>
-    const toggles = document.querySelectorAll('.project-toggle');
-
-    toggles.forEach(toggle => {
-      const details = toggle.nextElementSibling;
-
-      toggle.addEventListener('click', () => {
-        const isOpen = details.classList.contains('open');
-
-        toggle.classList.toggle('open', !isOpen);
-        details.classList.toggle('open', !isOpen);
-
-        if (isOpen) {
-          details.setAttribute('hidden', '');
-          toggle.setAttribute('aria-expanded', 'false');
-        } else {
-          details.removeAttribute('hidden');
-          toggle.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

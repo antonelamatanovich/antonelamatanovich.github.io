@@ -5,8 +5,8 @@ body, button {
 }
 
 body {
-  background: #ffffff; /* clean white background */
-  color: #4b0082; /* dark purple text */
+  background: #ffffff;
+  color: #4b0082;
   padding: 40px;
   line-height: 1.6;
 }
@@ -41,50 +41,32 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.projects-list li:hover {
-  background-color: #f3eaff; /* very light purple background on hover */
-}
-
-a {
-  color: #7e3cff; /* lighter purple links */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #5a2ecc; /* darker purple on hover */
-}
-
-/* Toggle button styling */
+/* Make the toggle button look like normal text */
 .project-toggle {
-  all: unset; /* remove default button styles */
+  background: none;
+  border: none;
   cursor: pointer;
-  font-weight: 600;
-  color: #7b3fbf; /* purple */
-  transition: color 0.3s ease, border-bottom-color 0.3s ease, box-shadow 0.3s ease;
-  padding: 4px 0;
-  border-bottom: 1px dashed transparent;
-  display: inline-block;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
   text-align: left;
-  border-radius: 4px;
-  outline: none; /* remove ugly default outline */
-}
-
-/* Custom focus style for accessibility */
-.project-toggle:focus-visible {
-  box-shadow: 0 2px 6px rgba(123, 63, 191, 0.6);
-  border-bottom-color: #7b3fbf;
+  width: 100%;
+  line-height: inherit;
 }
 
 .project-toggle:hover {
-  color: #a379d6;
-  border-bottom-color: #a379d6;
+  background-color: #f3eaff;
+}
+
+.project-toggle:focus-visible {
+  outline: none;
+  background-color: #efe6ff;
 }
 
 .project-toggle.open {
+  font-weight: 600;
   color: #4e2a91;
-  border-bottom-color: #4e2a91;
 }
 
 /* Project details styling */
@@ -106,7 +88,7 @@ a:hover {
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   margin-top: 15px;
@@ -122,4 +104,14 @@ a:hover {
   height: 100%;
   border: none;
   font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: #7e3cff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #5a2ecc;
 }

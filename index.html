@@ -17,26 +17,16 @@
       <ul class="projects-list">
         <li>
           <button class="project-toggle">Insect's Delegate: Brumble's Journey – Quest 3 VR Experience</button>
-          <div class="project-details" style="display: none;">
-            <p>
-              This virtual reality experience was created during the Winter Semester 2024, under Project 3: Discover Space and Time, a module of the Expanded Realities (Augmented and Virtual Reality Design) Bachelor of Arts study programme at Darmstadt University of Applied Sciences.
-            </p>
-            <p>
-              Our team created an experience to educate young audiences (ages 12–16) about the vital role of insects while connecting education with storytelling and exploration.
-            </p>
+          <div class="project-details">
+            <p>This virtual reality experience was created during the Winter Semester 2024, under Project 3: Discover Space and Time...</p>
+            <p>Our team created an experience to educate young audiences...</p>
             <p><strong>Team members:</strong> Jacopo Perilli, Lara Heß, Mutlu Yakubov, Antonela Matanović, Himanshu Dahiya</p>
             <img src="images/main image.png" alt="Cover Image" />
             <div class="video-container">
-              <iframe 
-                src="https://www.youtube.com/embed/hUOfJCqo2rE" 
-                title="Insect's Delegate: Brumble's Journey – Trailer" 
-                frameborder="0" 
-                allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="Insect's Delegate: Brumble's Journey – Trailer" allowfullscreen></iframe>
             </div>
           </div>
         </li>
-
         <li><strong>Blade of the Dawn</strong> – 3D RPG Game</li>
         <li><strong>Coralis</strong> – Quest 3 VR Experience</li>
         <li><strong>VR Home</strong> – Quest 3 VR Experience</li>
@@ -57,11 +47,13 @@
 
   <script>
     const toggles = document.querySelectorAll('.project-toggle');
+
     toggles.forEach(toggle => {
+      const details = toggle.nextElementSibling;
+
       toggle.addEventListener('click', () => {
         toggle.classList.toggle('open');
-        const details = toggle.nextElementSibling;
-        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        details.classList.toggle('open');
       });
     });
   </script>

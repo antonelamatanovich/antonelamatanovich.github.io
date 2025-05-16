@@ -34,7 +34,6 @@ h2 {
   padding: 0.4em 0.6em;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  cursor: default;
 }
 
 .projects-list li:hover {
@@ -49,4 +48,70 @@ a {
 a:hover {
   text-decoration: underline;
   color: #5a2ecc; /* tamnija ljubičasta na hover */
+}
+
+/* --- toggle button style --- */
+.project-toggle {
+  all: unset;
+  cursor: pointer;
+  font-weight: 600;
+  color: #7b3fbf; /* ljubičasta */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  padding: 4px 0;
+  border-bottom: 1px dashed transparent;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.project-toggle:hover {
+  color: #a379d6;
+  border-bottom-color: #a379d6;
+}
+
+.project-toggle:focus-visible {
+  outline: none;
+  border-bottom-color: #7b3fbf;
+}
+
+.project-toggle.open {
+  color: #4e2a91;
+  border-bottom-color: #4e2a91;
+}
+
+/* --- project details --- */
+.project-details {
+  margin-top: 10px;
+  padding-left: 15px;
+  border-left: 3px solid #7b3fbf;
+  color: #4b0082dd;
+  font-size: 0.95rem;
+  max-width: 700px;
+}
+
+.project-details img {
+  max-width: 100%;
+  margin-top: 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(123, 63, 191, 0.3);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  margin-top: 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(123, 63, 191, 0.4);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }

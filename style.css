@@ -114,20 +114,27 @@ body.dark .project-toggle.open {
   border-bottom-color: #fff;
 }
 
-/* smooth expand */
+/* smooth expand with max-height animation */
 .project-details {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
   opacity: 0;
   padding-left: 0;
   border-left: none;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.5s ease,
+    padding-left 0.3s ease,
+    border-left-color 0.5s ease;
+  pointer-events: none;
 }
 
 .project-details.open {
+  max-height: 1000px; /* dovoljno visoko da možeš sadržaj */
   opacity: 1;
   padding-left: 15px;
   border-left: 3px solid #7b3fbf;
+  pointer-events: auto;
 }
 
 body.dark .project-details {

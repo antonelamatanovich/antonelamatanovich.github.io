@@ -1,7 +1,12 @@
-body {
+/* Apply Roboto font everywhere including buttons */
+body, button {
   font-family: 'Roboto', sans-serif;
-  background: #ffffff; /* čista bijela pozadina */
-  color: #4b0082; /* tamna ljubičasta za tekst */
+  margin: 0;
+}
+
+body {
+  background: #ffffff; /* clean white background */
+  color: #4b0082; /* dark purple text */
   padding: 40px;
   line-height: 1.6;
 }
@@ -37,32 +42,39 @@ h2 {
 }
 
 .projects-list li:hover {
-  background-color: #f3eaff; /* vrlo svijetla ljubičasta pozadina na hover */
+  background-color: #f3eaff; /* very light purple background on hover */
 }
 
 a {
-  color: #7e3cff; /* svjetlija ljubičasta za linkove */
+  color: #7e3cff; /* lighter purple links */
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #5a2ecc; /* tamnija ljubičasta na hover */
+  color: #5a2ecc; /* darker purple on hover */
 }
 
-/* --- toggle button style --- */
+/* Toggle button styling */
 .project-toggle {
-  all: unset;
+  all: unset; /* remove default button styles */
   cursor: pointer;
   font-weight: 600;
-  color: #7b3fbf; /* ljubičasta */
-  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  color: #7b3fbf; /* purple */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease, box-shadow 0.3s ease;
   padding: 4px 0;
   border-bottom: 1px dashed transparent;
   display: inline-block;
   width: 100%;
   text-align: left;
   border-radius: 4px;
+  outline: none; /* remove ugly default outline */
+}
+
+/* Custom focus style for accessibility */
+.project-toggle:focus-visible {
+  box-shadow: 0 2px 6px rgba(123, 63, 191, 0.6);
+  border-bottom-color: #7b3fbf;
 }
 
 .project-toggle:hover {
@@ -70,17 +82,12 @@ a:hover {
   border-bottom-color: #a379d6;
 }
 
-.project-toggle:focus-visible {
-  outline: none;
-  border-bottom-color: #7b3fbf;
-}
-
 .project-toggle.open {
   color: #4e2a91;
   border-bottom-color: #4e2a91;
 }
 
-/* --- project details --- */
+/* Project details styling */
 .project-details {
   margin-top: 10px;
   padding-left: 15px;
@@ -99,7 +106,7 @@ a:hover {
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
   margin-top: 15px;
@@ -114,4 +121,5 @@ a:hover {
   width: 100%;
   height: 100%;
   border: none;
+  font-family: 'Roboto', sans-serif;
 }

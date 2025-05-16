@@ -54,35 +54,15 @@
       toggle.addEventListener('click', () => {
         const isOpen = details.classList.contains('open');
 
+        toggle.classList.toggle('open', !isOpen);
+        details.classList.toggle('open', !isOpen);
+
         if (isOpen) {
-          // close
-          details.style.maxHeight = details.scrollHeight + "px"; // set current height to enable transition
-          // next tick, set to 0 for smooth collapse
-          requestAnimationFrame(() => {
-            details.style.maxHeight = "0";
-          });
-          details.classList.remove('open');
-          toggle.classList.remove('open');
           details.setAttribute('hidden', '');
           toggle.setAttribute('aria-expanded', 'false');
-          // fade out handled by CSS transition on opacity
         } else {
-          // open
           details.removeAttribute('hidden');
-          details.classList.add('open');
-          toggle.classList.add('open');
           toggle.setAttribute('aria-expanded', 'true');
-
-          // set maxHeight for smooth expand
-          details.style.maxHeight = details.scrollHeight + "px";
-
-          // remove maxHeight after transition for flexibility
-          details.addEventListener('transitionend', function handler(e) {
-            if (e.propertyName === 'max-height' && details.classList.contains('open')) {
-              details.style.maxHeight = 'none';
-              details.removeEventListener('transitionend', handler);
-            }
-          });
         }
       });
     });

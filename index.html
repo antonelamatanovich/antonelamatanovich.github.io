@@ -16,8 +16,10 @@
       <h2>projects</h2>
       <ul class="projects-list">
         <li>
-          <button class="project-toggle">Insect's Delegate: Brumble's Journey – Quest 3 VR Experience</button>
-          <div class="project-details">
+          <button class="project-toggle" aria-expanded="false" aria-controls="insect-details">
+            Insect's Delegate: Brumble's Journey – Quest 3 VR Experience
+          </button>
+          <div id="insect-details" class="project-details" hidden>
             <p>
               This virtual reality experience was created during the Winter Semester 2024, under Project 3: Discover Space and Time, a module of the Expanded Realities (Augmented and Virtual Reality Design) Bachelor of Arts study programme at Darmstadt University of Applied Sciences.
             </p>
@@ -59,9 +61,18 @@
     const toggles = document.querySelectorAll('.project-toggle');
     toggles.forEach(toggle => {
       toggle.addEventListener('click', () => {
-        toggle.classList.toggle('open');
         const details = toggle.nextElementSibling;
-        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        const isHidden = details.hasAttribute('hidden');
+
+        if (isHidden) {
+          details.removeAttribute('hidden');
+          toggle.classList.add('open');
+          toggle.setAttribute('aria-expanded', 'true');
+        } else {
+          details.setAttribute('hidden', '');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     });
   </script>

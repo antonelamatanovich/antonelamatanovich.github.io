@@ -1,0 +1,52 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff; /* čista bijela pozadina */
+  color: #4b0082; /* tamna ljubičasta za tekst */
+  padding: 40px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projects-list li {
+  margin-bottom: 1em;
+  padding: 0.4em 0.6em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.projects-list li:hover {
+  background-color: #f3eaff; /* vrlo svijetla ljubičasta pozadina na hover */
+}
+
+a {
+  color: #7e3cff; /* svjetlija ljubičasta za linkove */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #5a2ecc; /* tamnija ljubičasta na hover */
+}

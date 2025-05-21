@@ -32,9 +32,9 @@ h3 {
   margin-top: 1.5em;
   margin-bottom: 0.4em;
   color: #000;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 400;    
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
 }
 
 .projects-list {
@@ -131,7 +131,7 @@ strong {
   font-weight: 600;
 }
 
-/* ===== cv grid layout ===== */
+/* cv grid layout */
 .cv-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

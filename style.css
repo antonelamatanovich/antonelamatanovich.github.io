@@ -41,7 +41,7 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-/* Make the toggle button look like normal text */
+/* Toggle buttons that look like normal text */
 .project-toggle {
   background: none;
   border: none;
@@ -69,7 +69,7 @@ h2 {
   color: #111111;
 }
 
-/* Project details styling */
+/* Project detail container */
 .project-details {
   margin-top: 10px;
   padding-left: 15px;
@@ -79,6 +79,7 @@ h2 {
   max-width: 700px;
 }
 
+/* Image styling */
 .project-details img {
   max-width: 100%;
   margin-top: 15px;
@@ -86,6 +87,7 @@ h2 {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive YouTube video */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -103,9 +105,9 @@ h2 {
   width: 100%;
   height: 100%;
   border: none;
-  font-family: 'Roboto', sans-serif;
 }
 
+/* Link styling */
 a {
   color: #000000;
   text-decoration: none;

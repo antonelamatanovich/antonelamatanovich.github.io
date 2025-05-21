@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>antonela matanović</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <main>
@@ -18,18 +18,13 @@
       <ul class="projects-list">
         <li>
           <button class="project-toggle">insect's delegate: brumble's journey – virtual reality experience</button>
-          <div class="project-details" style="display: none;">
-            <p>this virtual reality experience was created during the winter semester 2024, under project 3: discover space and time, a module of the expanded realities (augmented and virtual reality design) bachelor of arts study programme at darmstadt university of applied sciences.</p>
-            <p>our team created an experience to educate young audiences (ages 12-16) about the vital role of insects while connecting education with storytelling and exploration.</p>
+          <div class="project-details collapsible">
+            <p>this virtual reality experience was created during the winter semester 2024, under project 3: discover space and time...</p>
+            <p>our team created an experience to educate young audiences...</p>
             <p><strong>team members:</strong> Jacopo Perilli, Lara Heß, Mutlu Yakubov, Antonela Matanović, Himanshu Dahiya</p>
-            <img src="images/main image.png" alt="Cover Image" />
+            <img src="images/main image.png" alt="Cover Image"/>
             <div class="video-container">
-              <iframe 
-                src="https://www.youtube.com/embed/hUOfJCqo2rE" 
-                title="Insect's Delegate: Brumble's Journey – Trailer" 
-                frameborder="0" 
-                allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="Insect's Delegate Trailer" allowfullscreen></iframe>
             </div>
           </div>
         </li>
@@ -43,57 +38,32 @@
     <section>
       <h2>contact</h2>
       <p>
-        <a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a><br />
-        +49 1575 4761393<br />
-        <a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank" rel="noopener noreferrer">linkedin</a><br />
-        <a href="https://github.com/antonelamatanovich" target="_blank" rel="noopener noreferrer">github</a>
+        <a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a><br/>
+        +49 1575 4761393<br/>
+        <a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank">linkedin</a><br/>
+        <a href="https://github.com/antonelamatanovich" target="_blank">github</a>
       </p>
     </section>
 
     <section>
       <h2>curriculum vitae</h2>
       <button class="project-toggle">view cv</button>
-      <div class="project-details" style="display: none;">
+      <div class="project-details collapsible">
         <div class="cv-grid">
           <div class="cv-section">
             <h3>education</h3>
-            <p><strong>secondary education</strong><br />
-            <span class="date">sep 2019 – jun 2023</span><br />
-            public institution catholic school center “sveti franjo” general gymnasium tuzla, bosnia and herzegovina</p>
-
-            <p><strong>bachelor of arts in expanded realities</strong><br />
-            <span class="date">oct 2023 – present</span><br />
-            darmstadt university of applied sciences, darmstadt-dieburg, germany</p>
-
+            <p><strong>secondary education</strong><br/><span class="date">sep 2019 – jun 2023</span><br/>public institution catholic school center “sveti franjo”...</p>
+            <p><strong>bachelor of arts in expanded realities</strong><br/><span class="date">oct 2023 – present</span><br/>darmstadt university...</p>
             <h3>languages</h3>
-            <p>
-              <strong>bosnian / croatian / serbian:</strong> native<br />
-              <strong>english:</strong> full professional proficiency<br />
-              <strong>german:</strong> elementary proficiency
-            </p>
+            <p><strong>bosnian / croatian / serbian:</strong> native<br/><strong>english:</strong> full professional proficiency<br/><strong>german:</strong> elementary proficiency</p>
           </div>
 
           <div class="cv-section">
             <h3>experience</h3>
-            <p><strong>student study advisor for augmented and virtual reality design</strong><br />
-            <span class="date">apr 2025 – present</span><br />
-            darmstadt university of applied sciences, darmstadt-dieburg, germany · hybrid<br />
-            - facilitating communication between students and faculty, and organizing informational sessions<br />
-            - assisting fellow students with course-related questions and project support<br />
-
-            <p><strong>developer and designer intern</strong><br />
-            <span class="date">feb 2025 – present</span><br />
-            videoreality gmbh, frankfurt am main, germany · on site<br />
-            - development & design on immersive media projects</p>
-            - assist in design & building exhibition spaces</p>
-
+            <p><strong>student study advisor...</strong><br/><span class="date">apr 2025 – present</span><br/>darmstadt university...</p>
+            <p><strong>developer and designer intern</strong><br/><span class="date">feb 2025 – present</span><br/>videoreality gmbh...</p>
             <h3>skills</h3>
-            <p>
-              <strong>software & tools:</strong> unity, blender, gravity sketch, photoshop, insta360<br />
-              <strong>programming:</strong> c# (unity)<br />
-              <strong>design:</strong> hard surface 3d modeling, worldbuilding, level design, digital content creation, 2d sprites, 2d animation<br />
-              <strong>project management:</strong> collaborative workflows, jira, trello, sprint planning, gantt chart creation
-            </p>
+            <p><strong>software & tools:</strong> unity, blender, gravity sketch...<br/><strong>programming:</strong> c# (unity)<br/><strong>design:</strong> hard surface modeling...</p>
           </div>
         </div>
       </div>
@@ -101,12 +71,11 @@
   </main>
 
   <script>
-    const toggles = document.querySelectorAll('.project-toggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        toggle.classList.toggle('open');
-        const details = toggle.nextElementSibling;
-        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    document.querySelectorAll('.project-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('open');
+        const details = button.nextElementSibling;
+        details.classList.toggle('expanded');
       });
     });
   </script>

@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  max-width: 600px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -83,7 +83,7 @@ h3 {
   border-left: 3px solid #555555;
   color: #333333;
   font-size: 0.95rem;
-  max-width: 700px;
+  max-width: 100%;
 }
 
 .project-details img {
@@ -129,4 +129,15 @@ a:hover {
 
 strong {
   font-weight: 600;
+}
+
+/* ===== cv grid layout ===== */
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.cv-section {
+  margin-bottom: 1.5em;
 }

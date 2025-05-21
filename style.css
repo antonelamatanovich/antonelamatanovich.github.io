@@ -4,8 +4,8 @@ body, button {
 }
 
 body {
-  background: #000000;
-  color: #ffffff;
+  background: #000;
+  color: #fff;
   padding: 40px;
   line-height: 1.6;
 }
@@ -33,7 +33,7 @@ h3 {
   font-size: 1.1rem;
   margin-top: 1.5em;
   margin-bottom: 0.4em;
-  color: #ffffff;
+  color: #fff;
   font-weight: 400;
   text-transform: lowercase;
   letter-spacing: 0.02em;
@@ -48,8 +48,13 @@ h3 {
 .projects-list li {
   margin-bottom: 1em;
   padding: 0.4em 0.6em;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.projects-list li:hover {
+  background-color: #111;
+  transform: translateY(-2px);
 }
 
 .project-toggle {
@@ -63,10 +68,12 @@ h3 {
   text-align: left;
   width: 100%;
   line-height: inherit;
+  transition: color 0.3s ease;
 }
 
 .project-toggle:hover {
   background-color: #222;
+  color: #ddd;
 }
 
 .project-toggle:focus-visible {
@@ -76,16 +83,25 @@ h3 {
 
 .project-toggle.open {
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
 }
 
 .project-details {
   margin-top: 10px;
   padding-left: 15px;
-  border-left: 3px solid #aaaaaa;
-  color: #dddddd;
+  border-left: 3px solid #aaa;
+  color: #ddd;
   font-size: 0.95rem;
   max-width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.project-details.expanded {
+  max-height: 2000px;
+  opacity: 1;
 }
 
 .project-details img {
@@ -115,18 +131,19 @@ h3 {
 }
 
 a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #dddddd;
+  color: #ddd;
 }
 
 .date {
   font-size: 0.85rem;
-  color: #999999;
+  color: #999;
 }
 
 strong {

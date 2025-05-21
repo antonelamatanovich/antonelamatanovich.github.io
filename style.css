@@ -6,7 +6,7 @@ body, button {
 
 body {
   background: #ffffff;
-  color: #4b0082;
+  color: #000000;
   padding: 40px;
   line-height: 1.6;
 }
@@ -24,7 +24,7 @@ h1 {
 h2 {
   margin-top: 2em;
   font-size: 1.2rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
   padding-bottom: 0.3em;
 }
 
@@ -56,25 +56,25 @@ h2 {
 }
 
 .project-toggle:hover {
-  background-color: #f3eaff;
+  background-color: #f0f0f0;
 }
 
 .project-toggle:focus-visible {
   outline: none;
-  background-color: #efe6ff;
+  background-color: #e0e0e0;
 }
 
 .project-toggle.open {
   font-weight: 600;
-  color: #4e2a91;
+  color: #111111;
 }
 
 /* Project details styling */
 .project-details {
   margin-top: 10px;
   padding-left: 15px;
-  border-left: 3px solid #7b3fbf;
-  color: #4b0082dd;
+  border-left: 3px solid #555555;
+  color: #333333;
   font-size: 0.95rem;
   max-width: 700px;
 }
@@ -83,7 +83,7 @@ h2 {
   max-width: 100%;
   margin-top: 15px;
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(123, 63, 191, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .video-container {
@@ -93,7 +93,7 @@ h2 {
   overflow: hidden;
   margin-top: 15px;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(123, 63, 191, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .video-container iframe {
@@ -107,11 +107,11 @@ h2 {
 }
 
 a {
-  color: #7e3cff;
+  color: #000000;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #5a2ecc;
+  color: #333333;
 }

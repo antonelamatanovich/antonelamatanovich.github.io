@@ -4,8 +4,8 @@ body, button {
 }
 
 body {
-  background: #ffffff;
-  color: #000000;
+  background: #000000;
+  color: #ffffff;
   padding: 40px;
   line-height: 1.6;
 }
@@ -23,16 +23,18 @@ h1 {
 h2 {
   margin-top: 2em;
   font-size: 1.2rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #666;
   padding-bottom: 0.3em;
+  text-transform: lowercase;
+  font-weight: 400;
 }
 
 h3 {
   font-size: 1.1rem;
   margin-top: 1.5em;
   margin-bottom: 0.4em;
-  color: #000;
-  font-weight: 400;    
+  color: #ffffff;
+  font-weight: 400;
   text-transform: lowercase;
   letter-spacing: 0.02em;
 }
@@ -64,24 +66,24 @@ h3 {
 }
 
 .project-toggle:hover {
-  background-color: #f0f0f0;
+  background-color: #222;
 }
 
 .project-toggle:focus-visible {
   outline: none;
-  background-color: #e0e0e0;
+  background-color: #333;
 }
 
 .project-toggle.open {
   font-weight: 600;
-  color: #111111;
+  color: #ffffff;
 }
 
 .project-details {
   margin-top: 10px;
   padding-left: 15px;
-  border-left: 3px solid #555555;
-  color: #333333;
+  border-left: 3px solid #aaaaaa;
+  color: #dddddd;
   font-size: 0.95rem;
   max-width: 100%;
 }
@@ -90,7 +92,7 @@ h3 {
   max-width: 100%;
   margin-top: 15px;
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 .video-container {
@@ -100,7 +102,7 @@ h3 {
   overflow: hidden;
   margin-top: 15px;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .video-container iframe {
@@ -113,18 +115,18 @@ h3 {
 }
 
 a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #333333;
+  color: #dddddd;
 }
 
 .date {
   font-size: 0.85rem;
-  color: #777777;
+  color: #999999;
 }
 
 strong {

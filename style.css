@@ -67,7 +67,7 @@ strong {
   font-weight: 700;
 }
 
-/* about me section with image and text side by side */
+/* about me section */
 #about-me .about-wrapper {
   display: flex;
   align-items: center;
@@ -81,8 +81,8 @@ strong {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  /* box-shadow: 0 0 10px #fff2; */
   flex-shrink: 0;
+  /* box-shadow removed */
 }
 
 /* projects list */
@@ -162,7 +162,6 @@ strong {
   line-height: 1.5;
 }
 
-/* close button */
 #popup-close {
   position: absolute;
   top: 15px;
@@ -182,7 +181,6 @@ strong {
   outline: none;
 }
 
-/* project images inside popup */
 .popup-content img {
   max-width: 100%;
   margin: 15px 0;
@@ -190,10 +188,9 @@ strong {
   box-shadow: 0 0 15px #fff3;
 }
 
-/* video container inside popup */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   margin-top: 15px;
@@ -210,7 +207,7 @@ strong {
   border: none;
 }
 
-/* cv section button styling */
+/* CV section */
 #cv .project-btn {
   max-width: 150px;
   border: 1px solid #666;
@@ -230,7 +227,7 @@ strong {
   outline: none;
 }
 
-/* cv grid layout */
+/* CV grid layout */
 .cv-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -240,4 +237,11 @@ strong {
 
 .cv-section {
   margin-bottom: 1.5em;
+}
+
+/* horizontal line between sections */
+.cv-grid hr {
+  border: 0;
+  border-top: 1px solid #444;
+  margin: 20px 0;
 }

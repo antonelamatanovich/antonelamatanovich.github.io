@@ -47,65 +47,35 @@
             tuzla 360° – 360° video
           </button>
         </li>
-        <li>
-          <button class="project-btn" id="cv-btn">
-            curriculum vitae
-          </button>
-        </li>
       </ul>
     </section>
 
-    <!-- cv popup -->
-    <div id="cv-popup" class="popup-overlay">
-      <div class="popup-content">
-        <button id="popup-close" aria-label="close popup">&times;</button>
-        <h2>curriculum vitae</h2>
-        <div class="cv-grid">
-          <div class="cv-section">
-            <h3>education</h3>
-            <p><strong>katolički školski centar opća gimnazija “sveti franjo” tuzla</strong><br/>
-              <span class="date">2019 - 2023</span><br/>
-              high school diploma
-            </p>
-            <p><strong>darmstadt university of applied sciences</strong><br/>
-              <span class="date">2023 - 2027 (expected)</span><br/>
-              bachelor of arts – expanded realities (augmented and virtual reality design)
-            </p>
-          </div>
-          <div class="cv-section">
-            <h3>experience</h3>
-            <p><strong>videoreality gmbh</strong><br/>
-              <span class="date">2025 (planned)</span><br/>
-              working student – virtual reality (werkstudent)
-            </p>
-            <p><strong>stranger creatures – vr showcase</strong><br/>
-              <span class="date">2025</span><br/>
-              exhibition participant @ h_da werkschau
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- contact -->
+    <section id="contact">
+      <h2>contact</h2>
+      <p>
+        <a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a><br/>
+        +49 1575 4761393<br/>
+        <a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank" rel="noopener">linkedin</a><br/>
+        <a href="https://github.com/antonelamatanovich" target="_blank" rel="noopener">github</a>
+      </p>
+    </section>
+
+    <!-- curriculum vitae -->
+    <section id="cv">
+      <h2>curriculum vitae</h2>
+      <button class="project-btn" data-project="cv">view cv</button>
+    </section>
   </main>
 
-  <!-- scripts -->
-  <script>
-    // open cv popup
-    document.getElementById("cv-btn").addEventListener("click", function () {
-      document.getElementById("cv-popup").classList.add("active");
-    });
+  <!-- project popup modal -->
+  <div id="project-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="popup-content" role="document">
+      <button id="popup-close" aria-label="close project details">&times;</button>
+      <div id="popup-inner-content"></div>
+    </div>
+  </div>
 
-    // close cv popup
-    document.getElementById("popup-close").addEventListener("click", function () {
-      document.getElementById("cv-popup").classList.remove("active");
-    });
-
-    // close on outside click
-    document.getElementById("cv-popup").addEventListener("click", function (e) {
-      if (e.target === this) {
-        this.classList.remove("active");
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

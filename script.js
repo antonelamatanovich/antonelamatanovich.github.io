@@ -38,24 +38,61 @@ const projectsData = {
   cv: `
     <h2>curriculum vitae</h2>
     <div class="cv-grid">
+
       <div class="cv-section">
         <h3>education</h3>
-        <p><strong>secondary education</strong><br/><span class="date">2016 - 2020</span><br/>high school of commerce, tuzla, bosnia and herzegovina</p>
-        <p><strong>bachelor of arts</strong><br/><span class="date">2023 - present</span><br/>augmented and virtual reality design, darmstadt university of applied sciences, germany</p>
+
+        <p>
+          <strong>darmstadt university of applied sciences</strong><br/>
+          bachelor of arts - ba, expanded realities (augmented and virtual reality design)<br/>
+          <span class="date">oct 2023 - feb 2027</span><br/>
+          project delivery, trailer production and +14 skills
+        </p>
+
+        <p>
+          <strong>katolički školski centar opća gimnazija “sveti franjo” tuzla</strong><br/>
+          high school diploma<br/>
+          <span class="date">sep 2019 - jun 2023</span>
+        </p>
       </div>
+
+      <div class="cv-section">
+        <h3>experience</h3>
+
+        <p>
+          <strong>videoreality GmbH</strong><br/>
+          exhibition support at "timeleapvr artworld – mona lisas geheimnis" (work study)<br/>
+          frankfurt, hesse, germany · on-site<br/>
+          <span class="date">jun 2025 - present · 1 mo</span><br/>
+          interactive media and art exhibitions
+        </p>
+
+        <p>
+          <strong>developer and designer intern</strong><br/>
+          videoreality GmbH · full-time<br/>
+          <span class="date">feb 2025 - present · 5 mos</span><br/>
+          c#, unity and +3 skills
+        </p>
+
+        <p>
+          <strong>student study advisor for augmented and virtual reality design</strong><br/>
+          darmstadt university of applied sciences · contract<br/>
+          darmstadt-dieburg, hesse, germany · hybrid<br/>
+          <span class="date">apr 2025 - present · 3 mos</span>
+        </p>
+
+      </div>
+
       <div class="cv-section">
         <h3>languages</h3>
         <p>bosnian (native)<br/>english (c1)<br/>german (b2)<br/>croatian (native)</p>
       </div>
-      <div class="cv-section">
-        <h3>experience</h3>
-        <p><strong>intern</strong><br/><span class="date">july 2024 - oct 2024</span><br/>vr project at darmstadt university of applied sciences</p>
-        <p><strong>freelance designer</strong><br/><span class="date">2021 - 2023</span><br/>various 3d and vr design projects</p>
-      </div>
+
       <div class="cv-section">
         <h3>skills</h3>
         <p>unity 3d, c#, blender, adobe photoshop, adobe premiere, xr interaction toolkit, meta quest 2 & 3 development</p>
       </div>
+
     </div>
   `
 };

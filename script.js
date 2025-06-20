@@ -96,17 +96,17 @@ const projectsData = {
       <div class="cv-section">
         <h3>skills</h3>
         <p>
-          <strong>Game & XR Development:</strong><br/>
-          Unity · C# · Game Engines · Level Design · World Building
+          <strong>game & xr development:</strong><br/>
+          unity · c# · game engines · level design · world building
 
-          <br/><br/><strong>Design & Media Production:</strong><br/>
-          3D Modeling · Blender · Media Design · Visual Storytelling · Trailer Production · Video Editing
+          <br/><br/><strong>design & media production:</strong><br/>
+          3d modeling · blender · media design · visual storytelling · trailer production · video editing
 
-          <br/><br/><strong>Project & Team Skills:</strong><br/>
-          Project Delivery · Project Management · Teamwork · Team Management · Communication · Storytelling
+          <br/><br/><strong>project & team skills:</strong><br/>
+          project delivery · project management · teamwork · team management · communication · storytelling
 
-          <br/><br/><strong>Exhibition & Interactive Work:</strong><br/>
-          Interactive Media · Art Exhibitions · Exhibit Preparation
+          <br/><br/><strong>exhibition & interactive work:</strong><br/>
+          interactive media · art exhibitions · exhibit preparation
         </p>
       </div>
 

@@ -95,7 +95,19 @@ const projectsData = {
 
       <div class="cv-section">
         <h3>skills</h3>
-        <p>unity 3d, c#, blender, adobe photoshop, adobe premiere, xr interaction toolkit, meta quest 2 & 3 development</p>
+        <p>
+          <strong>Game & XR Development:</strong><br/>
+          Unity · C# · Game Engines · Level Design · World Building
+
+          <br/><br/><strong>Design & Media Production:</strong><br/>
+          3D Modeling · Blender · Media Design · Visual Storytelling · Trailer Production · Video Editing
+
+          <br/><br/><strong>Project & Team Skills:</strong><br/>
+          Project Delivery · Project Management · Teamwork · Team Management · Communication · Storytelling
+
+          <br/><br/><strong>Exhibition & Interactive Work:</strong><br/>
+          Interactive Media · Art Exhibitions · Exhibit Preparation
+        </p>
       </div>
 
     </div>

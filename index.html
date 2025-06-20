@@ -13,7 +13,7 @@
     <section id="about-me">
       <h1>antonela matanović.</h1>
       <div class="about-wrapper">
-        <img src="images/your-photo.jpg" alt="Antonela Matanović" class="profile-pic"/>
+        <img src="images/your-photo.jpg" alt="antonela matanović" class="profile-pic"/>
         <p>augmented and virtual reality design student @ darmstadt university of applied sciences · based in frankfurt am main</p>
       </div>
     </section>
@@ -47,13 +47,18 @@
             tuzla 360° – 360° video
           </button>
         </li>
+        <li>
+          <button class="project-btn" id="cv-btn">
+            curriculum vitae
+          </button>
+        </li>
       </ul>
     </section>
 
     <!-- cv popup -->
-    <section id="cv-popup" class="popup hidden">
+    <div id="cv-popup" class="popup-overlay">
       <div class="popup-content">
-        <span class="close-btn">&times;</span>
+        <button id="popup-close" aria-label="close popup">&times;</button>
         <h2>curriculum vitae</h2>
         <div class="cv-grid">
           <div class="cv-section">
@@ -80,9 +85,27 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <script src="script.js"></script>
+  <!-- scripts -->
+  <script>
+    // open cv popup
+    document.getElementById("cv-btn").addEventListener("click", function () {
+      document.getElementById("cv-popup").classList.add("active");
+    });
+
+    // close cv popup
+    document.getElementById("popup-close").addEventListener("click", function () {
+      document.getElementById("cv-popup").classList.remove("active");
+    });
+
+    // close on outside click
+    document.getElementById("cv-popup").addEventListener("click", function (e) {
+      if (e.target === this) {
+        this.classList.remove("active");
+      }
+    });
+  </script>
 </body>
 </html>

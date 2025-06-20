@@ -1,9 +1,7 @@
-// get popup elements
 const popup = document.getElementById('project-popup');
 const popupContent = document.getElementById('popup-inner-content');
 const closeBtn = document.getElementById('popup-close');
 
-// data for each project, stored as html strings
 const projectsData = {
   project1: `
     <h2>insect's delegate: brumble's journey</h2>
@@ -41,7 +39,6 @@ const projectsData = {
 
       <div class="cv-section">
         <h3>education</h3>
-
         <p>
           <strong>darmstadt university of applied sciences</strong><br/>
           bachelor of arts - ba, expanded realities (augmented and virtual reality design)<br/>
@@ -56,9 +53,10 @@ const projectsData = {
         </p>
       </div>
 
+      <hr/>
+
       <div class="cv-section">
         <h3>experience</h3>
-
         <p>
           <strong>videoreality GmbH</strong><br/>
           exhibition support at "timeleapvr artworld – mona lisas geheimnis" (work study)<br/>
@@ -80,13 +78,20 @@ const projectsData = {
           darmstadt-dieburg, hesse, germany · hybrid<br/>
           <span class="date">apr 2025 - present · 3 mos</span>
         </p>
-
       </div>
+
+      <hr/>
 
       <div class="cv-section">
         <h3>languages</h3>
-        <p>bosnian (native)<br/>english (c1)<br/>german (b2)<br/>croatian (native)</p>
+        <p>
+          bosnian / croatian / serbian – native or bilingual proficiency<br/>
+          english – professional working proficiency<br/>
+          german – elementary proficiency
+        </p>
       </div>
+
+      <hr/>
 
       <div class="cv-section">
         <h3>skills</h3>
@@ -97,7 +102,6 @@ const projectsData = {
   `
 };
 
-// add event listeners to project buttons to open popup with relevant content
 document.querySelectorAll('.project-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const projectKey = btn.getAttribute('data-project');
@@ -107,14 +111,12 @@ document.querySelectorAll('.project-btn').forEach(btn => {
   });
 });
 
-// close popup when close button clicked
 closeBtn.addEventListener('click', () => {
   popup.classList.remove('active');
   popup.setAttribute('aria-hidden', 'true');
   popupContent.innerHTML = '';
 });
 
-// close popup when clicking outside the popup content area
 popup.addEventListener('click', e => {
   if (e.target === popup) {
     popup.classList.remove('active');
@@ -123,7 +125,6 @@ popup.addEventListener('click', e => {
   }
 });
 
-// close popup on pressing escape key
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && popup.classList.contains('active')) {
     popup.classList.remove('active');

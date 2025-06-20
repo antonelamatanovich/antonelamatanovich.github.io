@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* reset and base styles */
 * {
   box-sizing: border-box;
 }
@@ -67,7 +67,7 @@ strong {
   font-weight: 700;
 }
 
-/* About me section with image and text side by side */
+/* about me section with image and text side by side */
 #about-me .about-wrapper {
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@ strong {
   flex-shrink: 0;
 }
 
-/* Projects list */
+/* projects list */
 .projects-list {
   list-style: none;
   padding: 0;
@@ -129,7 +129,7 @@ strong {
   outline: none;
 }
 
-/* Popup overlay */
+/* popup overlay */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -162,7 +162,7 @@ strong {
   line-height: 1.5;
 }
 
-/* Close button */
+/* close button */
 #popup-close {
   position: absolute;
   top: 15px;
@@ -182,7 +182,7 @@ strong {
   outline: none;
 }
 
-/* Project images inside popup */
+/* project images inside popup */
 .popup-content img {
   max-width: 100%;
   margin: 15px 0;
@@ -190,10 +190,10 @@ strong {
   box-shadow: 0 0 15px #fff3;
 }
 
-/* Video container inside popup */
+/* video container inside popup */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
   margin-top: 15px;
@@ -210,7 +210,7 @@ strong {
   border: none;
 }
 
-/* CV section button styling */
+/* cv section button styling */
 #cv .project-btn {
   max-width: 150px;
   border: 1px solid #666;
@@ -230,7 +230,7 @@ strong {
   outline: none;
 }
 
-/* CV Grid layout */
+/* cv grid layout */
 .cv-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

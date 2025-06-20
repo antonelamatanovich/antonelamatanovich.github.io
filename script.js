@@ -59,20 +59,30 @@ const projectsData = {
       <div class="cv-section">
         <h3>experience</h3>
 
-        <p>
-          <strong>videoreality GmbH</strong><br/>
-          exhibition support at "timeleapvr artworld – mona lisas geheimnis" (work study)<br/>
-          frankfurt, hesse, germany · on-site<br/>
-          <span class="date">jun 2025 - present · 1 mo</span><br/>
-          interactive media and art exhibitions
-        </p>
+        <div class="experience-item">
+          <p><strong>videoreality GmbH</strong> · 5 mos<br/>
+          frankfurt, hesse, germany · on-site</p>
 
-        <p>
-          <strong>developer and designer intern</strong><br/>
-          videoreality GmbH · full-time<br/>
-          <span class="date">feb 2025 - present · 5 mos</span><br/>
-          c#, unity and +3 skills
-        </p>
+          <ul class="experience-details">
+            <li>
+              <strong>exhibition support at "timeleapvr artworld – mona lisas geheimnis"</strong><br/>
+              work study<br/>
+              <span class="date">jun 2025 - present · 1 mo</span>
+              <div class="icon-text">
+                <svg aria-hidden="true" focusable="false" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right:5px;">
+                  <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0Zm3.865 6.615-4.716 4.716a.75.75 0 0 1-1.06-1.06l4.716-4.716a.75.75 0 1 1 1.06 1.06Z"/>
+                </svg>
+                <span>interactive media and art exhibitions</span>
+              </div>
+            </li>
+
+            <li>
+              <strong>developer and designer intern</strong><br/>
+              full-time<br/>
+              <span class="date">feb 2025 - present · 5 mos</span>
+            </li>
+          </ul>
+        </div>
 
         <p>
           <strong>student study advisor for augmented and virtual reality design</strong><br/>

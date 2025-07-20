@@ -1,10 +1,12 @@
+// lower case comments
+
 // get popup elements
 const popup = document.getElementById('project-popup');
 const popupContent = popup.querySelector('.popup-content');
-const closeBtn = document.getElementById('popup-close');
 const popupInnerContent = document.getElementById('popup-inner-content');
+const closeBtn = document.getElementById('popup-close');
 
-// store project content
+// project & cv content data
 const projectsData = {
   project1: `
     <div class="popup-inner-wrapper">
@@ -33,50 +35,38 @@ const projectsData = {
 
 // open popup function
 const openPopup = (key) => {
-  popupContent.style.opacity = 0;
-  popupContent.style.transform = 'scale(0.96)';
+  popupInnerContent.innerHTML = projectsData[key] || '<p>details coming soon...</p>';
   popup.classList.add('active');
   popup.setAttribute('aria-hidden', 'false');
-
-  setTimeout(() => {
-    popupInnerContent.innerHTML = projectsData[key] || '<p>details coming soon...</p>';
-    popupContent.style.opacity = 1;
-    popupContent.style.transform = 'scale(1)';
-    // focus first focusable element if exists
-    const focusable = popupContent.querySelector('button, a, iframe, img, p, h2, h3');
-    focusable?.focus();
-  }, 100);
+  // focus close button for accessibility
+  closeBtn.focus();
 };
 
-// open popup on project link click
+// close popup function
+const closePopup = () => {
+  popup.classList.remove('active');
+  popup.setAttribute('aria-hidden', 'true');
+  popupInnerContent.innerHTML = '';
+};
+
+// attach open popup event to project and cv links
 document.querySelectorAll('.project-link').forEach(link => {
-  link.addEventListener('click', (e) => {
+  link.addEventListener('click', e => {
     e.preventDefault();
     const key = link.getAttribute('data-project');
     openPopup(key);
   });
 });
 
-// close popup function
-const closePopup = () => {
-  popupContent.style.opacity = 0;
-  popupContent.style.transform = 'scale(0.96)';
-  setTimeout(() => {
-    popup.classList.remove('active');
-    popup.setAttribute('aria-hidden', 'true');
-    popupInnerContent.innerHTML = '';
-  }, 300);
-};
-
-// close on close button click
+// close popup on close button
 closeBtn.addEventListener('click', closePopup);
 
-// close on background click
+// close popup on background click (outside popup content)
 popup.addEventListener('click', (e) => {
   if (e.target === popup) closePopup();
 });
 
-// close on escape key
+// close popup on escape key press
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && popup.classList.contains('active')) {
     closePopup();
@@ -96,7 +86,7 @@ window.addEventListener('scroll', () => {
     header.style.background = 'rgba(13, 13, 13, 0.7)';
     header.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.7)';
   } else {
-    header.style.background = 'rgba(13, 13, 13, 0.5)';
+    header.style.background = 'rgba(13, 13, 13, 0.4)';
     header.style.boxShadow = 'none';
   }
 });

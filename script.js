@@ -1,58 +1,60 @@
-// close popup
-const closePopup = () => {
-  popupContent.style.opacity = 0;
-  popupContent.style.transform = 'scale(0.96)';
-  setTimeout(() => {
-    popup.classList.remove('active');
-    popup.setAttribute('aria-hidden', 'true');
-    popupContent.innerHTML = '';
-  }, 300);
+// lowercase popup data
+const projectsData = {
+  project1: `
+    <h2>insect's delegate</h2>
+    <p>virtual reality experience made @ h_da, winter 2024. team: jacopo perilli, lara heß, mutlu yakubov, antonela matanović, himanshu dahiya.</p>
+    <img src="images/main image.png" alt="insect's delegate image" />
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="insect's delegate trailer" allowfullscreen></iframe>
+    </div>
+  `,
+  project2: `<h2>blade of the dawn</h2><p>coming soon</p>`,
+  project3: `<h2>coralis</h2><p>coming soon</p>`,
+  project4: `<h2>vr home</h2><p>coming soon</p>`,
+  project5: `<h2>tuzla 360°</h2><p>coming soon</p>`,
+  cv: `<h2>cv</h2><p>available upon request or downloadable here soon.</p>`
 };
 
-// close button
-closeBtn.addEventListener('click', closePopup);
-
-// background click closes popup
-popup.addEventListener('click', (e) => {
-  if (e.target === popup) closePopup();
-});
-
-// esc key closes popup
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && popup.classList.contains('active')) {
-    closePopup();
-  }
-});
-
-// hamburger menu toggle
-const navToggle = document.getElementById('nav-toggle');
-const navList = document.querySelector('.nav-list');
-
-navToggle.addEventListener('click', () => {
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', !expanded);
-  navList.classList.toggle('active');
-});
-
-// smooth scroll for nav links
-document.querySelectorAll('.nav-link').forEach((link) => {
-  link.addEventListener('click', (e) => {
+// open popup
+document.querySelectorAll('.project-link').forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    navList.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
-    const target = document.querySelector(link.getAttribute('href'));
-    target?.scrollIntoView({ behavior: 'smooth' });
-    target?.focus();
+    const key = link.getAttribute('data-project');
+    const popup = document.getElementById('project-popup');
+    const content = document.getElementById('popup-inner-content');
+    content.innerHTML = projectsData[key] || '<p>details coming soon</p>';
+    popup.classList.add('active');
+    popup.setAttribute('aria-hidden', 'false');
   });
 });
 
+// close popup
+document.getElementById('popup-close').addEventListener('click', () => {
+  const popup = document.getElementById('project-popup');
+  const content = document.getElementById('popup-inner-content');
+  popup.classList.remove('active');
+  popup.setAttribute('aria-hidden', 'true');
+  content.innerHTML = '';
+});
+
+document.getElementById('project-popup').addEventListener('click', e => {
+  if (e.target.id === 'project-popup') {
+    document.getElementById('popup-close').click();
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('popup-close').click();
+  }
+});
+
 // scroll progress bar
-const scrollProgress = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
-  scrollProgress.style.width = scrolled + '%';
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.getElementById('scroll-progress').style.width = scrollPercent + '%';
 
   const header = document.getElementById('site-header');
   if (scrollTop > 10) {

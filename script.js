@@ -11,16 +11,20 @@ const projectsData = {
     <p id="popup-desc">this virtual reality experience was created during the winter semester 2024, under project 3: discover space and time, a module of the expanded realities (augmented and virtual reality design) bachelor of arts study programme at darmstadt university of applied sciences.</p>
     <p>our team created an experience to educate young audiences (ages 12-16) about the vital role of insects while connecting education with storytelling and exploration.</p>
     <p><strong>team members:</strong> jacopo perilli, lara heß, mutlu yakubov, antonela matanović, himanshu dahiya</p>
-    <img src="images/main image.png" alt="insect's delegate cover image" />
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="insect's delegate trailer" allowfullscreen></iframe>
+    <img src="images/main image.png" alt="insect's delegate cover image" style="width:100%;border-radius:8px;object-fit:cover;margin-top:1rem;" />
+    <div class="video-container" style="margin-top:1rem;aspect-ratio:16/9;">
+      <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="insect's delegate trailer" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
     </div>
   `,
   project2: `<p>details coming soon...</p>`,
   project3: `<p>details coming soon...</p>`,
   project4: `<p>details coming soon...</p>`,
   project5: `<p>details coming soon...</p>`,
-  cv: `<p>cv details or pdf link can go here.</p>`
+  cv: `
+    <h2 id="popup-title">curriculum vitae</h2>
+    <p id="popup-desc">download or view my cv here. <br /> (replace this content with your actual CV details or embed a pdf viewer.)</p>
+    <p><a href="your-cv.pdf" target="_blank" rel="noopener" style="color:#bbb; border-bottom:1.5px solid #bbb;">download pdf</a></p>
+  `
 };
 
 // open popup when clicking project or cv links
@@ -39,7 +43,9 @@ document.querySelectorAll('.project-link').forEach(link => {
       popupContent.innerHTML = projectsData[projectKey];
       popupContent.style.opacity = 1;
       popupContent.style.transform = 'scale(1)';
-      popupContent.querySelector('button, a, iframe, img, p, h2, h3')?.focus();
+      // focus first focusable element inside popup
+      const focusable = popupContent.querySelector('button, a, iframe, img, p, h2, h3');
+      focusable?.focus();
     }, 100);
   });
 });

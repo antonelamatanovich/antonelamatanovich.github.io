@@ -61,7 +61,7 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #00ffe7;
+  color: #bbb;
 }
 
 .nav-link::after {
@@ -70,8 +70,8 @@ body {
   bottom: 0;
   left: 50%;
   width: 0;
-  height: 2px;
-  background: #00ffe7;
+  height: 1.5px;
+  background: #bbb;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -95,23 +95,21 @@ body {
 main {
   max-width: 960px;
   margin: auto;
-  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  background: #121212;
   padding: 30px 20px;
-  border-radius: 24px;
-  box-shadow: 0 0 24px #00ffe7aa;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
   position: relative;
-  z-index: 1;
-
-  /* subtle diagonal lines background */
-  background-image:
-    repeating-linear-gradient(45deg, rgba(255 255 255 / 0.03) 0 2px, transparent 2px 6px);
 }
+
+/* Remove any background pattern */
+/* background-image removed */
 
 /* headings */
 h1, h2, h3 {
   font-weight: 700;
   text-transform: lowercase;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   line-height: 1.1;
   font-variant: small-caps;
 }
@@ -124,7 +122,7 @@ h1 {
 h2 {
   font-size: clamp(1.6rem, 3vw, 2rem);
   margin: 4rem 0 2rem;
-  border-bottom: 2px solid #222;
+  border-bottom: 1.5px solid #333;
   padding-bottom: 0.5rem;
 }
 
@@ -132,7 +130,7 @@ h3 {
   font-size: 1.2rem;
   margin-top: 2em;
   color: #aaa;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   font-variant: normal;
 }
 
@@ -145,7 +143,7 @@ a {
 
 a:hover,
 a:focus-visible {
-  color: #00ffe7;
+  color: #bbb;
   outline: none;
 }
 
@@ -161,15 +159,15 @@ a:focus-visible {
 .profile-pic {
   width: 160px;
   height: 160px;
-  border-radius: 20px;
+  border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 0 12px #00ffe7bb;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.6);
   transition: box-shadow 0.3s ease;
 }
 
 .profile-pic:hover,
 .profile-pic:focus-visible {
-  box-shadow: 0 0 20px #00ffe7ee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
 /* project grid */
@@ -184,16 +182,16 @@ a:focus-visible {
 .projects-list li {
   background: #1a1a1a;
   padding: 1.2em 1em;
-  border-radius: 16px;
-  box-shadow: 0 0 12px #00ffe722;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .projects-list li:hover,
 .projects-list li:focus-within {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   background-color: #222222;
-  box-shadow: 0 0 20px #00ffe7bb;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 /* project buttons */
@@ -218,14 +216,14 @@ a:focus-visible {
   bottom: 0;
   left: 50%;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #00ffe7, #00b0a7);
+  height: 1.5px;
+  background: #bbb;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
 .project-btn:hover,
 .project-btn:focus-visible {
-  color: #00ffe7;
+  color: #bbb;
   outline: none;
 }
 
@@ -239,7 +237,7 @@ a:focus-visible {
 .popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(13, 13, 13, 0.95);
   opacity: 0;
   pointer-events: none;
   display: flex;
@@ -248,7 +246,7 @@ a:focus-visible {
   z-index: 10000;
   padding: 2rem;
   transition: opacity 0.3s ease;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
 }
 
 .popup-overlay.active {
@@ -260,14 +258,14 @@ a:focus-visible {
 .popup-content {
   background: #121212;
   color: #eee;
-  border-radius: 24px;
+  border-radius: 12px;
   max-width: 720px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 2.5rem;
+  padding: 2rem;
   position: relative;
-  box-shadow: 0 0 40px #00ffe7bb;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   transform: scale(0.96);
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -283,18 +281,18 @@ a:focus-visible {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
-  color: #aaa;
+  color: #bbb;
   transition: color 0.3s ease;
   line-height: 1;
 }
 
 #popup-close:hover,
 #popup-close:focus-visible {
-  color: #00ffe7;
+  color: #888;
   outline: none;
 }
 
@@ -302,9 +300,9 @@ a:focus-visible {
 .popup-content img,
 .video-container iframe {
   width: 100%;
-  margin: 1.5rem 0;
-  border-radius: 16px;
-  box-shadow: 0 0 20px #00ffe7bb;
+  margin: 1.2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
 }
 
 /* video container */
@@ -313,7 +311,7 @@ a:focus-visible {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 8px;
 }
 
 .video-container iframe {
@@ -328,9 +326,9 @@ a:focus-visible {
 #cv .project-btn {
   display: inline-block;
   margin-top: 1em;
-  padding: 12px 28px;
-  border: 2px solid #00ffe7;
-  border-radius: 14px;
+  padding: 10px 24px;
+  border: 1.5px solid #bbb;
+  border-radius: 10px;
   font-size: 1rem;
   background: transparent;
   transition: background 0.3s ease, color 0.3s ease;
@@ -338,8 +336,8 @@ a:focus-visible {
 
 #cv .project-btn:hover,
 #cv .project-btn:focus-visible {
-  background: #00ffe7;
-  color: #000;
+  background: #bbb;
+  color: #121212;
   outline: none;
 }
 
@@ -358,14 +356,14 @@ a:focus-visible {
 /* horizontal line between cv sections */
 .cv-grid hr {
   border: 0;
-  border-top: 1px solid #444;
+  border-top: 1px solid #333;
   margin: 20px 0;
 }
 
 /* meta text like dates */
 .date {
   font-size: 0.85rem;
-  color: #888;
+  color: #777;
 }
 
 strong {
@@ -374,9 +372,8 @@ strong {
 
 /* keyboard focus visible */
 .focus-visible {
-  outline: 2px solid #00ffe7;
+  outline: 2px solid #bbb;
   outline-offset: 4px;
-  box-shadow: 0 0 8px #00ffe7aa;
 }
 
 /* scroll progress bar */
@@ -384,8 +381,8 @@ strong {
   position: fixed;
   top: 0;
   left: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #00ffe7, #00b0a7);
+  height: 3px;
+  background: #bbb;
   width: 0;
   z-index: 12000;
   transition: width 0.2s ease-out;
@@ -406,7 +403,7 @@ strong {
     transform: translateX(100%);
     transition: transform 0.3s ease;
     border-radius: 0 0 0 12px;
-    box-shadow: -4px 0 24px #00ffe7bb;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.6);
     pointer-events: none;
     user-select: none;
   }

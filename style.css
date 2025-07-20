@@ -49,7 +49,7 @@ body {
 .nav-link {
   text-transform: lowercase;
   font-weight: 600;
-  font-variant: small-caps;
+  font-variant: normal;
   letter-spacing: -0.04em;
   color: #eaeaea;
   text-decoration: none;

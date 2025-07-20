@@ -10,11 +10,11 @@ body {
   background: #0d0d0d;
   color: #eaeaea;
   line-height: 1.6;
-  padding: 64px 40px 40px; /* padding to give space for fixed header */
+  padding: 64px 40px 40px; /* padding for header space */
   scroll-behavior: smooth;
   text-transform: lowercase;
   display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: center; /* center main horizontally */
 }
 
 main {
@@ -34,14 +34,14 @@ h1 {
   font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 700;
   margin-bottom: 1rem;
-  text-align: center; /* center title */
+  text-align: center;
 }
 
 h2 {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 600;
   margin: 3rem 0 1.5rem;
-  text-align: center; /* center headings */
+  text-align: center;
 }
 
 a {
@@ -64,8 +64,8 @@ a:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 3rem;
-  justify-content: center; /* center content horizontally */
-  text-align: center;     /* center text */
+  justify-content: center;
+  text-align: center;
 }
 
 .profile-pic {
@@ -89,12 +89,77 @@ a:focus-visible {
 .project-link {
   font-size: 1.1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 /* contact */
 #contact p {
   font-size: 1rem;
   text-align: center;
+}
+
+/* popup overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 2rem;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(8px); /* reduced blur */
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* popup content */
+.popup-content {
+  background: #121212;
+  color: #eee;
+  border-radius: 12px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  transform: scale(0.96);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left; /* popup text aligned left */
+}
+
+.popup-overlay.active .popup-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* popup close button */
+#popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+#popup-close:hover,
+#popup-close:focus-visible {
+  color: #888;
+  outline: none;
 }
 
 /* scroll progress */
@@ -107,6 +172,27 @@ a:focus-visible {
   width: 0;
   z-index: 2000;
   transition: width 0.2s ease-out;
+}
+
+/* nav */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: blur(4px); /* reduced blur */
+  z-index: 1000;
+  padding: 16px 40px;
+}
+
+/* nav-list */
+.nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  justify-content: center; /* center nav items */
+  padding: 0;
 }
 
 /* responsive */

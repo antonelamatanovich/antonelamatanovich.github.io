@@ -3,9 +3,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   scroll-behavior: smooth;
-  text-transform: lowercase !important; /* force all text lowercase */
+}
+
+/* Force lowercase explicitly */
+body, h1, h2, h3, p, a, nav, section, header, footer {
+  text-transform: lowercase !important;
+  font-variant: normal !important;
+  letter-spacing: -0.04em;
 }
 
 body {
@@ -51,14 +57,13 @@ body {
 
 .nav-link {
   font-weight: 600;
-  font-variant: normal;
-  letter-spacing: -0.04em;
   color: #eaeaea;
   text-decoration: none;
   padding: 6px 0;
   position: relative;
   transition: color 0.3s ease;
   outline-offset: 4px;
+  text-transform: lowercase;
 }
 
 .nav-link:hover,
@@ -83,31 +88,19 @@ body {
   left: 0;
 }
 
-/* hamburger nav toggle */
-#nav-toggle {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: #eaeaea;
-  cursor: pointer;
-}
-
 /* full width layout */
-/* remove any box shadows or background colors for minimalism */
 main {
   max-width: 100%;
   margin: 0;
-  background: transparent !important; /* remove background */
+  background: transparent !important;
   padding: 30px 40px;
   border-radius: 0;
-  box-shadow: none !important; /* remove shadows */
+  box-shadow: none !important;
   position: relative;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
-/* sections no background either */
 section {
   max-width: 100%;
   padding-left: 0;
@@ -121,8 +114,9 @@ h1, h2, h3 {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  font-variant: small-caps;
-  text-transform: lowercase !important; /* ensure headings are lowercase */
+  font-variant: normal !important;
+  text-transform: lowercase !important;
+  margin-bottom: 0.5em;
 }
 
 h1 {
@@ -142,23 +136,47 @@ h3 {
   margin-top: 2em;
   color: #aaa;
   letter-spacing: -0.01em;
-  font-variant: normal;
 }
 
-/* links */
-a {
+/* links in projects */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.projects-list li {
+  /* remove background & box shadow */
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.project-link {
+  font-weight: 600;
   color: #eaeaea;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid transparent;
+  display: inline-block;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  outline-offset: 4px;
+  text-transform: lowercase;
 }
 
-a:hover,
-a:focus-visible {
+.project-link:hover,
+.project-link:focus-visible {
+  border-bottom-color: #bbb;
   color: #bbb;
   outline: none;
 }
 
-/* about section */
+/* about-wrapper */
 .about-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -181,67 +199,10 @@ a:focus-visible {
   box-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-/* project grid */
-.projects-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
-
-.projects-list li {
-  background: #1a1a1a;
-  padding: 1.2em 1em;
-  border-radius: 12px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.projects-list li:hover,
-.projects-list li:focus-within {
-  transform: translateY(-2px);
-  background-color: #222222;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
-}
-
-/* project buttons */
-.project-btn {
-  all: unset;
-  cursor: pointer;
-  font-weight: 600;
-  display: block;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  color: #eaeaea;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 4px;
-  outline-offset: 4px;
-  transition: color 0.3s ease;
-}
-
-.project-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1.5px;
-  background: #bbb;
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.project-btn:hover,
-.project-btn:focus-visible {
-  color: #bbb;
-  outline: none;
-}
-
-.project-btn:hover::after,
-.project-btn:focus-visible::after {
-  width: 100%;
-  left: 0;
+/* contact section */
+#contact p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* popup overlay */
@@ -427,5 +388,10 @@ strong {
 
   #nav-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #eaeaea;
+    cursor: pointer;
   }
 }

@@ -3,7 +3,7 @@ const popup = document.getElementById('project-popup');
 const popupContent = document.getElementById('popup-inner-content');
 const closeBtn = document.getElementById('popup-close');
 const navToggle = document.getElementById('nav-toggle');
-const navList = document.querySelector('.nav-list');
+const navList = document.querySelector('.nav-projects-list');
 const scrollProgress = document.getElementById('scroll-progress');
 
 // store project content
@@ -18,14 +18,14 @@ const projectsData = {
       <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="insect's delegate trailer" allowfullscreen></iframe>
     </div>
   `,
-  project2: `...`,
-  project3: `...`,
-  project4: `...`,
-  project5: `...`,
-  cv: `...`
+  project2: `<p>details coming soon...</p>`,
+  project3: `<p>details coming soon...</p>`,
+  project4: `<p>details coming soon...</p>`,
+  project5: `<p>details coming soon...</p>`,
+  cv: `<p>cv content goes here...</p>`
 };
 
-// open popup
+// open popup for project buttons
 document.querySelectorAll('.project-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const projectKey = btn.getAttribute('data-project');
@@ -41,7 +41,7 @@ document.querySelectorAll('.project-btn').forEach(btn => {
       popupContent.innerHTML = projectsData[projectKey] || '<p>details coming soon...</p>';
       popupContent.style.opacity = 1;
       popupContent.style.transform = 'scale(1)';
-      popupContent.querySelector('button, a, iframe, img, p, h2, h3').focus?.();
+      popupContent.querySelector('button, a, iframe, img, p, h2, h3')?.focus();
     }, 100);
   });
 });
@@ -79,8 +79,8 @@ navToggle.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
 
-// smooth scroll on nav link click (for accessibility)
-document.querySelectorAll('.nav-link').forEach(link => {
+// smooth scroll on nav-project-link click (for accessibility)
+document.querySelectorAll('.nav-project-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     navList.classList.remove('active');
@@ -91,16 +91,15 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// scroll progress bar update
+// scroll progress bar update and header style on scroll
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrolled = (scrollTop / docHeight) * 100;
   scrollProgress.style.width = scrolled + '%';
 
-  // header smooth shadow + background change on scroll
   const header = document.getElementById('site-header');
-  if(scrollTop > 10) {
+  if (scrollTop > 10) {
     header.style.background = 'rgba(18, 18, 18, 0.95)';
     header.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.7)';
   } else {

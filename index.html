@@ -12,7 +12,7 @@
       <ul class="nav-list">
         <li><a href="#about-me" class="nav-link">about</a></li>
         <li><a href="#projects" class="nav-link">projects</a></li>
-        <li><a href="#cv" class="nav-link">cv</a></li> <!-- moved cv before contact -->
+        <li><a href="#cv" class="nav-link">cv</a></li>
         <li><a href="#contact" class="nav-link">contact</a></li>
       </ul>
     </nav>
@@ -23,24 +23,24 @@
       <h1>antonela matanović</h1>
       <div class="about-wrapper">
         <img src="images/profile.png" alt="antonela matanović" class="profile-pic" />
-        <p>augmented and virtual reality design student @ darmstadt university of applied sciences · based in frankfurt am main</p>
+        <p>augmented and virtual reality design student @ h_da · based in frankfurt am main</p>
       </div>
     </section>
 
     <section id="projects">
       <h2>projects</h2>
       <ul class="projects-list">
-        <li><a href="#project1" class="project-link">insect's delegate</a></li>
-        <li><a href="#project2" class="project-link">blade of the dawn</a></li>
-        <li><a href="#project3" class="project-link">coralis</a></li>
-        <li><a href="#project4" class="project-link">vr home</a></li>
-        <li><a href="#project5" class="project-link">tuzla 360°</a></li>
+        <li><a href="#" class="project-link" data-project="project1">insect's delegate</a></li>
+        <li><a href="#" class="project-link" data-project="project2">blade of the dawn</a></li>
+        <li><a href="#" class="project-link" data-project="project3">coralis</a></li>
+        <li><a href="#" class="project-link" data-project="project4">vr home</a></li>
+        <li><a href="#" class="project-link" data-project="project5">tuzla 360°</a></li>
       </ul>
     </section>
 
     <section id="cv">
       <h2>cv</h2>
-      <p><a href="#" class="project-link">view cv</a></p>
+      <p><a href="#" class="project-link" data-project="cv">view cv</a></p>
     </section>
 
     <section id="contact">
@@ -48,13 +48,22 @@
       <p>
         <a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a><br />
         +49 1575 4761393<br />
-        <a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank">linkedin</a><br />
-        <a href="https://github.com/antonelamatanovich" target="_blank">github</a>
+        <a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank" rel="noopener">linkedin</a><br />
+        <a href="https://github.com/antonelamatanovich" target="_blank" rel="noopener">github</a>
       </p>
     </section>
   </main>
 
-  <div id="scroll-progress"></div>
+  <!-- popup overlay -->
+  <div id="project-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+    <div class="popup-content" role="document">
+      <button id="popup-close" aria-label="close project details">&times;</button>
+      <div id="popup-inner-content"></div>
+    </div>
+  </div>
+
+  <!-- scroll progress bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>

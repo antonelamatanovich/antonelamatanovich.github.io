@@ -1,28 +1,9 @@
-// get popup elements
-const popup = document.createElement('div');
-popup.id = 'project-popup';
-popup.className = 'popup-overlay';
-popup.setAttribute('aria-hidden', 'true');
-popup.setAttribute('role', 'dialog');
-popup.setAttribute('aria-modal', 'true');
-popup.setAttribute('aria-labelledby', 'popup-title');
-popup.setAttribute('aria-describedby', 'popup-desc');
-popup.style.display = 'none';
+// popup elements
+const popup = document.getElementById('project-popup');
+const popupContent = document.getElementById('popup-inner-content');
+const closeBtn = document.getElementById('popup-close');
 
-const popupContent = document.createElement('div');
-popupContent.className = 'popup-content';
-popupContent.setAttribute('role', 'document');
-
-const closeBtn = document.createElement('button');
-closeBtn.id = 'popup-close';
-closeBtn.setAttribute('aria-label', 'close project details');
-closeBtn.innerHTML = '&times;';
-
-popupContent.appendChild(closeBtn);
-popup.appendChild(popupContent);
-document.body.appendChild(popup);
-
-// store project and cv content
+// projects data
 const projectsData = {
   project1: `
     <h2 id="popup-title">insect's delegate: brumble's journey</h2>
@@ -38,82 +19,62 @@ const projectsData = {
   project3: `<p>details coming soon...</p>`,
   project4: `<p>details coming soon...</p>`,
   project5: `<p>details coming soon...</p>`,
-  cv: `<p>cv content will be here soon.</p>`
+  cv: `<p>cv details coming soon...</p>`
 };
 
 // open popup function
-function openPopup(key) {
+const openPopup = (key) => {
   popupContent.style.opacity = 0;
   popupContent.style.transform = 'scale(0.96)';
-  popup.style.display = 'flex';
   popup.classList.add('active');
   popup.setAttribute('aria-hidden', 'false');
 
   setTimeout(() => {
-    popupContent.innerHTML = '';
-    popupContent.appendChild(closeBtn); // keep close button
-    const contentWrapper = document.createElement('div');
-    contentWrapper.innerHTML = projectsData[key] || '<p>details coming soon...</p>';
-    popupContent.appendChild(contentWrapper);
+    popupContent.innerHTML = projectsData[key] || '<p>details coming soon...</p>';
     popupContent.style.opacity = 1;
     popupContent.style.transform = 'scale(1)';
     // focus first focusable element inside popup
-    const focusable = popupContent.querySelector('button, a, iframe, input, textarea');
-    if (focusable) focusable.focus();
+    const firstFocusable = popupContent.querySelector('button, a, iframe, img, p, h2, h3');
+    if(firstFocusable) firstFocusable.focus();
   }, 100);
-}
+};
+
+// attach click listeners for all project links
+document.querySelectorAll('.project-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const key = link.getAttribute('data-project');
+    openPopup(key);
+  });
+});
 
 // close popup function
-function closePopup() {
+const closePopup = () => {
   popupContent.style.opacity = 0;
   popupContent.style.transform = 'scale(0.96)';
   setTimeout(() => {
     popup.classList.remove('active');
     popup.setAttribute('aria-hidden', 'true');
-    popup.style.display = 'none';
     popupContent.innerHTML = '';
-    popupContent.appendChild(closeBtn);
   }, 300);
-}
+};
 
-// event listeners for popup close
+// close popup on close button click
 closeBtn.addEventListener('click', closePopup);
+
+// close popup on background click
 popup.addEventListener('click', (e) => {
   if (e.target === popup) closePopup();
 });
+
+// close popup on Escape key press
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && popup.classList.contains('active')) {
     closePopup();
   }
 });
 
-// handle nav links smooth scroll
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    target?.scrollIntoView({ behavior: 'smooth' });
-    target?.focus();
-  });
-});
-
-// handle project links and cv link popup
-document.querySelectorAll('.project-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const text = link.textContent.trim().toLowerCase();
-    // match project keys by text content
-    if (text.includes("insect's delegate")) openPopup('project1');
-    else if (text.includes('blade of the dawn')) openPopup('project2');
-    else if (text.includes('coralis')) openPopup('project3');
-    else if (text.includes('vr home')) openPopup('project4');
-    else if (text.includes('tuzla 360°')) openPopup('project5');
-    else if (text.includes('view cv')) openPopup('cv');
-    else openPopup('cv'); // default fallback
-  });
-});
-
-// scroll progress bar logic
+// scroll progress bar
 const scrollProgress = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
@@ -123,10 +84,8 @@ window.addEventListener('scroll', () => {
 
   const header = document.getElementById('site-header');
   if (scrollTop > 10) {
-    header.style.background = 'rgba(18, 18, 18, 0.95)';
     header.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.7)';
   } else {
-    header.style.background = 'rgba(18, 18, 18, 0.85)';
-    header.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.5)';
+    header.style.boxShadow = 'none';
   }
 });

@@ -10,9 +10,18 @@ body {
   background: #0d0d0d;
   color: #eaeaea;
   line-height: 1.6;
-  padding: 64px 40px 40px; /* top padding adjusted for fixed header */
+  padding: 64px 40px 40px; /* padding to give space for fixed header */
   scroll-behavior: smooth;
   text-transform: lowercase;
+  display: flex;
+  justify-content: center; /* center horizontally */
+}
+
+main {
+  max-width: 1600px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* typography */
@@ -25,12 +34,14 @@ h1 {
   font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 700;
   margin-bottom: 1rem;
+  text-align: center; /* center title */
 }
 
 h2 {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 600;
   margin: 3rem 0 1.5rem;
+  text-align: center; /* center headings */
 }
 
 a {
@@ -47,47 +58,14 @@ a:focus-visible {
   outline: none;
 }
 
-/* header nav - fixed, full width, reduced blur, no bg color */
-#site-header {
-  position: fixed;   /* fix at top */
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;     /* full viewport width */
-  background: transparent; /* no background color */
-  backdrop-filter: blur(4px);   /* reduced blur */
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 1000;
-  padding: 16px 0;  /* vertical padding only */
-  text-align: center;
-  margin: 0;
-}
-
-.nav-list {
-  display: inline-flex;
-  gap: 30px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-  width: 100%;
-}
-
-/* main layout */
-main {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
 .about-wrapper {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 3rem;
-  justify-content: center;
-  text-align: center;
+  justify-content: center; /* center content horizontally */
+  text-align: center;     /* center text */
 }
 
 .profile-pic {
@@ -134,7 +112,7 @@ main {
 /* responsive */
 @media (max-width: 720px) {
   body {
-    padding: 64px 20px 40px; /* maintain top padding for fixed header */
+    padding: 64px 20px 40px;
   }
 
   .nav-list {

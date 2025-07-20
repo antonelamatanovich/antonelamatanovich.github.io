@@ -30,11 +30,11 @@
     <section id="projects">
       <h2>projects</h2>
       <ul class="projects-list">
-        <li><a href="#project1" class="project-link">insect's delegate</a></li>
-        <li><a href="#project2" class="project-link">blade of the dawn</a></li>
-        <li><a href="#project3" class="project-link">coralis</a></li>
-        <li><a href="#project4" class="project-link">vr home</a></li>
-        <li><a href="#project5" class="project-link">tuzla 360°</a></li>
+        <li><a href="#" class="project-link" data-project="project1">insect's delegate</a></li>
+        <li><a href="#" class="project-link" data-project="project2">blade of the dawn</a></li>
+        <li><a href="#" class="project-link" data-project="project3">coralis</a></li>
+        <li><a href="#" class="project-link" data-project="project4">vr home</a></li>
+        <li><a href="#" class="project-link" data-project="project5">tuzla 360°</a></li>
       </ul>
     </section>
 
@@ -50,9 +50,16 @@
 
     <section id="cv">
       <h2>cv</h2>
-      <p><a href="#" class="project-link">view cv</a></p>
+      <p><a href="#" class="project-link" data-project="cv">view cv</a></p>
     </section>
   </main>
+
+  <div id="project-popup" class="popup-overlay" aria-hidden="true">
+    <div class="popup-content">
+      <button id="popup-close" aria-label="close popup">×</button>
+      <div id="popup-inner-content"></div>
+    </div>
+  </div>
 
   <div id="scroll-progress"></div>
   <script src="script.js"></script>

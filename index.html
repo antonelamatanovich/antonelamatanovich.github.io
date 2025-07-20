@@ -8,16 +8,28 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <header id="site-header" role="banner">
+    <nav id="main-nav" role="navigation" aria-label="primary navigation">
+      <ul class="nav-list">
+        <li><a href="#about-me" class="nav-link">about</a></li>
+        <li><a href="#projects" class="nav-link">projects</a></li>
+        <li><a href="#contact" class="nav-link">contact</a></li>
+        <li><a href="#cv" class="nav-link">cv</a></li>
+      </ul>
+      <button id="nav-toggle" aria-label="toggle menu" aria-expanded="false">&#9776;</button>
+    </nav>
+  </header>
+
   <main>
-    <section id="about-me">
+    <section id="about-me" tabindex="-1">
       <h1>antonela matanović</h1>
       <div class="about-wrapper">
-        <img src="images/profile.png" alt="antonela matanović" class="profile-pic"/>
+        <img src="images/profile.png" alt="antonela matanović" class="profile-pic" />
         <p>augmented and virtual reality design student @ h_da · based in frankfurt am main</p>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" tabindex="-1">
       <h2>projects</h2>
       <ul class="projects-list">
         <li><button class="project-btn" data-project="project1">insect's delegate</button></li>
@@ -28,7 +40,7 @@
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="contact" tabindex="-1">
       <h2>contact</h2>
       <p>
         <a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a><br/>
@@ -38,18 +50,20 @@
       </p>
     </section>
 
-    <section id="cv">
+    <section id="cv" tabindex="-1">
       <h2>cv</h2>
       <button class="project-btn" data-project="cv">view cv</button>
     </section>
   </main>
 
-  <div id="project-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div id="project-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
     <div class="popup-content" role="document">
       <button id="popup-close" aria-label="close project details">&times;</button>
       <div id="popup-inner-content"></div>
     </div>
   </div>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>

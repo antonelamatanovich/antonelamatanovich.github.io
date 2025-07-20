@@ -13,6 +13,7 @@ body {
   padding: 60px 40px;
   scroll-behavior: smooth;
   text-transform: lowercase;
+  text-align: center; /* <-- keep main page text centered */
 }
 
 /* typography */
@@ -76,6 +77,7 @@ main {
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 3rem;
+  justify-content: center; /* keep content centered */
 }
 
 .profile-pic {
@@ -92,6 +94,7 @@ main {
   gap: 20px;
   list-style: none;
   padding: 0;
+  justify-items: center; /* center project links */
 }
 
 .project-link {
@@ -137,6 +140,7 @@ main {
   pointer-events: auto;
 }
 
+/* popup content */
 .popup-content {
   background: #121212;
   color: #eee;
@@ -150,15 +154,37 @@ main {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   transform: scale(0.96);
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  text-align: left; /* force left alignment */
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left; /* <-- ONLY popup text is left aligned */
 }
 
+/* popup overlay active state */
 .popup-overlay.active .popup-content {
   opacity: 1;
   transform: scale(1);
 }
 
+/* popup close button */
+#popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+#popup-close:hover,
+#popup-close:focus-visible {
+  color: #888;
+  outline: none;
+}
+
+/* popup media */
 .popup-content img,
 .video-container iframe {
   width: 100%;
@@ -167,6 +193,7 @@ main {
   box-shadow: 0 1px 6px rgba(0,0,0,0.4);
 }
 
+/* video container */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -187,6 +214,7 @@ main {
 @media (max-width: 720px) {
   body {
     padding: 40px 20px;
+    text-align: center; /* keep main text centered on small screens too */
   }
 
   .nav-list {

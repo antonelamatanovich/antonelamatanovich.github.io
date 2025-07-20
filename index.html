@@ -12,8 +12,8 @@
       <ul class="nav-list">
         <li><a href="#about-me" class="nav-link">about</a></li>
         <li><a href="#projects" class="nav-link">projects</a></li>
+        <li><a href="#cv" class="nav-link">cv</a></li> <!-- moved cv before contact -->
         <li><a href="#contact" class="nav-link">contact</a></li>
-        <li><a href="#cv" class="nav-link">cv</a></li>
       </ul>
     </nav>
   </header>
@@ -23,19 +23,24 @@
       <h1>antonela matanović</h1>
       <div class="about-wrapper">
         <img src="images/profile.png" alt="antonela matanović" class="profile-pic" />
-        <p>augmented and virtual reality design student @ h_da · based in frankfurt am main</p>
+        <p>augmented and virtual reality design student @ darmstadt university of applied sciences · based in frankfurt am main</p>
       </div>
     </section>
 
     <section id="projects">
       <h2>projects</h2>
       <ul class="projects-list">
-        <li><a href="#" class="project-link" data-project="project1">insect's delegate</a></li>
-        <li><a href="#" class="project-link" data-project="project2">blade of the dawn</a></li>
-        <li><a href="#" class="project-link" data-project="project3">coralis</a></li>
-        <li><a href="#" class="project-link" data-project="project4">vr home</a></li>
-        <li><a href="#" class="project-link" data-project="project5">tuzla 360°</a></li>
+        <li><a href="#project1" class="project-link">insect's delegate</a></li>
+        <li><a href="#project2" class="project-link">blade of the dawn</a></li>
+        <li><a href="#project3" class="project-link">coralis</a></li>
+        <li><a href="#project4" class="project-link">vr home</a></li>
+        <li><a href="#project5" class="project-link">tuzla 360°</a></li>
       </ul>
+    </section>
+
+    <section id="cv">
+      <h2>cv</h2>
+      <p><a href="#" class="project-link">view cv</a></p>
     </section>
 
     <section id="contact">
@@ -47,21 +52,10 @@
         <a href="https://github.com/antonelamatanovich" target="_blank">github</a>
       </p>
     </section>
-
-    <section id="cv">
-      <h2>cv</h2>
-      <p><a href="#" class="project-link" data-project="cv">view cv</a></p>
-    </section>
   </main>
 
-  <div id="project-popup" class="popup-overlay" aria-hidden="true">
-    <div class="popup-content">
-      <button id="popup-close" aria-label="close popup">×</button>
-      <div id="popup-inner-content"></div>
-    </div>
-  </div>
-
   <div id="scroll-progress"></div>
+
   <script src="script.js"></script>
 </body>
 </html>

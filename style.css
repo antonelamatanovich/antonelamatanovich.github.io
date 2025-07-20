@@ -5,6 +5,7 @@
   padding: 0;
 }
 
+/* body & typography */
 body {
   font-family: Helvetica, Arial, sans-serif;
   background: #0d0d0d;
@@ -13,13 +14,14 @@ body {
   padding: 60px 40px;
   scroll-behavior: smooth;
   text-transform: lowercase;
-  text-align: center; /* <-- keep main page text centered */
+  text-align: center; /* center page text */
 }
 
-/* typography */
+/* headings & links */
 h1, h2, h3, p, a {
   letter-spacing: -0.03em;
   text-transform: lowercase;
+  text-align: center; /* center headings and paragraphs */
 }
 
 h1 {
@@ -48,36 +50,65 @@ a:focus-visible {
   outline: none;
 }
 
-/* header nav */
+/* header & nav */
 #site-header {
   position: sticky;
   top: 0;
   background: rgba(13, 13, 13, 0.9);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: 16px 40px;
+  padding: 16px 0; /* remove side padding */
+  width: 100vw;
+  left: 0;
+  right: 0;
 }
 
+/* nav list full width, centered text */
 .nav-list {
   display: flex;
   gap: 30px;
   list-style: none;
+  justify-content: center; /* center nav items */
+  margin: 0;
+  padding: 0 20px; /* small side padding */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-/* main layout */
+.nav-link {
+  font-weight: 600;
+  color: #eaeaea;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  text-align: center; /* center nav link text */
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #bbb;
+  border-bottom: 1.5px solid #bbb;
+  outline: none;
+}
+
+/* main content max width and centered */
 main {
   width: 100%;
-  max-width: 1600px;
+  max-width: 960px;
   margin: 0 auto;
+  text-align: center; /* center main content text */
 }
 
+/* about wrapper */
 .about-wrapper {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center; /* center horizontally */
   margin-bottom: 3rem;
-  justify-content: center; /* keep content centered */
+  text-align: left; /* text left inside this wrapper */
 }
 
 .profile-pic {
@@ -87,27 +118,28 @@ main {
   object-fit: cover;
 }
 
-/* projects */
+/* projects list */
 .projects-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   list-style: none;
   padding: 0;
-  justify-items: center; /* center project links */
+  text-align: center; /* center project links */
 }
 
 .project-link {
   font-size: 1.1rem;
   font-weight: 600;
+  display: inline-block;
 }
 
-/* contact */
+/* contact paragraph */
 #contact p {
   font-size: 1rem;
 }
 
-/* scroll progress */
+/* scroll progress bar */
 #scroll-progress {
   position: fixed;
   top: 0;
@@ -119,7 +151,7 @@ main {
   transition: width 0.2s ease-out;
 }
 
-/* popup overlay */
+/* popup overlay and content */
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -140,7 +172,6 @@ main {
   pointer-events: auto;
 }
 
-/* popup content */
 .popup-content {
   background: #121212;
   color: #eee;
@@ -155,10 +186,9 @@ main {
   transform: scale(0.96);
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: left; /* <-- ONLY popup text is left aligned */
+  text-align: left; /* left align only popup text */
 }
 
-/* popup overlay active state */
 .popup-overlay.active .popup-content {
   opacity: 1;
   transform: scale(1);
@@ -214,11 +244,19 @@ main {
 @media (max-width: 720px) {
   body {
     padding: 40px 20px;
-    text-align: center; /* keep main text centered on small screens too */
   }
 
   .nav-list {
     flex-direction: column;
     gap: 16px;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
+  .about-wrapper {
+    justify-content: center;
+    text-align: center;
   }
 }

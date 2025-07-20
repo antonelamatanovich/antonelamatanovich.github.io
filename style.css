@@ -1,64 +1,77 @@
-/* base reset */
+/* reset basics */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* body and main container */
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: helvetica, arial, sans-serif;
   background: #0d0d0d;
   color: #eaeaea;
   line-height: 1.6;
-  padding: 60px 40px;
   scroll-behavior: smooth;
   text-transform: lowercase;
   display: flex;
-  justify-content: center; /* center main content horizontally */
+  justify-content: center; /* center horizontally */
+  padding: 60px 40px;
+  min-height: 100vh;
 }
 
 main {
-  width: 100%;
   max-width: 1600px;
-  margin: 0 auto;
-  text-align: center; /* center text on the page except popup */
+  width: 100%;
+  text-align: center; /* center main text by default */
 }
 
-/* typography */
-h1, h2, h3, p, a {
-  letter-spacing: -0.03em;
-  text-transform: lowercase;
-}
-
-/* header nav */
+/* header/nav bar */
 #site-header {
   position: sticky;
   top: 0;
-  background: rgba(13, 13, 13, 0.5); /* reduced blur effect */
-  backdrop-filter: blur(5px);
-  z-index: 1000;
-  padding: 16px 0;  /* remove side padding */
-  width: 100vw; /* full width to edges */
+  width: 100vw; /* full width */
   left: 0;
+  background: rgba(13, 13, 13, 0.4); /* subtle transparent background */
+  backdrop-filter: blur(3px); /* subtle blur */
+  z-index: 1000;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-list {
-  display: flex;
-  justify-content: center; /* center nav links horizontally */
-  gap: 30px;
   list-style: none;
-  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
   padding: 0 20px;
-  max-width: 1000px; /* limit nav width */
+  width: 100%;
+  justify-content: center;
 }
 
-/* about-wrapper */
+.nav-list li a {
+  color: #eaeaea;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus-visible {
+  color: #bbb;
+  border-bottom: 1.5px solid #bbb;
+  outline: none;
+}
+
+/* about section */
 .about-wrapper {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center; /* center about section content */
+  justify-content: center; /* center about content horizontally */
   margin-bottom: 3rem;
 }
 
@@ -71,10 +84,10 @@ h1, h2, h3, p, a {
 
 /* projects */
 .projects-list {
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  list-style: none;
   padding: 0;
   justify-items: center; /* center each project link */
 }
@@ -82,12 +95,13 @@ h1, h2, h3, p, a {
 .project-link {
   font-size: 1.1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 /* contact */
 #contact p {
   font-size: 1rem;
-  text-align: center; /* center contact info */
+  text-align: center;
 }
 
 /* popup overlay */
@@ -126,7 +140,7 @@ h1, h2, h3, p, a {
   transform: scale(0.96);
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: left; /* keep popup text left-aligned */
+  text-align: left; /* left-align popup text */
 }
 
 .popup-overlay.active .popup-content {
@@ -134,13 +148,13 @@ h1, h2, h3, p, a {
   transform: scale(1);
 }
 
-/* popup inner wrapper for centering view cv content horizontally */
+/* popup inner wrapper for content */
 .popup-inner-wrapper {
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* popup close button */
+/* close button */
 #popup-close {
   position: absolute;
   top: 1rem;
@@ -160,7 +174,7 @@ h1, h2, h3, p, a {
   outline: none;
 }
 
-/* popup media */
+/* images and iframe inside popup */
 .popup-content img,
 .video-container iframe {
   width: 100%;
@@ -186,7 +200,7 @@ h1, h2, h3, p, a {
   width: 100%;
 }
 
-/* scroll progress */
+/* scroll progress bar */
 #scroll-progress {
   position: fixed;
   top: 0;

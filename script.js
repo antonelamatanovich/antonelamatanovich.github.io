@@ -1,26 +1,8 @@
-// lower case comments
-
 // get popup elements
-const popup = document.createElement('div');
-popup.id = 'project-popup';
-popup.className = 'popup-overlay';
-popup.setAttribute('aria-hidden', 'true');
-popup.setAttribute('role', 'dialog');
-popup.setAttribute('aria-modal', 'true');
-popup.setAttribute('aria-labelledby', 'popup-title');
-popup.setAttribute('aria-describedby', 'popup-desc');
-document.body.appendChild(popup);
-
-const popupContent = document.createElement('div');
-popupContent.className = 'popup-content';
-popupContent.setAttribute('role', 'document');
-popup.appendChild(popupContent);
-
-const closeBtn = document.createElement('button');
-closeBtn.id = 'popup-close';
-closeBtn.setAttribute('aria-label', 'close project details');
-closeBtn.innerHTML = '&times;';
-popupContent.appendChild(closeBtn);
+const popup = document.getElementById('project-popup');
+const popupContent = popup.querySelector('.popup-content');
+const closeBtn = document.getElementById('popup-close');
+const popupInnerContent = document.getElementById('popup-inner-content');
 
 // store project content
 const projectsData = {
@@ -57,8 +39,7 @@ const openPopup = (key) => {
   popup.setAttribute('aria-hidden', 'false');
 
   setTimeout(() => {
-    popupContent.innerHTML = projectsData[key] || '<p>details coming soon...</p>';
-    popupContent.appendChild(closeBtn); // re-append close button
+    popupInnerContent.innerHTML = projectsData[key] || '<p>details coming soon...</p>';
     popupContent.style.opacity = 1;
     popupContent.style.transform = 'scale(1)';
     // focus first focusable element if exists
@@ -71,8 +52,7 @@ const openPopup = (key) => {
 document.querySelectorAll('.project-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    const href = link.getAttribute('href');
-    const key = href.replace('#', '');
+    const key = link.getAttribute('data-project');
     openPopup(key);
   });
 });
@@ -84,8 +64,7 @@ const closePopup = () => {
   setTimeout(() => {
     popup.classList.remove('active');
     popup.setAttribute('aria-hidden', 'true');
-    popupContent.innerHTML = '';
-    popupContent.appendChild(closeBtn); // re-append close button after clearing
+    popupInnerContent.innerHTML = '';
   }, 300);
 };
 

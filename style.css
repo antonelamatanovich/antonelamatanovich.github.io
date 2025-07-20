@@ -3,8 +3,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'space grotesk', sans-serif;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
+  text-transform: lowercase !important; /* force all text lowercase */
 }
 
 body {
@@ -49,7 +50,6 @@ body {
 }
 
 .nav-link {
-  text-transform: lowercase;
   font-weight: 600;
   font-variant: normal;
   letter-spacing: -0.04em;
@@ -94,32 +94,35 @@ body {
 }
 
 /* full width layout */
+/* remove any box shadows or background colors for minimalism */
 main {
   max-width: 100%;
   margin: 0;
-  background: #121212;
+  background: transparent !important; /* remove background */
   padding: 30px 40px;
   border-radius: 0;
-  box-shadow: none;
+  box-shadow: none !important; /* remove shadows */
   position: relative;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
-/* optional: sections full width with side padding */
+/* sections no background either */
 section {
   max-width: 100%;
   padding-left: 0;
   padding-right: 0;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* headings */
 h1, h2, h3 {
   font-weight: 700;
-  text-transform: lowercase;
   letter-spacing: -0.04em;
   line-height: 1.1;
   font-variant: small-caps;
+  text-transform: lowercase !important; /* ensure headings are lowercase */
 }
 
 h1 {

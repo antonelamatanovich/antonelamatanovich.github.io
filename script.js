@@ -5,7 +5,16 @@ const closeBtn = document.getElementById('popup-close');
 
 // store project content
 const projectsData = {
-  project1: `...`, // full HTML content here
+  project1: `
+    <h2>insect's delegate: brumble's journey</h2>
+    <p>this virtual reality experience was created during the winter semester 2024, under Project 3: Discover Space and Time, a module of the Expanded Realities (Augmented and Virtual Reality Design) Bachelor of Arts study programme at Darmstadt University of Applied Sciences.</p>
+    <p>our team created an experience to educate young audiences (ages 12-16) about the vital role of insects while connecting education with storytelling and exploration.</p>
+    <p><strong>team members:</strong> Jacopo Perilli, Lara Heß, Mutlu Yakubov, Antonela Matanović, Himanshu Dahiya</p>
+    <img src="images/main image.png" alt="insect's delegate cover image" />
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="insect's delegate trailer" allowfullscreen></iframe>
+    </div>
+  `,
   project2: `...`,
   project3: `...`,
   project4: `...`,

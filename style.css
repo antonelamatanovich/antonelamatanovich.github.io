@@ -58,6 +58,7 @@ a:focus-visible {
   outline: none;
 }
 
+/* about */
 .about-wrapper {
   display: flex;
   gap: 20px;
@@ -92,14 +93,25 @@ a:focus-visible {
   cursor: pointer;
 }
 
-/* contact */
-#contact p {
-  font-size: 1rem;
+/* icon styling for project links */
+.icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* cv */
+#cv p {
   text-align: center;
 }
 
-/* center the “view cv” link inside #cv section */
-#cv p {
+/* contact */
+#contact p {
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -199,7 +211,6 @@ a:focus-visible {
   padding: 16px 40px;
 }
 
-/* nav-list */
 .nav-list {
   display: flex;
   gap: 30px;

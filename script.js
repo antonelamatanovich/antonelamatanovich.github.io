@@ -55,7 +55,7 @@ const projectsData = {
       <div style="margin-top:1rem;">
         <div><strong>darmstadt university of applied sciences</strong></div>
         <div style="margin-left:1rem;">
-          <div><em>bachelor of arts – expanded realities (ar & vr design)</em></div>
+          <div><em>bachelor of arts – expanded realities (augmented and virtual reality design)</em></div>
           <div>oct 2023 – feb 2027</div>
         </div>
       </div>

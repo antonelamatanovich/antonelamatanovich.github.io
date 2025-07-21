@@ -21,44 +21,52 @@ const projectsData = {
   project4: `<p>details coming soon...</p>`,
   project5: `<p>details coming soon...</p>`,
   cv: `
-    <h2 id="popup-title">curriculum vitae</h2>
+    <h2 id="popup-title" style="text-align:left;">curriculum vitae</h2>
     <div id="popup-desc">
-      <h3>experience</h3>
-      <ul>
-        <li>
-          <strong>videoreality gmbh</strong><br>
-          <em>developer and designer intern</em><br>
-          feb 2025 – jun 2025 · 5 mos<br>
-          frankfurt, hesse, germany · on-site<br>
-          <em>exhibition support at "timeleapvr artworld – mona lisas geheimnis"</em>
-        </li>
-        <li style="margin-top:1rem;">
-          <strong>videoreality gmbh</strong><br>
-          <em>work study – interactive media and art exhibitions</em><br>
-          jun 2025 – present · 2 mos<br>
-          frankfurt, hesse, germany · on-site
-        </li>
-        <li style="margin-top:1rem;">
-          <strong>darmstadt university of applied sciences</strong><br>
-          <em>student study advisor – augmented and virtual reality design</em><br>
-          apr 2025 – present · 4 mos<br>
-          darmstadt-dieburg, hesse, germany · hybrid
-        </li>
-      </ul>
+      <h3 style="font-size:1.3rem;">experience</h3>
+      
+      <div style="margin-top:1rem;">
+        <div>
+          <div><strong>videoreality gmbh</strong></div>
+          <div style="margin-left:1rem;border-left:2px solid #999;padding-left:1rem;">
+            <div><em>developer and designer intern</em></div>
+            <div>feb 2025 – jun 2025 · 5 mos</div>
+            <div>frankfurt, hesse, germany · on-site</div>
+            <div style="margin-bottom:1rem;">exhibition support at "timeleapvr artworld – mona lisas geheimnis"</div>
 
-      <h3 style="margin-top:2rem;">education</h3>
-      <ul>
-        <li>
-          <strong>darmstadt university of applied sciences</strong><br>
-          <em>bachelor of arts – expanded realities (ar & vr design)</em><br>
-          oct 2023 – feb 2027
-        </li>
-        <li style="margin-top:1rem;">
-          <strong>katolički školski centar opća gimnazija “sveti franjo” tuzla</strong><br>
-          <em>high school diploma</em><br>
-          sep 2019 – jun 2023
-        </li>
-      </ul>
+            <div><em>work study – interactive media and art exhibitions</em></div>
+            <div>jun 2025 – present · 2 mos</div>
+            <div>frankfurt, hesse, germany · on-site</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <div><strong>darmstadt university of applied sciences</strong></div>
+        <div style="margin-left:1rem;">
+          <div><em>student study advisor – augmented and virtual reality design</em></div>
+          <div>apr 2025 – present · 4 mos</div>
+          <div>darmstadt-dieburg, hesse, germany · hybrid</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:2rem;font-size:1.3rem;">education</h3>
+
+      <div style="margin-top:1rem;">
+        <div><strong>darmstadt university of applied sciences</strong></div>
+        <div style="margin-left:1rem;">
+          <div><em>bachelor of arts – expanded realities (ar & vr design)</em></div>
+          <div>oct 2023 – feb 2027</div>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem;">
+        <div><strong>katolički školski centar opća gimnazija “sveti franjo” tuzla</strong></div>
+        <div style="margin-left:1rem;">
+          <div><em>high school diploma</em></div>
+          <div>sep 2019 – jun 2023</div>
+        </div>
+      </div>
     </div>
   `
 };

@@ -23,8 +23,8 @@ const projectsData = {
   cv: `
     <h2 id="popup-title" style="text-align:left;">curriculum vitae</h2>
     <div id="popup-desc">
-      <h3 style="font-size:1.3rem;">experience</h3>
-      
+      <h3 style="font-size:1.4rem;">experience</h3>
+
       <div style="margin-top:1rem;">
         <div>
           <div><strong>videoreality gmbh</strong></div>
@@ -50,7 +50,7 @@ const projectsData = {
         </div>
       </div>
 
-      <h3 style="margin-top:2rem;font-size:1.3rem;">education</h3>
+      <h3 style="margin-top:2rem;font-size:1.4rem;">education</h3>
 
       <div style="margin-top:1rem;">
         <div><strong>darmstadt university of applied sciences</strong></div>
@@ -66,6 +66,34 @@ const projectsData = {
           <div><em>high school diploma</em></div>
           <div>sep 2019 – jun 2023</div>
         </div>
+      </div>
+
+      <h3 style="margin-top:2rem;font-size:1.4rem;">skills</h3>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:0.5rem;margin-top:1rem;">
+        <div>virtual reality</div>
+        <div>augmented reality</div>
+        <div>mixed reality</div>
+        <div>interactive media</div>
+        <div>c#</div>
+        <div>unity</div>
+        <div>project delivery</div>
+        <div>visual storytelling</div>
+        <div>art exhibitions</div>
+        <div>exhibit preparation</div>
+        <div>world building</div>
+        <div>level design</div>
+        <div>project management</div>
+        <div>trailer production</div>
+        <div>video editing</div>
+        <div>teamwork</div>
+        <div>team management</div>
+        <div>storytelling</div>
+        <div>game engines</div>
+        <div>media design</div>
+        <div>blender</div>
+        <div>3d modeling</div>
+        <div>communication</div>
       </div>
     </div>
   `

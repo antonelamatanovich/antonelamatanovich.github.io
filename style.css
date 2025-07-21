@@ -106,9 +106,24 @@ a:focus-visible {
   flex-shrink: 0;
 }
 
+/* plus icon animation */
+.plus-icon line {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.project-link:hover .plus-icon line:first-child {
+  transform: rotate(90deg);
+}
+
 /* cv */
 #cv p {
   text-align: center;
+}
+
+.cv-button-container {
+  text-align: center;
+  margin-top: 1rem;
 }
 
 /* contact */

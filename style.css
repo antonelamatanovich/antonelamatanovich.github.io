@@ -98,6 +98,11 @@ a:focus-visible {
   text-align: center;
 }
 
+/* center the “view cv” link inside #cv section */
+#cv p {
+  text-align: center;
+}
+
 /* popup overlay */
 .popup-overlay {
   position: fixed;

@@ -29,9 +29,75 @@ const projectsData = {
   `,
   cv: `
     <h2 id="popup-title" style="text-align:left;">curriculum vitae</h2>
-    <div id="popup-desc">
-      <!-- CV content here -->
-      <!-- truncated for brevity -->
+    <div id="popup-desc" style="text-align:left;">
+      
+      <div style="border-bottom: 1px solid #333; margin: 1.5rem 0; padding-bottom: 0.5rem;">
+        <h3 style="margin:0;color:#eaeaea;font-size:1.2rem;">work experience</h3>
+      </div>
+      
+      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #555; background: rgba(255,255,255,0.02);">
+        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://videoreality.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">videoreality GmbH</a></h4>
+        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Frankfurt am Main</p>
+        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">XR Project & Prototyping Assistant (Working Student)</strong></p>
+        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Aug 2025 – Present · Hybrid</p>
+        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
+          <li style="margin-bottom:0.3rem;">Exhibition support for TimeLeapVR Artworld – Mona Lisa's Geheimnis, an interactive mixed-media XR exhibition</li>
+          <li style="margin-bottom:0.3rem;">On-site operation, supervision, and maintenance of immersive installations</li>
+          <li style="margin-bottom:0.3rem;">Testing, setup, and iteration of interactive XR systems for public audiences</li>
+          <li style="margin-bottom:0.3rem;">Collaboration with artists, developers, and exhibition teams in a live production environment</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #555; background: rgba(255,255,255,0.02);">
+        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://videoreality.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">videoreality GmbH</a></h4>
+        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Frankfurt am Main</p>
+        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">XR Developer & Designer Intern</strong></p>
+        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Feb 2025 – Jun 2025 · On-site</p>
+        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
+          <li style="margin-bottom:0.3rem;">Development of interactive XR exhibition content as part of the Expanded Realities (B.A.) practice phase</li>
+          <li style="margin-bottom:0.3rem;">Co-creator of <strong style="color:#eaeaea;">"Animal Garden"</strong>, an interactive digital installation exhibited at TimeLeapVR Artworld – Mona Lisa's Geheimnis</li>
+          <li style="margin-bottom:0.3rem;">Implementation of real-time interactions using Unity (C#)</li>
+          <li style="margin-bottom:0.3rem;">Prototyping, testing, and refinement of immersive experiences for exhibition use</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #555; background: rgba(255,255,255,0.02);">
+        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://h-da.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">Darmstadt University of Applied Sciences (h_da)</a></h4>
+        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Darmstadt / Dieburg</p>
+        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">Student Study Advisor — <a href="https://mediencampus.h-da.de/studieren/studienangebot/bachelor/augmented-and-virtual-reality-design/profile" target="_blank" rel="noopener" style="color:#eaeaea;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#eaeaea'" onmouseout="this.style.borderBottomColor='transparent'">Augmented & Virtual Reality Design</a></strong></p>
+        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Apr 2025 – Present · Hybrid</p>
+        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
+          <li style="margin-bottom:0.3rem;">Academic advising and peer support for students in the XR design program</li>
+          <li style="margin-bottom:0.3rem;">Guidance on curriculum structure, study planning, and program-specific requirements</li>
+          <li style="margin-bottom:0.3rem;">Support of teaching- and study-related services within the department</li>
+        </ul>
+      </div>
+
+      <div style="border-bottom: 1px solid #333; margin: 2rem 0 1.5rem 0; padding-bottom: 0.5rem;">
+        <h3 style="margin:0;color:#eaeaea;font-size:1.2rem;">education</h3>
+      </div>
+      
+      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #666; background: rgba(255,255,255,0.03);">
+        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://h-da.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">Darmstadt University of Applied Sciences (h_da)</a></h4>
+        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Dieburg</p>
+        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">Bachelor of Arts (B.A.) — Expanded Realities</strong></p>
+        <p style="margin:0.3rem 0 0.3rem 0;"><strong style="color:#ddd;"><a href="https://mediencampus.h-da.de/studieren/studienangebot/bachelor/augmented-and-virtual-reality-design/profile" target="_blank" rel="noopener" style="color:#ddd;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#ddd'" onmouseout="this.style.borderBottomColor='transparent'">Augmented & Virtual Reality Design</a></strong></p>
+        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Oct 2023 – Feb 2027</p>
+        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
+          <li style="margin-bottom:0.3rem;">Interdisciplinary, project-based XR program taught in English</li>
+          <li style="margin-bottom:0.3rem;">Focus on XR design and development, immersive storytelling, interaction design, and real-time 3D</li>
+          <li style="margin-bottom:0.3rem;">Strong emphasis on practice through studio projects, an internship semester, and collaboration with real clients</li>
+          <li style="margin-bottom:0.3rem;">Hands-on work with industry-standard XR hardware and software, including VR/AR labs, motion capture, and usability testing facilities</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:2rem; padding: 1rem; border-left: 3px solid #666; background: rgba(255,255,255,0.03);">
+        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;">Katolički Školski Centar Opća Gimnazija "Sveti Franjo"</h4>
+        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Tuzla</p>
+        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">High School Diploma</strong></p>
+        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Sep 2019 – Jun 2023</p>
+      </div>
+
     </div>
   `
 };

@@ -150,6 +150,25 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// personal projects toggle functionality
+const personalToggle = document.getElementById('personal-toggle');
+const personalProjectsList = document.getElementById('personal-projects-list');
+let isPersonalProjectsVisible = false;
+
+personalToggle.addEventListener('click', (e) => {
+  e.preventDefault();
+  isPersonalProjectsVisible = !isPersonalProjectsVisible;
+  
+  if (isPersonalProjectsVisible) {
+    personalProjectsList.style.display = 'block';
+    personalToggle.querySelector('.plus-icon').style.transform = 'rotate(45deg)';
+    personalToggle.querySelector('svg').style.transition = 'transform 0.3s ease';
+  } else {
+    personalProjectsList.style.display = 'none';
+    personalToggle.querySelector('.plus-icon').style.transform = 'rotate(0deg)';
+  }
+});
+
 // university projects toggle functionality
 const universityToggle = document.getElementById('university-toggle');
 const universityProjectsList = document.getElementById('university-projects-list');

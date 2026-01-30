@@ -100,7 +100,7 @@ a:focus-visible {
 
 .project-info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 6px;
   text-align: center;
@@ -141,6 +141,41 @@ a:focus-visible {
 
 .project-link:hover .plus-icon line:first-child {
   transform: rotate(90deg);
+}
+
+/* personal projects */
+.personal-projects-container {
+  text-align: center;
+}
+
+.personal-projects-toggle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  color: #eaeaea;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.personal-projects-toggle:hover {
+  border-bottom-color: #eaeaea;
+}
+
+.personal-projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  justify-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
 }
 
 /* university projects */

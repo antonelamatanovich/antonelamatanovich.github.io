@@ -11,7 +11,9 @@
     <nav id="main-nav">
       <ul class="nav-list">
         <li><a href="#about-me" class="nav-link">about</a></li>
-        <li><a href="#projects" class="nav-link">projects</a></li>
+        <li><a href="#projects" class="nav-link">personal projects</a></li>
+        <li><a href="#university-projects" class="nav-link">university projects</a></li>
+        <li><a href="#work-projects" class="nav-link">work projects</a></li>
         <li><a href="#cv" class="nav-link">cv</a></li>
         <li><a href="#contact" class="nav-link">contact</a></li>
       </ul>
@@ -28,7 +30,7 @@
     </section>
 
     <section id="projects">
-      <h2>projects</h2>
+      <h2>personal projects</h2>
       <ul class="projects-list">
         <li>
           <a href="#" class="project-link" data-project="project1">
@@ -36,7 +38,10 @@
               <line x1="8" y1="2" x2="8" y2="14"/>
               <line x1="2" y1="8" x2="14" y2="8"/>
             </svg>
-            insect's delegate
+            <div class="project-info">
+              <span class="project-tag">VR</span>
+              <span class="project-title">vr home</span>
+            </div>
           </a>
         </li>
         <li>
@@ -45,37 +50,91 @@
               <line x1="8" y1="2" x2="8" y2="14"/>
               <line x1="2" y1="8" x2="14" y2="8"/>
             </svg>
-            blade of the dawn
-          </a>
-        </li>
-        <li>
-          <a href="#" class="project-link" data-project="project3">
-            <svg class="icon plus-icon" viewBox="0 0 16 16">
-              <line x1="8" y1="2" x2="8" y2="14"/>
-              <line x1="2" y1="8" x2="14" y2="8"/>
-            </svg>
-            coralis
-          </a>
-        </li>
-        <li>
-          <a href="#" class="project-link" data-project="project4">
-            <svg class="icon plus-icon" viewBox="0 0 16 16">
-              <line x1="8" y1="2" x2="8" y2="14"/>
-              <line x1="2" y1="8" x2="14" y2="8"/>
-            </svg>
-            vr home
-          </a>
-        </li>
-        <li>
-          <a href="#" class="project-link" data-project="project5">
-            <svg class="icon plus-icon" viewBox="0 0 16 16">
-              <line x1="8" y1="2" x2="8" y2="14"/>
-              <line x1="2" y1="8" x2="14" y2="8"/>
-            </svg>
-            tuzla 360°
+            <div class="project-info">
+              <span class="project-tag">360 video</span>
+              <span class="project-title">tuzla 360°</span>
+            </div>
           </a>
         </li>
       </ul>
+    </section>
+
+    <section id="university-projects">
+      <h2>university projects</h2>
+      <div class="university-projects-container">
+        <a href="#" class="university-projects-toggle" id="university-toggle">
+          <svg class="icon plus-icon" viewBox="0 0 16 16">
+            <line x1="8" y1="2" x2="8" y2="14"/>
+            <line x1="2" y1="8" x2="14" y2="8"/>
+          </svg>
+          view university projects
+        </a>
+        <ul class="university-projects-list" id="university-projects-list" style="display: none;">
+          <li>
+            <a href="#" class="project-link" data-project="uni-project1">
+              <svg class="icon plus-icon" viewBox="0 0 16 16">
+                <line x1="8" y1="2" x2="8" y2="14"/>
+                <line x1="2" y1="8" x2="14" y2="8"/>
+              </svg>
+              <div class="project-info">
+                <span class="project-tag">vr</span>
+                <span class="project-title">insect's delegate</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="project-link" data-project="uni-project2">
+              <svg class="icon plus-icon" viewBox="0 0 16 16">
+                <line x1="8" y1="2" x2="8" y2="14"/>
+                <line x1="2" y1="8" x2="14" y2="8"/>
+              </svg>
+              <div class="project-info">
+                <span class="project-tag">3d game</span>
+                <span class="project-title">blade of the dawn</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="project-link" data-project="uni-project3">
+              <svg class="icon plus-icon" viewBox="0 0 16 16">
+                <line x1="8" y1="2" x2="8" y2="14"/>
+                <line x1="2" y1="8" x2="14" y2="8"/>
+              </svg>
+              <div class="project-info">
+                <span class="project-tag">vr</span>
+                <span class="project-title">coralis</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="work-projects">
+      <h2>work projects</h2>
+      <div class="work-projects-container">
+        <a href="#" class="work-projects-toggle" id="work-toggle">
+          <svg class="icon plus-icon" viewBox="0 0 16 16">
+            <line x1="8" y1="2" x2="8" y2="14"/>
+            <line x1="2" y1="8" x2="14" y2="8"/>
+          </svg>
+          view work projects
+        </a>
+        <ul class="work-projects-list" id="work-projects-list" style="display: none;">
+          <li>
+            <a href="#" class="project-link" data-project="work-project1">
+              <svg class="icon plus-icon" viewBox="0 0 16 16">
+                <line x1="8" y1="2" x2="8" y2="14"/>
+                <line x1="2" y1="8" x2="14" y2="8"/>
+              </svg>
+              <div class="project-info">
+                <span class="project-tag">interactive media installation</span>
+                <span class="project-title">animal garden</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section id="cv">

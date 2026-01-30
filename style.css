@@ -92,8 +92,35 @@ a:focus-visible {
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   gap: 8px;
+  text-align: center;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.project-tag {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #eaeaea;
+  background: transparent;
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  border: 1px solid #eaeaea;
 }
 
 /* icon styling for inline SVG plus icons */
@@ -114,6 +141,87 @@ a:focus-visible {
 
 .project-link:hover .plus-icon line:first-child {
   transform: rotate(90deg);
+}
+
+/* university projects */
+.university-projects-container {
+  text-align: center;
+}
+
+.university-projects-toggle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  color: #eaeaea;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.university-projects-toggle:hover {
+  border-bottom-color: #eaeaea;
+}
+
+.university-projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  justify-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* work projects */
+.work-projects-container {
+  text-align: center;
+}
+
+.work-projects-toggle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  color: #eaeaea;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.work-projects-toggle:hover {
+  border-bottom-color: #eaeaea;
+}
+
+.work-projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  justify-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
 }
 
 /* cv */

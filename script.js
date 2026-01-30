@@ -6,7 +6,9 @@ const scrollProgress = document.getElementById('scroll-progress');
 
 // project content data
 const projectsData = {
-  project1: `
+  project1: `<p>details coming soon...</p>`,
+  project2: `<p>details coming soon...</p>`,
+  'uni-project1': `
     <h2 id="popup-title">insect's delegate: brumble's journey</h2>
     <p id="popup-desc">this virtual reality experience was created during the winter semester 2024, under project 3: discover space and time, a module of the expanded realities (augmented and virtual reality design) bachelor of arts study programme at darmstadt university of applied sciences.</p>
     <p>our team created an experience to educate young audiences (ages 12–16) about the vital role of insects while connecting education with storytelling and exploration.</p>
@@ -16,10 +18,15 @@ const projectsData = {
       <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="insect's delegate trailer" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
     </div>
   `,
-  project2: `<p>details coming soon...</p>`,
-  project3: `<p>details coming soon...</p>`,
-  project4: `<p>details coming soon...</p>`,
-  project5: `<p>details coming soon...</p>`,
+  'uni-project2': `<p>details coming soon...</p>`,
+  'uni-project3': `<p>details coming soon...</p>`,
+  'work-project1': `
+    <h2 id="popup-title">animal garden</h2>
+    <p id="popup-desc">this is a placeholder for the animal garden work project. you can replace this content with details about your actual project, including descriptions, images, videos, and any other relevant information.</p>
+    <p><strong>technologies used:</strong> placeholder technologies</p>
+    <p><strong>duration:</strong> placeholder duration</p>
+    <p><strong>role:</strong> placeholder role</p>
+  `,
   cv: `
     <h2 id="popup-title" style="text-align:left;">curriculum vitae</h2>
     <div id="popup-desc">
@@ -74,6 +81,44 @@ popup.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && popup.classList.contains('active')) {
     closePopup();
+  }
+});
+
+// university projects toggle functionality
+const universityToggle = document.getElementById('university-toggle');
+const universityProjectsList = document.getElementById('university-projects-list');
+let isUniversityProjectsVisible = false;
+
+universityToggle.addEventListener('click', (e) => {
+  e.preventDefault();
+  isUniversityProjectsVisible = !isUniversityProjectsVisible;
+  
+  if (isUniversityProjectsVisible) {
+    universityProjectsList.style.display = 'block';
+    universityToggle.querySelector('.plus-icon').style.transform = 'rotate(45deg)';
+    universityToggle.querySelector('svg').style.transition = 'transform 0.3s ease';
+  } else {
+    universityProjectsList.style.display = 'none';
+    universityToggle.querySelector('.plus-icon').style.transform = 'rotate(0deg)';
+  }
+});
+
+// work projects toggle functionality
+const workToggle = document.getElementById('work-toggle');
+const workProjectsList = document.getElementById('work-projects-list');
+let isWorkProjectsVisible = false;
+
+workToggle.addEventListener('click', (e) => {
+  e.preventDefault();
+  isWorkProjectsVisible = !isWorkProjectsVisible;
+  
+  if (isWorkProjectsVisible) {
+    workProjectsList.style.display = 'block';
+    workToggle.querySelector('.plus-icon').style.transform = 'rotate(45deg)';
+    workToggle.querySelector('svg').style.transition = 'transform 0.3s ease';
+  } else {
+    workProjectsList.style.display = 'none';
+    workToggle.querySelector('.plus-icon').style.transform = 'rotate(0deg)';
   }
 });
 

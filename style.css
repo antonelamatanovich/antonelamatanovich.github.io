@@ -87,40 +87,139 @@ a:focus-visible {
   text-align: center;
 }
 
-.project-link {
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
+/* project cards - optimized for scannability */
+.project {
+  max-width: 540px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  border: none;
 }
 
-.project-info {
+.project:hover {
+  background: #1f1f1f;
+}
+
+/* primary: title section */
+.project-header {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 6px;
-  text-align: center;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-.project-title {
-  font-size: 1.1rem;
+.project h3 {
+  font-size: 1.2rem;
   font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+
+/* secondary: description */
+.summary {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 24px;
+  max-width: 480px;
+}
+
+/* tertiary: meta information */
+.meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #888888;
+  text-transform: lowercase;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  letter-spacing: 0.02em;
+}
+
+.meta span {
+  position: relative;
+}
+
+.meta span:not(:last-child)::after {
+  content: "·";
+  position: absolute;
+  right: -8px;
+  color: #666;
+}
+
+/* key contributions: simple list with no styling */
+.contributions {
+  margin: 0 0 28px 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.contributions li {
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+  max-width: 480px;
+  background: red !important;
+}
+}
+
+/* xr focus: de-emphasized but readable */
+.focus {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+  max-width: 480px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.focus strong {
+  color: #cccccc;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+/* team section: always expanded */
+.team {
+  margin-top: 12px;
+}
+
+.team-label {
+  color: #777777;
+  font-size: 0.75rem;
+  text-transform: lowercase;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.02em;
+}
+
+.team-members {
+  font-size: 0.75rem;
+  color: #888888;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid #2a2a2a;
+  line-height: 1.4;
 }
 
 .project-tag {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #eaeaea;
-  background: transparent;
-  padding: 3px 10px;
-  border-radius: 12px;
-  letter-spacing: -0.02em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #000;
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 16px;
+  letter-spacing: 0.01em;
   text-transform: lowercase;
-  border: 1px solid #eaeaea;
+  border: none;
+  flex-shrink: 0;
 }
 
 /* icon styling for inline SVG plus icons */
@@ -168,14 +267,19 @@ a:focus-visible {
 
 .personal-projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  gap: 200px !important;
   list-style: none;
   padding: 0;
   justify-items: center;
-  text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   animation: fadeIn 0.3s ease;
+}
+
+.personal-projects-list li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* university projects */
@@ -203,14 +307,19 @@ a:focus-visible {
 
 .university-projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  gap: 120px;
   list-style: none;
   padding: 0;
   justify-items: center;
-  text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   animation: fadeIn 0.3s ease;
+}
+
+.university-projects-list li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes fadeIn {
@@ -249,14 +358,19 @@ a:focus-visible {
 
 .work-projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  gap: 120px;
   list-style: none;
   padding: 0;
   justify-items: center;
-  text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   animation: fadeIn 0.3s ease;
+}
+
+.work-projects-list li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* cv */

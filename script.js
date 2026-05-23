@@ -1,223 +1,225 @@
-// get popup elements
-const popup = document.getElementById('project-popup');
-const popupContent = document.getElementById('popup-inner-content');
-const closeBtn = document.getElementById('popup-close');
-const scrollProgress = document.getElementById('scroll-progress');
+const popup = document.getElementById("project-popup");
+const popupContent = document.getElementById("popup-inner-content");
+const closeBtn = document.getElementById("popup-close");
+const scrollProgress = document.getElementById("scroll-progress");
+const navMenuButton = document.querySelector(".nav-menu-button");
+const navList = document.getElementById("nav-links");
 
-// project content data
 const projectsData = {
-  project1: `<p>details coming soon...</p>`,
-  project2: `<p>details coming soon...</p>`,
-  'uni-project1': `
-    <h2 id="popup-title">insect's delegate: brumble's journey</h2>
-    <p id="popup-desc">this virtual reality experience was created during the winter semester 2024, under project 3: discover space and time, a module of the expanded realities (augmented and virtual reality design) bachelor of arts study programme at darmstadt university of applied sciences.</p>
-    <p>our team created an experience to educate young audiences (ages 12–16) about the vital role of insects while connecting education with storytelling and exploration.</p>
-    <p><strong>team members:</strong> jacopo perilli, lara heß, mutlu yakubov, antonela matanović, himanshu dahiya</p>
-    <img src="images/main image.png" alt="insect's delegate cover image" style="width:100%;border-radius:8px;object-fit:cover;margin-top:1rem;" />
-    <div class="video-container" style="margin-top:1rem;aspect-ratio:16/9;">
-      <iframe src="https://www.youtube.com/embed/hUOfJCqo2rE" title="insect's delegate trailer" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+  "discovering-barite": `
+    <h2 id="popup-title">discovering barite</h2>
+
+    <div class="popup-meta">
+      <span>augmented reality</span>
+      <span>unity</span>
+      <span>vuforia</span>
+      <span>image tracking</span>
+      <span>ui design</span>
+      <span>project coordination</span>
+    </div>
+
+    <p>
+      as part of expanded realities – project 5 at darmstadt university of applied sciences, we developed
+      <strong>discovering barite</strong>, an educational mobile augmented reality experience created for the
+      spatschlucht near schriesheim in collaboration with the geo-naturpark bergstraße-odenwald.
+    </p>
+
+    <p>
+      the project uses augmented reality to reveal geological and historical layers shaped by roman-era barite mining —
+      elements that are no longer visible in the landscape. through staged interactions, visitors reconstruct the original
+      rock face and explore its interior by slicing through the virtual gorge to uncover hidden barite veins.
+    </p>
+
+    <h3>my contribution</h3>
+    <ul>
+      <li>implemented and tested image tracking using vuforia.</li>
+      <li>worked on project coordination and production structure.</li>
+      <li>designed and optimized ui layouts for the mobile ar experience.</li>
+      <li>programmed interactive events and supported on-site integration.</li>
+    </ul>
+
+    <h3>team</h3>
+    <p>karam sawaftah · jacopo perilli · antonela matanović</p>
+
+    <p class="image-note">
+      to add your project image, place it inside your <strong>images</strong> folder and name it
+      <strong>discovering-barite.jpg</strong>. then uncomment the image line in this popup inside script.js.
+    </p>
+
+    <img src="images/discovering-barite.jpg" alt="discovering barite ar project preview" />
+
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/iN2uR1dm6d4"
+        title="discovering barite trailer"
+        allowfullscreen>
+      </iframe>
     </div>
   `,
-  'uni-project2': `<p>details coming soon...</p>`,
-  'uni-project3': `<p>details coming soon...</p>`,
-  'work-project1': `
+
+  "animal-garden": `
     <h2 id="popup-title">animal garden</h2>
-    <p id="popup-desc">this is a placeholder for the animal garden work project. you can replace this content with details about your actual project, including descriptions, images, videos, and any other relevant information.</p>
-    <p><strong>technologies used:</strong> placeholder technologies</p>
-    <p><strong>duration:</strong> placeholder duration</p>
-    <p><strong>role:</strong> placeholder role</p>
+
+    <div class="popup-meta">
+      <span>interactive installation</span>
+      <span>unity</span>
+      <span>c#</span>
+      <span>exhibition</span>
+      <span>work project</span>
+    </div>
+
+    <p>
+      <strong>animal garden</strong> is an interactive media installation created together with ricci liguori for
+      videoreality gmbh. it was exhibited at timeleapvr artworld – mona lisa’s geheimnis in frankfurt am main.
+    </p>
+
+    <p>
+      the installation was developed in a real exhibition context and focused on creating an accessible, responsive,
+      and engaging visitor experience for a public audience.
+    </p>
+
+    <h3>my contribution</h3>
+    <ul>
+      <li>co-created the concept and interaction structure of the installation.</li>
+      <li>implemented and tested interactive behavior using unity and c#.</li>
+      <li>supported refinement for exhibition use and public visitor interaction.</li>
+      <li>worked on balancing playful discovery with clear interaction feedback.</li>
+    </ul>
+
+    <h3>context</h3>
+    <p>
+      shown as part of timeleapvr artworld – mona lisa’s geheimnis, a large-scale immersive exhibition blending
+      virtual reality, ai, and interactive art experiences inspired by leonardo da vinci and hieronymus bosch.
+    </p>
   `,
-  cv: `
-    <h2 id="popup-title" style="text-align:left;">curriculum vitae</h2>
-    <div id="popup-desc" style="text-align:left;">
-      
-      <div style="border-bottom: 1px solid #333; margin: 1.5rem 0; padding-bottom: 0.5rem;">
-        <h3 style="margin:0;color:#eaeaea;font-size:1.2rem;">work experience</h3>
-      </div>
-      
-      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #555; background: rgba(255,255,255,0.02);">
-        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://videoreality.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">videoreality GmbH</a></h4>
-        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Frankfurt am Main</p>
-        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">XR Project & Prototyping Assistant (Working Student)</strong></p>
-        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Aug 2025 – Present · Hybrid</p>
-        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
-          <li style="margin-bottom:0.3rem;">Exhibition support for TimeLeapVR Artworld – Mona Lisa's Geheimnis, an interactive mixed-media XR exhibition</li>
-          <li style="margin-bottom:0.3rem;">On-site operation, supervision, and maintenance of immersive installations</li>
-          <li style="margin-bottom:0.3rem;">Testing, setup, and iteration of interactive XR systems for public audiences</li>
-          <li style="margin-bottom:0.3rem;">Collaboration with artists, developers, and exhibition teams in a live production environment</li>
-        </ul>
-      </div>
 
-      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #555; background: rgba(255,255,255,0.02);">
-        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://videoreality.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">videoreality GmbH</a></h4>
-        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Frankfurt am Main</p>
-        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">XR Developer & Designer Intern</strong></p>
-        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Feb 2025 – Jun 2025 · On-site</p>
-        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
-          <li style="margin-bottom:0.3rem;">Development of interactive XR exhibition content as part of the Expanded Realities (B.A.) practice phase</li>
-          <li style="margin-bottom:0.3rem;">Co-creator of <strong style="color:#eaeaea;">"Animal Garden"</strong>, an interactive digital installation exhibited at TimeLeapVR Artworld – Mona Lisa's Geheimnis</li>
-          <li style="margin-bottom:0.3rem;">Implementation of real-time interactions using Unity (C#)</li>
-          <li style="margin-bottom:0.3rem;">Prototyping, testing, and refinement of immersive experiences for exhibition use</li>
-        </ul>
-      </div>
+  insects: `
+    <h2 id="popup-title">insect's delegate: brumble's journey</h2>
 
-      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #555; background: rgba(255,255,255,0.02);">
-        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://h-da.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">Darmstadt University of Applied Sciences (h_da)</a></h4>
-        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Darmstadt / Dieburg</p>
-        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">Student Study Advisor — <a href="https://mediencampus.h-da.de/studieren/studienangebot/bachelor/augmented-and-virtual-reality-design/profile" target="_blank" rel="noopener" style="color:#eaeaea;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#eaeaea'" onmouseout="this.style.borderBottomColor='transparent'">Augmented & Virtual Reality Design</a></strong></p>
-        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Apr 2025 – Present · Hybrid</p>
-        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
-          <li style="margin-bottom:0.3rem;">Academic advising and peer support for students in the XR design program</li>
-          <li style="margin-bottom:0.3rem;">Guidance on curriculum structure, study planning, and program-specific requirements</li>
-          <li style="margin-bottom:0.3rem;">Support of teaching- and study-related services within the department</li>
-        </ul>
-      </div>
+    <div class="popup-meta">
+      <span>virtual reality</span>
+      <span>unity</span>
+      <span>c#</span>
+      <span>interaction design</span>
+      <span>university project</span>
+    </div>
 
-      <div style="border-bottom: 1px solid #333; margin: 2rem 0 1.5rem 0; padding-bottom: 0.5rem;">
-        <h3 style="margin:0;color:#eaeaea;font-size:1.2rem;">education</h3>
-      </div>
-      
-      <div style="margin-bottom:2.5rem; padding: 1rem; border-left: 3px solid #666; background: rgba(255,255,255,0.03);">
-        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;"><a href="https://h-da.de/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#fff'" onmouseout="this.style.borderBottomColor='transparent'">Darmstadt University of Applied Sciences (h_da)</a></h4>
-        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Dieburg</p>
-        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">Bachelor of Arts (B.A.) — Expanded Realities</strong></p>
-        <p style="margin:0.3rem 0 0.3rem 0;"><strong style="color:#ddd;"><a href="https://mediencampus.h-da.de/studieren/studienangebot/bachelor/augmented-and-virtual-reality-design/profile" target="_blank" rel="noopener" style="color:#ddd;text-decoration:none;border-bottom:1px solid transparent;transition:border-bottom-color 0.2s ease;" onmouseover="this.style.borderBottomColor='#ddd'" onmouseout="this.style.borderBottomColor='transparent'">Augmented & Virtual Reality Design</a></strong></p>
-        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Oct 2023 – Feb 2027</p>
-        <ul style="margin:0.5rem 0;padding-left:1.5rem;color:#ddd;">
-          <li style="margin-bottom:0.3rem;">Interdisciplinary, project-based XR program taught in English</li>
-          <li style="margin-bottom:0.3rem;">Focus on XR design and development, immersive storytelling, interaction design, and real-time 3D</li>
-          <li style="margin-bottom:0.3rem;">Strong emphasis on practice through studio projects, an internship semester, and collaboration with real clients</li>
-          <li style="margin-bottom:0.3rem;">Hands-on work with industry-standard XR hardware and software, including VR/AR labs, motion capture, and usability testing facilities</li>
-        </ul>
-      </div>
+    <p>
+      this virtual reality experience was created during winter semester 2024 in the project module
+      “discover space and time” at darmstadt university of applied sciences.
+    </p>
 
-      <div style="margin-bottom:2rem; padding: 1rem; border-left: 3px solid #666; background: rgba(255,255,255,0.03);">
-        <h4 style="color:#fff;font-size:1.1rem;margin-bottom:0.5rem;">Katolički Školski Centar Opća Gimnazija "Sveti Franjo"</h4>
-        <p style="margin:0;color:#ccc;font-size:0.85rem;opacity:0.8;">Tuzla</p>
-        <p style="margin:0.8rem 0 0.3rem 0;"><strong style="color:#eaeaea;">High School Diploma</strong></p>
-        <p style="margin:0.3rem 0 1rem 0;color:#888;font-size:0.9rem;">Sep 2019 – Jun 2023</p>
-      </div>
+    <p>
+      the experience introduces young audiences aged 12–16 to the vital role of insects through storytelling,
+      exploration, and interactive learning.
+    </p>
 
+    <h3>my contribution</h3>
+    <ul>
+      <li>implemented core interaction systems and gameplay logic in unity using c#.</li>
+      <li>designed player interaction flows supporting exploration and learning.</li>
+      <li>managed scene logic, triggers, and state progression across the experience.</li>
+      <li>supported project organization and team coordination.</li>
+    </ul>
+
+    <h3>team</h3>
+    <p>jacopo perilli · lara heß · mutlu yakubov · antonela matanović · himanshu dahiya</p>
+
+    <img src="images/main image.png" alt="insect's delegate cover image" />
+
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/hUOfJCqo2rE"
+        title="insect's delegate trailer"
+        allowfullscreen>
+      </iframe>
     </div>
   `
 };
 
-// open popup when clicking project or cv links
-document.querySelectorAll('.project-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const projectKey = link.getAttribute('data-project');
-    if (!projectsData[projectKey]) return;
+let lastFocusedElement = null;
 
-    popupContent.style.opacity = 0;
-    popupContent.style.transform = 'scale(0.96)';
-    popup.classList.add('active');
-    popup.setAttribute('aria-hidden', 'false');
+function openPopup(projectKey) {
+  const content = projectsData[projectKey];
+
+  if (!content) {
+    return;
+  }
+
+  lastFocusedElement = document.activeElement;
+
+  popupContent.innerHTML = content;
+  popup.classList.add("active");
+  popup.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+
+  const popupTitle = popupContent.querySelector("#popup-title");
+
+  if (popupTitle) {
+    popupTitle.setAttribute("tabindex", "-1");
 
     setTimeout(() => {
-      popupContent.innerHTML = projectsData[projectKey];
-      popupContent.style.opacity = 1;
-      popupContent.style.transform = 'scale(1)';
-      const focusable = popupContent.querySelector('button, a, iframe, img, p, h2, h3');
-      focusable?.focus();
-    }, 100);
+      popupTitle.focus();
+    }, 80);
+  }
+}
+
+function closePopup() {
+  popup.classList.remove("active");
+  popup.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("no-scroll");
+
+  setTimeout(() => {
+    popupContent.innerHTML = "";
+
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  }, 180);
+}
+
+document.querySelectorAll(".project-link").forEach((button) => {
+  button.addEventListener("click", () => {
+    const projectKey = button.dataset.project;
+    openPopup(projectKey);
   });
 });
 
-// close popup function
-const closePopup = () => {
-  popupContent.style.opacity = 0;
-  popupContent.style.transform = 'scale(0.96)';
-  setTimeout(() => {
-    popup.classList.remove('active');
-    popup.setAttribute('aria-hidden', 'true');
-    popupContent.innerHTML = '';
-  }, 300);
-};
+closeBtn.addEventListener("click", closePopup);
 
-// close on close button click
-closeBtn.addEventListener('click', closePopup);
-
-// close on background click
-popup.addEventListener('click', (e) => {
-  if (e.target === popup) closePopup();
-});
-
-// close on escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && popup.classList.contains('active')) {
+popup.addEventListener("click", (event) => {
+  if (event.target === popup) {
     closePopup();
   }
 });
 
-// personal projects toggle functionality
-const personalToggle = document.getElementById('personal-toggle');
-const personalProjectsList = document.getElementById('personal-projects-list');
-let isPersonalProjectsVisible = false;
-
-personalToggle.addEventListener('click', (e) => {
-  e.preventDefault();
-  isPersonalProjectsVisible = !isPersonalProjectsVisible;
-  
-  if (isPersonalProjectsVisible) {
-    personalProjectsList.style.display = 'block';
-    personalToggle.querySelector('.plus-icon').style.transform = 'rotate(45deg)';
-    personalToggle.querySelector('svg').style.transition = 'transform 0.3s ease';
-  } else {
-    personalProjectsList.style.display = 'none';
-    personalToggle.querySelector('.plus-icon').style.transform = 'rotate(0deg)';
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && popup.classList.contains("active")) {
+    closePopup();
   }
 });
 
-// university projects toggle functionality
-const universityToggle = document.getElementById('university-toggle');
-const universityProjectsList = document.getElementById('university-projects-list');
-let isUniversityProjectsVisible = false;
-
-universityToggle.addEventListener('click', (e) => {
-  e.preventDefault();
-  isUniversityProjectsVisible = !isUniversityProjectsVisible;
-  
-  if (isUniversityProjectsVisible) {
-    universityProjectsList.style.display = 'block';
-    universityToggle.querySelector('.plus-icon').style.transform = 'rotate(45deg)';
-    universityToggle.querySelector('svg').style.transition = 'transform 0.3s ease';
-  } else {
-    universityProjectsList.style.display = 'none';
-    universityToggle.querySelector('.plus-icon').style.transform = 'rotate(0deg)';
-  }
+navMenuButton.addEventListener("click", () => {
+  const isOpen = navList.classList.toggle("open");
+  navMenuButton.setAttribute("aria-expanded", String(isOpen));
 });
 
-// work projects toggle functionality
-const workToggle = document.getElementById('work-toggle');
-const workProjectsList = document.getElementById('work-projects-list');
-let isWorkProjectsVisible = false;
-
-workToggle.addEventListener('click', (e) => {
-  e.preventDefault();
-  isWorkProjectsVisible = !isWorkProjectsVisible;
-  
-  if (isWorkProjectsVisible) {
-    workProjectsList.style.display = 'block';
-    workToggle.querySelector('.plus-icon').style.transform = 'rotate(45deg)';
-    workToggle.querySelector('svg').style.transition = 'transform 0.3s ease';
-  } else {
-    workProjectsList.style.display = 'none';
-    workToggle.querySelector('.plus-icon').style.transform = 'rotate(0deg)';
-  }
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    navList.classList.remove("open");
+    navMenuButton.setAttribute("aria-expanded", "false");
+  });
 });
 
-// scroll progress bar update
-window.addEventListener('scroll', () => {
+function updateScrollProgress() {
   const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
-  scrollProgress.style.width = scrolled + '%';
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
 
-  const header = document.getElementById('site-header');
-  if (scrollTop > 10) {
-    header.style.backdropFilter = 'blur(6px)';
-  } else {
-    header.style.backdropFilter = 'blur(4px)';
-  }
-});
+  scrollProgress.style.width = `${progress}%`;
+}
+
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
+
+updateScrollProgress();

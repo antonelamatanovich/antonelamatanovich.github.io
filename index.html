@@ -3,265 +3,297 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>antonela matanović</title>
+  <meta
+    name="description"
+    content="Portfolio of Antonela Matanović — XR designer and developer focused on immersive storytelling, interaction design, AR, VR, and real-time 3D."
+  />
+  <title>antonela matanović — xr designer & developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div id="scroll-progress"></div>
+
   <header id="site-header">
-    <nav id="main-nav">
-      <ul class="nav-list">
-        <li><a href="#about-me" class="nav-link">about</a></li>
-        <li><a href="#projects" class="nav-link">personal projects</a></li>
-        <li><a href="#university-projects" class="nav-link">university projects</a></li>
-        <li><a href="#work-projects" class="nav-link">work projects</a></li>
-        <li><a href="#cv" class="nav-link">cv</a></li>
+    <a href="#home" class="site-logo">antonela matanović</a>
+
+    <button class="nav-menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
+      menu
+    </button>
+
+    <nav aria-label="main navigation">
+      <ul class="nav-list" id="nav-links">
+        <li><a href="#about" class="nav-link">about</a></li>
+        <li><a href="#projects" class="nav-link">projects</a></li>
+        <li><a href="#experience" class="nav-link">experience</a></li>
+        <li><a href="#education" class="nav-link">education</a></li>
         <li><a href="#contact" class="nav-link">contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="about-me">
-      <h1>antonela matanović</h1>
-      <div class="about-wrapper">
-        <img src="images/profile.png" alt="antonela matanović" class="profile-pic" />
-        <p>augmented and virtual reality design student @ h_da · based in frankfurt am main</p>
-      </div>
-    </section>
+  <main id="home">
+    <section class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">xr designer & developer</p>
 
-    <section id="projects">
-      <h2>personal projects</h2>
-      <div class="personal-projects-container">
-        <a href="#" class="personal-projects-toggle" id="personal-toggle">
-          <svg class="icon plus-icon" viewBox="0 0 16 16">
-            <line x1="8" y1="2" x2="8" y2="14"/>
-            <line x1="2" y1="8" x2="14" y2="8"/>
-          </svg>
-          view personal projects
-        </a>
-        <ul class="personal-projects-list" id="personal-projects-list" style="display: none;">
-          <li>
-            <article class="project">
-              <div class="project-header">
-                <span class="project-tag">vr</span>
-                <h3>vr home</h3>
-              </div>
-              <p class="summary">immersive virtual living space design and interaction system</p>
-              <div class="meta">
-                <span>vr designer</span>
-                <span>developer</span>
-                <span>personal project</span>
-              </div>
-              <ul class="contributions">
-                <li>designed spatial layouts and interaction systems for virtual environments</li>
-                <li>implemented comfort and presence optimization for extended vr use</li>
-                <li>developed intuitive navigation and object manipulation mechanics</li>
-              </ul>
-              <p class="focus"><strong>xr focus:</strong> spatial interaction design, presence, and comfort for extended virtual living experiences.</p>
-              <div class="team">
-                <p class="team-label">team</p>
-                <p class="team-members">solo project</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project-header">
-                <span class="project-tag">360 video</span>
-                <h3>tuzla 360°</h3>
-              </div>
-              <p class="summary">immersive documentary capturing cultural heritage through 360° video</p>
-              <div class="meta">
-                <span>360° filmmaker</span>
-                <span>post-production specialist</span>
-                <span>personal project</span>
-              </div>
-              <ul class="contributions">
-                <li>captured and directed 360° cinematography for cultural documentation</li>
-                <li>handled stitching, color correction, and spatial audio integration</li>
-                <li>designed narrative flow optimized for immersive viewing</li>
-              </ul>
-              <p class="focus"><strong>xr focus:</strong> spatial storytelling and viewer navigation, balancing presence with narrative guidance.</p>
-              <div class="team">
-                <p class="team-label">team</p>
-                <p class="team-members">solo project</p>
-              </div>
-            </article>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <h1>
+          creating meaningful immersive experiences through storytelling,
+          interaction design, and real-time 3d.
+        </h1>
 
-    <section id="university-projects">
-      <h2>university projects</h2>
-      <div class="university-projects-container">
-        <a href="#" class="university-projects-toggle" id="university-toggle">
-          <svg class="icon plus-icon" viewBox="0 0 16 16">
-            <line x1="8" y1="2" x2="8" y2="14"/>
-            <line x1="2" y1="8" x2="14" y2="8"/>
-          </svg>
-          view university projects
-        </a>
-        <ul class="university-projects-list" id="university-projects-list" style="display: none;">
-          <li>
-            <article class="project">
-              <div class="project-header">
-                <span class="project-tag">vr</span>
-                <h3>insect's delegate: brumble's journey</h3>
-              </div>
-              <p class="summary">educational vr experience for young audiences (12–16), combining storytelling, exploration, and interactive learning.</p>
-              <div class="meta">
-                <span>xr programmer</span>
-                <span>project manager</span>
-                <span>winter semester 2024</span>
-              </div>
-              <ul class="contributions">
-                <li>implemented core interaction systems and gameplay logic in unity (c#)</li>
-                <li>designed player interaction flows supporting exploration and learning</li>
-                <li>managed scene logic, triggers, and state progression across the experience</li>
-              </ul>
-              <p class="focus"><strong>xr focus:</strong> interaction-driven exploration for first-time vr users, guided through affordances and environmental cues.</p>
-              <div class="team">
-                <p class="team-label">team</p>
-                <p class="team-members">jacopo perilli · lara heß · mutlu yakubov · antonela matanović · himanshu dahiya</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project-header">
-                <span class="project-tag">3d game</span>
-                <h3>blade of the dawn</h3>
-              </div>
-              <p class="summary">3d action-adventure game with immersive combat mechanics</p>
-              <div class="meta">
-                <span>game designer</span>
-                <span>developer</span>
-                <span>game development course</span>
-              </div>
-              <ul class="contributions">
-                <li>designed and implemented core gameplay mechanics and combat systems</li>
-                <li>created level layouts focusing on spatial navigation and player flow</li>
-                <li>developed feedback systems for player actions and progression</li>
-              </ul>
-              <p class="focus"><strong>xr focus:</strong> player agency and spatial navigation, creating intuitive movement and feedback systems.</p>
-              <div class="team">
-                <p class="team-label">team</p>
-                <p class="team-members">collaborative university project</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project-header">
-                <span class="project-tag">vr</span>
-                <h3>coralis</h3>
-              </div>
-              <p class="summary">underwater vr exploration focusing on marine ecosystem preservation</p>
-              <div class="meta">
-                <span>vr designer</span>
-                <span>environmental researcher</span>
-                <span>environmental media project</span>
-              </div>
-              <ul class="contributions">
-                <li>designed underwater simulation with realistic physics and lighting</li>
-                <li>created educational experience flow balancing exploration and learning</li>
-                <li>developed empathy-driven interactions with marine life</li>
-              </ul>
-              <p class="focus"><strong>xr focus:</strong> environmental presence and educational engagement, fostering empathy through immersive interaction.</p>
-              <div class="team">
-                <p class="team-label">team</p>
-                <p class="team-members">collaborative university project</p>
-              </div>
-            </article>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="work-projects">
-      <h2>work projects</h2>
-      <div class="work-projects-container">
-        <a href="#" class="work-projects-toggle" id="work-toggle">
-          <svg class="icon plus-icon" viewBox="0 0 16 16">
-            <line x1="8" y1="2" x2="8" y2="14"/>
-            <line x1="2" y1="8" x2="14" y2="8"/>
-          </svg>
-          view work projects
-        </a>
-        <ul class="work-projects-list" id="work-projects-list" style="display: none;">
-          <li>
-            <article class="project">
-              <div class="project-header">
-                <span class="project-tag">interactive installation</span>
-                <h3>animal garden</h3>
-              </div>
-              <p class="summary">interactive media installation exploring human-animal relationships</p>
-              <div class="meta">
-                <span>interaction designer</span>
-                <span>media artist</span>
-                <span>museum exhibition</span>
-              </div>
-              <ul class="contributions">
-                <li>designed interaction flows for multi-user museum environment</li>
-                <li>integrated sensor systems with responsive media content</li>
-                <li>created visitor experience balancing discovery and engagement</li>
-              </ul>
-              <p class="focus"><strong>xr focus:</strong> physical interaction design and responsive environments, creating engaging multi-user experiences.</p>
-              <div class="team">
-                <p class="team-label">team</p>
-                <p class="team-members">collaborative project with artists and developers</p>
-              </div>
-            </article>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="cv">
-      <h2>cv</h2>
-      <div class="cv-button-container">
-        <a href="#" class="project-link" data-project="cv">view cv</a>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>contact</h2>
-
-      <!-- contact form -->
-      <form id="contact-form" action="https://formspree.io/f/xrblejez" method="POST" novalidate>
-        <label for="name">name</label>
-        <input type="text" id="name" name="name" placeholder="your name" required />
-
-        <label for="email">email</label>
-        <input type="email" id="email" name="_replyto" placeholder="your email" required />
-
-        <label for="message">message</label>
-        <textarea id="message" name="message" rows="4" placeholder="your message" required></textarea>
-
-        <button type="submit">send</button>
-      </form>
-
-      <!-- contact info below form -->
-      <div class="contact-info" style="margin-top: 2rem; text-align: center;">
-        <p>
-          <a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a><br />
-          +49 1575 4761393<br />
-          <a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank" rel="noopener">linkedin</a><br />
-          <a href="https://github.com/antonelamatanovich" target="_blank" rel="noopener">github</a>
+        <p class="hero-text">
+          i study expanded realities (b.a.) at darmstadt university of applied sciences and currently work with
+          videoreality gmbh on xr prototyping, ai-driven immersive systems, and interactive exhibition experiences.
         </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="button primary">view projects</a>
+          <a href="#contact" class="button secondary">contact me</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="profile summary">
+        <img src="images/profile.png" alt="portrait of antonela matanović" class="profile-pic" />
+        <div>
+          <p class="hero-card-title">based in frankfurt am main</p>
+          <p>xr design · unity · ar/vr · interaction design · immersive exhibitions</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section split-section">
+      <div>
+        <p class="section-label">about</p>
+        <h2>xr, interaction, and immersive media.</h2>
+      </div>
+
+      <div class="text-stack">
+        <p>
+          XR designer and developer studying Expanded Realities (B.A.) at Darmstadt University of Applied Sciences,
+          with a focus on immersive storytelling, interaction design, and real-time 3D.
+        </p>
+
+        <p>
+          Currently working with videoreality GmbH on development, prototyping, and on-site exhibition operation,
+          including contributions to TimeLeapVR ArtWorld – Mona Lisa’s Geheimnis and co-creation of the interactive
+          installation Animal Garden.
+        </p>
+
+        <p>
+          Also active as a Student Study Advisor for Augmented and Virtual Reality Design, supporting students through
+          academic guidance and peer advising.
+        </p>
+      </div>
+    </section>
+
+    <section class="section skills-section" aria-label="skills">
+      <p class="section-label">focus</p>
+
+      <div class="skill-grid">
+        <span>unity</span>
+        <span>c#</span>
+        <span>vuforia</span>
+        <span>augmented reality</span>
+        <span>virtual reality</span>
+        <span>interaction design</span>
+        <span>real-time 3d</span>
+        <span>immersive storytelling</span>
+        <span>xr prototyping</span>
+        <span>exhibition testing</span>
+        <span>ui layout</span>
+        <span>spatial experiences</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <p class="section-label">selected projects</p>
+        <h2>work and university projects with real context.</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card featured">
+          <div class="project-meta">
+            <span>ar</span>
+            <span>unity</span>
+            <span>vuforia</span>
+            <span>university project</span>
+          </div>
+
+          <h3>discovering barite</h3>
+
+          <p>
+            educational mobile ar experience for the spatschlucht near schriesheim, created in collaboration with
+            geo-naturpark bergstraße-odenwald.
+          </p>
+
+          <button class="project-link" type="button" data-project="discovering-barite">
+            view case study
+          </button>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span>interactive installation</span>
+            <span>exhibition</span>
+            <span>work project</span>
+          </div>
+
+          <h3>animal garden</h3>
+
+          <p>
+            interactive media installation co-created for videoreality gmbh and exhibited at timeleapvr artworld –
+            mona lisa’s geheimnis.
+          </p>
+
+          <button class="project-link" type="button" data-project="animal-garden">
+            view case study
+          </button>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span>vr</span>
+            <span>unity / c#</span>
+            <span>university project</span>
+          </div>
+
+          <h3>insect's delegate: brumble's journey</h3>
+
+          <p>
+            educational vr experience for young audiences, combining storytelling, exploration, and interactive learning.
+          </p>
+
+          <button class="project-link" type="button" data-project="insects">
+            view case study
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section split-section">
+      <div>
+        <p class="section-label">experience</p>
+        <h2>professional work in xr prototyping, exhibitions, and advising.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <p class="timeline-date">aug 2025 – present · hybrid</p>
+          <h3>xr project & prototyping assistant</h3>
+          <p class="timeline-company">videoreality gmbh · frankfurt, germany</p>
+          <p>
+            supporting the development of internal tools and ai-driven immersive systems for interactive museum and
+            exhibition experiences, with a focus on prototyping, pipeline integration, and real-time deployment workflows.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <p class="timeline-date">jun 2025 – present · on-site</p>
+          <h3>exhibition support</h3>
+          <p class="timeline-company">timeleapvr artworld – mona lisa’s geheimnis</p>
+          <p>
+            on-site operation, supervision, and maintenance of immersive installations in a large-scale exhibition
+            blending virtual reality, ai, and interactive art.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <p class="timeline-date">feb 2025 – jun 2025 · internship</p>
+          <h3>xr developer & designer intern</h3>
+          <p class="timeline-company">videoreality gmbh · frankfurt, germany</p>
+          <p>
+            developed interactive xr exhibition content as part of the expanded realities practice phase. co-created
+            animal garden and supported testing and refinement of immersive experiences for exhibition use.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <p class="timeline-date">apr 2025 – apr 2026 · hybrid</p>
+          <h3>student study advisor</h3>
+          <p class="timeline-company">darmstadt university of applied sciences</p>
+          <p>
+            academic advising and peer support for students in the augmented and virtual reality design program,
+            including guidance on study planning, curriculum structure, and department services.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section split-section">
+      <div>
+        <p class="section-label">education</p>
+        <h2>expanded realities and interdisciplinary xr practice.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <p class="timeline-date">oct 2023 – feb 2027</p>
+          <h3>bachelor of arts — expanded realities</h3>
+          <p class="timeline-company">darmstadt university of applied sciences</p>
+          <p>
+            project-based xr program taught in english, focused on xr design and development, immersive storytelling,
+            interaction design, real-time 3d, studio projects, industry-standard xr hardware, vr/ar labs, motion capture,
+            and usability testing facilities.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <p class="timeline-date">sep 2019 – jun 2023</p>
+          <h3>high school diploma</h3>
+          <p class="timeline-company">katolički školski centar opća gimnazija “sveti franjo” tuzla</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <p class="section-label">contact</p>
+      <h2>let’s connect.</h2>
+
+      <div class="contact-grid">
+        <form id="contact-form" action="https://formspree.io/f/xrblejez" method="POST">
+          <label for="name">name</label>
+          <input type="text" id="name" name="name" placeholder="your name" required />
+
+          <label for="email">email</label>
+          <input type="email" id="email" name="_replyto" placeholder="your email" required />
+
+          <label for="message">message</label>
+          <textarea id="message" name="message" rows="5" placeholder="your message" required></textarea>
+
+          <button type="submit">send message</button>
+        </form>
+
+        <div class="contact-info">
+          <p>
+            interested in xr, interactive installations, ar/vr prototyping, and immersive storytelling.
+          </p>
+
+          <ul>
+            <li><a href="mailto:antonelamatanovic@icloud.com">antonelamatanovic@icloud.com</a></li>
+            <li><a href="tel:+4915754761393">+49 1575 4761393</a></li>
+            <li><a href="https://www.linkedin.com/in/antonelamatanovic/" target="_blank" rel="noopener">linkedin</a></li>
+            <li><a href="https://github.com/antonelamatanovich" target="_blank" rel="noopener">github</a></li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
 
-  <div id="project-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+  <div
+    id="project-popup"
+    class="popup-overlay"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="popup-title"
+  >
     <div class="popup-content" role="document">
-      <button id="popup-close" aria-label="close project details">&times;</button>
+      <button id="popup-close" type="button" aria-label="close project details">&times;</button>
       <div id="popup-inner-content"></div>
     </div>
   </div>
-
-  <div id="scroll-progress"></div>
 
   <script src="script.js"></script>
 </body>

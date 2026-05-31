@@ -221,8 +221,7 @@ p {
     background 0.18s ease,
     color 0.18s ease,
     transform 0.18s ease,
-    border-color 0.18s ease,
-    opacity 0.18s ease;
+    border-color 0.18s ease;
 }
 
 .button:hover,
@@ -249,7 +248,6 @@ p {
   list-style: none;
   display: grid;
   gap: 0;
-  margin-top: 0;
 }
 
 .project-row {
@@ -259,7 +257,6 @@ p {
   align-items: start;
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
-  transition: background 0.15s ease;
 }
 
 .project-row:first-child {
@@ -302,7 +299,7 @@ p {
   font-size: 0.75rem;
 }
 
-/* ─── Experience + Education side-by-side ─── */
+/* ─── Experience + Education ─── */
 
 .two-col-section {
   display: grid;
@@ -349,14 +346,45 @@ p {
 .timeline-item h3 {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   color: var(--text);
+}
+
+/* Company link with logo */
+
+.timeline-company-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  transition: color 0.18s ease;
+  text-decoration: none;
+}
+
+.timeline-company-link:hover {
+  color: var(--text);
+}
+
+.timeline-logo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+/* h_da logo is black on white — invert it for dark background */
+.timeline-logo--light {
+  filter: invert(1) brightness(0.75);
 }
 
 .timeline-company {
   color: var(--muted);
   font-size: 0.88rem;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .timeline-item p:not(.timeline-date):not(.timeline-company) {
@@ -564,6 +592,17 @@ p {
   border: 1px solid var(--line);
 }
 
+#popup-inner-content a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.18s ease;
+}
+
+#popup-inner-content a:hover {
+  color: var(--text);
+}
+
 .video-container {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -579,12 +618,71 @@ p {
   border: none;
 }
 
-.image-note {
-  font-size: 0.85rem;
+/* ─── Popup context banner ─── */
+
+.popup-context-banner {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 20px 0 28px;
+  text-decoration: none;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.popup-context-banner:hover {
+  border-color: #444;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.popup-context-logo {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 8px;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.popup-context-title {
+  font-weight: 600;
+  color: var(--text) !important;
+  font-size: 0.95rem;
+  margin-bottom: 6px !important;
+  text-decoration: none;
+}
+
+.popup-context-link-hint {
+  font-weight: 400;
   color: var(--soft);
-  border-left: 2px solid var(--line);
-  padding-left: 14px;
-  border-radius: 0;
+  font-size: 0.85rem;
+}
+
+.popup-context-desc {
+  font-size: 0.88rem;
+  color: var(--muted) !important;
+  line-height: 1.6;
+  margin: 0 !important;
+}
+
+/* ─── Popup image grids ─── */
+
+.popup-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.popup-image-grid img {
+  width: 100%;
+  margin: 0 !important;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* ─── Responsive ─── */
@@ -606,6 +704,11 @@ p {
 
   .project-tags {
     justify-content: flex-start;
+  }
+
+  .popup-context-banner {
+    grid-template-columns: 120px 1fr;
+    gap: 14px;
   }
 }
 
@@ -671,57 +774,13 @@ p {
   .popup-content {
     max-height: 93vh;
   }
-}
 
-/* ─── Popup enhancements ─── */
-
-.popup-context-banner {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
-  align-items: start;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 18px 20px;
-  margin: 20px 0 28px;
-}
-
-.popup-context-logo {
-  width: 140px;
-  border-radius: 8px;
-  border: none;
-  margin: 0;
-}
-
-.popup-context-title {
-  font-weight: 600;
-  color: var(--text);
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-}
-
-.popup-image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 14px 0;
-}
-
-.popup-image-grid img {
-  width: 100%;
-  margin: 0;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-@media (max-width: 580px) {
   .popup-context-banner {
     grid-template-columns: 1fr;
   }
 
   .popup-context-logo {
-    width: 100px;
+    max-width: 120px;
   }
 
   .popup-image-grid {

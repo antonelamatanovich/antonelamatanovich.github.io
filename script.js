@@ -64,40 +64,37 @@ const projectsData = {
       <span>Work Project</span>
     </div>
 
-    <div class="popup-context-banner">
+    <a href="https://videoreality.de/monalisasgeheimnis" target="_blank" rel="noopener" class="popup-context-banner">
       <img src="images/TimeLeapVR ArtWorld Logo 1380px.png" alt="TimeLeapVR ArtWorld logo" class="popup-context-logo" />
       <div>
-        <p class="popup-context-title">TimeLeapVR ArtWorld — Mona Lisa's Geheimnis</p>
-        <p>
-          A large-scale immersive exhibition at The Squaire, Frankfurt Airport, blending Virtual Reality, AI,
-          and interactive art around the worlds of Leonardo da Vinci and Hieronymus Bosch.
-          Running from April 2025, the exhibition guided visitors through six themed rooms — from da Vinci's
-          studio to Bosch's Garden of Earthly Delights — culminating in a live conversation with an
-          AI-driven interactive Mona Lisa.
+        <p class="popup-context-title">TimeLeapVR ArtWorld — Mona Lisa's Geheimnis <span class="popup-context-link-hint">↗</span></p>
+        <p class="popup-context-desc">
+          A large-scale immersive exhibition at The Squaire, Frankfurt Airport, blending VR, AI, and interactive art
+          around the worlds of Leonardo da Vinci and Hieronymus Bosch. Six themed rooms across 600+ m²,
+          running from April 2025.
         </p>
       </div>
-    </div>
+    </a>
 
     <h3>About the installation</h3>
 
     <p>
       <strong>Animal Garden</strong> is an interactive media installation I co-created with Riccardo Liguori
-      for videoreality GmbH, conceived and built entirely during my internship semester. It lived in
-      Room 4 of the exhibition — the immersive Bosch-world — as a hands-on creative station for visitors
-      of all ages.
+      for videoreality GmbH during my internship semester. It lived in Room 4 of the exhibition — the
+      immersive Bosch-world — as a hands-on creative station for visitors of all ages.
     </p>
 
     <p>
       Visitors would pick up a printed outline of a fantastical creature from Hieronymus Bosch's
-      <em>Garden of Earthly Delights</em>, colour it in however they wanted, then place it onto a scanner
-      surface. The system would automatically detect and cut out the coloured creature, import it as a
-      live asset into a Unity scene, and project it onto a large wall — making their drawing appear as a
-      moving, animated part of a growing digital garden alongside contributions from all other visitors.
-      The collage updated in real time, with older creatures gradually fading out to make room for new ones.
+      <em>Garden of Earthly Delights</em>, colour it however they wanted, then place it onto a scanner surface.
+      The system automatically detected and cut out the coloured creature, imported it as a live asset into a
+      Unity scene, and projected it onto a large wall — making their drawing appear as a moving, animated part
+      of a growing digital garden alongside all other visitors' contributions. The collage updated in real time,
+      with older creatures gradually fading out to make room for new ones.
     </p>
 
     <div class="popup-image-grid">
-      <img src="images/visitors sitting.JPG" alt="Visitors at the Animal Garden coloring station" />
+      <img src="images/visitors sitting.JPG" alt="Visitors at the Animal Garden colouring station" />
       <img src="images/visitor coloring the print sheet.JPG" alt="Visitor colouring a creature print sheet" />
     </div>
     <div class="popup-image-grid">
@@ -114,12 +111,12 @@ const projectsData = {
     </p>
 
     <p>
-      The kiosk consists of a backlit scanning surface at table height with a camera mounted inside the
-      housing above it, pointed downward. When a visitor places their coloured sheet on the surface,
-      the camera captures the image. Custom software — built in Unity and integrated with a machine-vision
-      pipeline — automatically detects the printed registration markers on each sheet, isolates the
-      coloured drawing, removes the background, and exports a PNG with transparency. That asset is then
-      immediately loaded into the live projection scene.
+      The kiosk is a self-contained wooden housing with a backlit scanning surface at table height and a
+      downward-facing camera mounted inside the top section. When a visitor places their coloured sheet on
+      the surface, the camera captures the image. Custom software built in Unity and integrated with a
+      machine-vision pipeline automatically detects the printed registration markers on each sheet,
+      isolates the coloured drawing, removes the background, and exports a transparent PNG — which is
+      then immediately loaded into the live projection scene. No staff input needed.
     </p>
 
     <div class="popup-image-grid">
@@ -127,56 +124,48 @@ const projectsData = {
       <img src="images/building progress (2).jpg" alt="Scanner kiosk — frame with shelving" />
     </div>
     <div class="popup-image-grid">
-      <img src="images/building progress (3).jpg" alt="Scanner kiosk — hardware integration prototype" />
-      <img src="images/building progress (4).jpg" alt="Scanner kiosk — finished housing in black" />
+      <img src="images/building progress (3).jpg" alt="Scanner kiosk — hardware integration" />
+      <img src="images/building progress (4).jpg" alt="Scanner kiosk — finished black housing" />
     </div>
     <div class="popup-image-grid">
       <img src="images/prototype.jpg" alt="Early prototype of the scanner station" />
-      <img src="images/testing the projection.jpg" alt="Testing the projection output in the exhibition space" />
+      <img src="images/testing the projection.jpg" alt="Testing the live projection in the exhibition space" />
     </div>
 
     <p>
       The frame was built from timber, then clad in black-painted MDF panels for the final exhibition finish.
-      We went through several prototypes to get the camera angle, diffusion, and registration accuracy
-      right before the opening. The kiosk needed to be self-explanatory for visitors — no staff required —
-      so the interaction flow (place sheet, wait, see it appear on the wall) had to be immediate and clear.
+      We went through several prototypes to get the camera angle, diffusion, and registration accuracy right
+      before opening. The kiosk had to be fully self-explanatory — place sheet, wait, see it appear on the wall.
     </p>
 
     <h3>The projection scene</h3>
 
     <p>
       The live Unity scene ran on a dedicated PC and received incoming creature assets as they were processed.
-      Each new creature would enter the garden with a short entrance animation, wander around for a set duration,
-      then gently fade out as newer contributions replaced it. The background was a stylised interpretation
-      of Bosch's painting, keeping the visual language of the exhibition consistent.
+      Each new creature enters the garden with a short entrance animation, wanders for a set duration, then
+      gently fades out as newer contributions replace it. The background is a stylised interpretation of
+      Bosch's painting, keeping the visual language of the exhibition consistent.
     </p>
 
     <img src="images/scene view.png" alt="Unity scene view of the Animal Garden projection" />
-    <img src="images/exhibit place (1).jpg" alt="Animal Garden installation in the exhibition space during setup" />
+    <img src="images/exhibit place (1).jpg" alt="Animal Garden installation in the exhibition space" />
 
     <h3>My contribution</h3>
     <ul>
-      <li>Co-created the concept and interaction structure of the installation.</li>
-      <li>Designed and built the physical scanner kiosk together with Riccardo Liguori.</li>
-      <li>Developed the camera capture, image processing, and asset pipeline in Unity using C#.</li>
+      <li>Co-created the concept and interaction structure with Riccardo Liguori.</li>
+      <li>Designed and built the physical scanner kiosk hardware.</li>
+      <li>Developed the camera capture, image processing, and asset pipeline in Unity / C#.</li>
       <li>Built the live projection scene including asset import, animation, and timed fade logic.</li>
-      <li>Iterated through multiple hardware prototypes to achieve reliable, unsupervised operation.</li>
-      <li>Supported testing, calibration, and refinement for exhibition use across the full run.</li>
+      <li>Iterated through multiple hardware prototypes for reliable, unsupervised operation.</li>
+      <li>Supported testing, calibration, and refinement across the full exhibition run.</li>
     </ul>
 
-    <h3>Context</h3>
-    <p>
-      Animal Garden was part of Room 4 — the immersive Bosch world — within TimeLeapVR ArtWorld –
-      Mona Lisa's Geheimnis, a large-scale exhibition at The Squaire, Frankfurt Airport. The exhibition
-      blended VR experiences, AI-driven talking paintings, interactive installations, and art-historical
-      content across 600+ m² and six themed rooms. Animal Garden served as the participatory, family-friendly
-      creative station within that space.
-    </p>
-
     <h3>Credits</h3>
-    <p>Concept and realisation: Antonela Matanović, Riccardo Liguori<br>
-    Technical support: Linus Steffens<br>
-    Exhibition: TimeLeapVR ArtWorld – Mona Lisa's Geheimnis, videoreality GmbH, 2025</p>
+    <p>
+      Concept and realisation: Antonela Matanović, Riccardo Liguori<br>
+      Technical support: Linus Steffens<br>
+      Exhibition: <a href="https://videoreality.de/monalisasgeheimnis" target="_blank" rel="noopener">TimeLeapVR ArtWorld – Mona Lisa's Geheimnis</a>, videoreality GmbH, 2025
+    </p>
   `,
 
   insects: `
@@ -227,18 +216,13 @@ let lastFocusedElement = null;
 
 function openPopup(projectKey) {
   const content = projectsData[projectKey];
-
   if (!content) return;
-
   lastFocusedElement = document.activeElement;
-
   popupContent.innerHTML = content;
   popup.classList.add("active");
   popup.setAttribute("aria-hidden", "false");
   document.body.classList.add("no-scroll");
-
   const popupTitle = popupContent.querySelector("#popup-title");
-
   if (popupTitle) {
     popupTitle.setAttribute("tabindex", "-1");
     setTimeout(() => popupTitle.focus(), 80);
@@ -249,7 +233,6 @@ function closePopup() {
   popup.classList.remove("active");
   popup.setAttribute("aria-hidden", "true");
   document.body.classList.remove("no-scroll");
-
   setTimeout(() => {
     popupContent.innerHTML = "";
     if (lastFocusedElement) lastFocusedElement.focus();
@@ -291,5 +274,4 @@ function updateScrollProgress() {
 
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
 window.addEventListener("resize", updateScrollProgress);
-
 updateScrollProgress();

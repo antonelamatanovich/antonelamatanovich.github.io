@@ -41,11 +41,6 @@ const projectsData = {
     <h3>team</h3>
     <p>karam sawaftah · jacopo perilli · antonela matanović</p>
 
-    <p class="image-note">
-      to add your project image, place it inside your <strong>images</strong> folder and name it
-      <strong>discovering-barite.jpg</strong>. then uncomment the image line in this popup inside script.js.
-    </p>
-
     <img src="images/discovering-barite.jpg" alt="discovering barite ar project preview" />
 
     <div class="video-container">
@@ -70,7 +65,7 @@ const projectsData = {
 
     <p>
       <strong>animal garden</strong> is an interactive media installation created together with ricci liguori for
-      videoreality gmbh. it was exhibited at timeleapvr artworld – mona lisa’s geheimnis in frankfurt am main.
+      videoreality gmbh. it was exhibited at timeleapvr artworld – mona lisa's geheimnis in frankfurt am main.
     </p>
 
     <p>
@@ -88,7 +83,7 @@ const projectsData = {
 
     <h3>context</h3>
     <p>
-      shown as part of timeleapvr artworld – mona lisa’s geheimnis, a large-scale immersive exhibition blending
+      shown as part of timeleapvr artworld – mona lisa's geheimnis, a large-scale immersive exhibition blending
       virtual reality, ai, and interactive art experiences inspired by leonardo da vinci and hieronymus bosch.
     </p>
   `,
@@ -106,7 +101,7 @@ const projectsData = {
 
     <p>
       this virtual reality experience was created during winter semester 2024 in the project module
-      “discover space and time” at darmstadt university of applied sciences.
+      "discover space and time" at darmstadt university of applied sciences.
     </p>
 
     <p>
@@ -142,9 +137,7 @@ let lastFocusedElement = null;
 function openPopup(projectKey) {
   const content = projectsData[projectKey];
 
-  if (!content) {
-    return;
-  }
+  if (!content) return;
 
   lastFocusedElement = document.activeElement;
 
@@ -157,10 +150,7 @@ function openPopup(projectKey) {
 
   if (popupTitle) {
     popupTitle.setAttribute("tabindex", "-1");
-
-    setTimeout(() => {
-      popupTitle.focus();
-    }, 80);
+    setTimeout(() => popupTitle.focus(), 80);
   }
 }
 
@@ -171,32 +161,22 @@ function closePopup() {
 
   setTimeout(() => {
     popupContent.innerHTML = "";
-
-    if (lastFocusedElement) {
-      lastFocusedElement.focus();
-    }
+    if (lastFocusedElement) lastFocusedElement.focus();
   }, 180);
 }
 
 document.querySelectorAll(".project-link").forEach((button) => {
-  button.addEventListener("click", () => {
-    const projectKey = button.dataset.project;
-    openPopup(projectKey);
-  });
+  button.addEventListener("click", () => openPopup(button.dataset.project));
 });
 
 closeBtn.addEventListener("click", closePopup);
 
 popup.addEventListener("click", (event) => {
-  if (event.target === popup) {
-    closePopup();
-  }
+  if (event.target === popup) closePopup();
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && popup.classList.contains("active")) {
-    closePopup();
-  }
+  if (event.key === "Escape" && popup.classList.contains("active")) closePopup();
 });
 
 navMenuButton.addEventListener("click", () => {
@@ -215,7 +195,6 @@ function updateScrollProgress() {
   const scrollTop = window.scrollY;
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
-
   scrollProgress.style.width = `${progress}%`;
 }
 

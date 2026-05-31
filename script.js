@@ -7,125 +7,216 @@ const navList = document.getElementById("nav-links");
 
 const projectsData = {
   "discovering-barite": `
-    <h2 id="popup-title">discovering barite</h2>
+    <h2 id="popup-title">Discovering Barite</h2>
 
     <div class="popup-meta">
-      <span>augmented reality</span>
-      <span>unity</span>
-      <span>vuforia</span>
-      <span>image tracking</span>
-      <span>ui design</span>
-      <span>project coordination</span>
+      <span>Augmented Reality</span>
+      <span>Unity</span>
+      <span>Vuforia</span>
+      <span>Image Tracking</span>
+      <span>UI Design</span>
+      <span>Project Coordination</span>
     </div>
 
     <p>
-      as part of expanded realities – project 5 at darmstadt university of applied sciences, we developed
-      <strong>discovering barite</strong>, an educational mobile augmented reality experience created for the
-      spatschlucht near schriesheim in collaboration with the geo-naturpark bergstraße-odenwald.
+      As part of Expanded Realities – Project 5 at Darmstadt University of Applied Sciences, we developed
+      <strong>Discovering Barite</strong>, an educational mobile augmented reality experience created for the
+      Spatschlucht near Schriesheim in collaboration with the Geo-Naturpark Bergstraße-Odenwald.
     </p>
 
     <p>
-      the project uses augmented reality to reveal geological and historical layers shaped by roman-era barite mining —
-      elements that are no longer visible in the landscape. through staged interactions, visitors reconstruct the original
+      The project uses augmented reality to reveal geological and historical layers shaped by Roman-era barite mining —
+      elements no longer visible in the landscape. Through staged interactions, visitors reconstruct the original
       rock face and explore its interior by slicing through the virtual gorge to uncover hidden barite veins.
     </p>
 
-    <h3>my contribution</h3>
+    <h3>My contribution</h3>
     <ul>
-      <li>implemented and tested image tracking using vuforia.</li>
-      <li>worked on project coordination and production structure.</li>
-      <li>designed and optimized ui layouts for the mobile ar experience.</li>
-      <li>programmed interactive events and supported on-site integration.</li>
+      <li>Implemented and tested image tracking using Vuforia.</li>
+      <li>Worked on project coordination and production structure.</li>
+      <li>Designed and optimised UI layouts for the mobile AR experience.</li>
+      <li>Programmed interactive events and supported on-site integration.</li>
     </ul>
 
-    <h3>team</h3>
-    <p>karam sawaftah · jacopo perilli · antonela matanović</p>
+    <h3>Team</h3>
+    <p>Karam Sawaftah · Jacopo Perilli · Antonela Matanović</p>
 
-    <img src="images/discovering-barite.jpg" alt="discovering barite ar project preview" />
+    <img src="images/discovering-barite.jpg" alt="Discovering Barite AR project preview" />
 
     <div class="video-container">
       <iframe
         src="https://www.youtube.com/embed/iN2uR1dm6d4"
-        title="discovering barite trailer"
+        title="Discovering Barite trailer"
         allowfullscreen>
       </iframe>
     </div>
   `,
 
   "animal-garden": `
-    <h2 id="popup-title">animal garden</h2>
+    <h2 id="popup-title">Animal Garden</h2>
 
     <div class="popup-meta">
-      <span>interactive installation</span>
-      <span>unity</span>
-      <span>c#</span>
-      <span>exhibition</span>
-      <span>work project</span>
+      <span>Interactive Installation</span>
+      <span>Unity</span>
+      <span>C#</span>
+      <span>Hardware Build</span>
+      <span>Exhibition</span>
+      <span>Work Project</span>
+    </div>
+
+    <div class="popup-context-banner">
+      <img src="images/TimeLeapVR ArtWorld Logo 1380px.png" alt="TimeLeapVR ArtWorld logo" class="popup-context-logo" />
+      <div>
+        <p class="popup-context-title">TimeLeapVR ArtWorld — Mona Lisa's Geheimnis</p>
+        <p>
+          A large-scale immersive exhibition at The Squaire, Frankfurt Airport, blending Virtual Reality, AI,
+          and interactive art around the worlds of Leonardo da Vinci and Hieronymus Bosch.
+          Running from April 2025, the exhibition guided visitors through six themed rooms — from da Vinci's
+          studio to Bosch's Garden of Earthly Delights — culminating in a live conversation with an
+          AI-driven interactive Mona Lisa.
+        </p>
+      </div>
+    </div>
+
+    <h3>About the installation</h3>
+
+    <p>
+      <strong>Animal Garden</strong> is an interactive media installation I co-created with Riccardo Liguori
+      for videoreality GmbH, conceived and built entirely during my internship semester. It lived in
+      Room 4 of the exhibition — the immersive Bosch-world — as a hands-on creative station for visitors
+      of all ages.
+    </p>
+
+    <p>
+      Visitors would pick up a printed outline of a fantastical creature from Hieronymus Bosch's
+      <em>Garden of Earthly Delights</em>, colour it in however they wanted, then place it onto a scanner
+      surface. The system would automatically detect and cut out the coloured creature, import it as a
+      live asset into a Unity scene, and project it onto a large wall — making their drawing appear as a
+      moving, animated part of a growing digital garden alongside contributions from all other visitors.
+      The collage updated in real time, with older creatures gradually fading out to make room for new ones.
+    </p>
+
+    <div class="popup-image-grid">
+      <img src="images/visitors sitting.JPG" alt="Visitors at the Animal Garden coloring station" />
+      <img src="images/visitor coloring the print sheet.JPG" alt="Visitor colouring a creature print sheet" />
+    </div>
+    <div class="popup-image-grid">
+      <img src="images/visitor 1.JPG" alt="Visitor with finished drawing" />
+      <img src="images/visitor 2.JPG" alt="Visitors engaging with the installation" />
+    </div>
+
+    <h3>Building the scanner</h3>
+
+    <p>
+      One of the core challenges was translating physical drawings into clean digital assets in real time —
+      reliably, with minimal staff intervention, across a full exhibition day. Riccardo and I designed and
+      built a custom scanner kiosk from scratch to solve this.
+    </p>
+
+    <p>
+      The kiosk consists of a backlit scanning surface at table height with a camera mounted inside the
+      housing above it, pointed downward. When a visitor places their coloured sheet on the surface,
+      the camera captures the image. Custom software — built in Unity and integrated with a machine-vision
+      pipeline — automatically detects the printed registration markers on each sheet, isolates the
+      coloured drawing, removes the background, and exports a PNG with transparency. That asset is then
+      immediately loaded into the live projection scene.
+    </p>
+
+    <div class="popup-image-grid">
+      <img src="images/building progress (1).jpg" alt="Scanner kiosk — early wooden frame" />
+      <img src="images/building progress (2).jpg" alt="Scanner kiosk — frame with shelving" />
+    </div>
+    <div class="popup-image-grid">
+      <img src="images/building progress (3).jpg" alt="Scanner kiosk — hardware integration prototype" />
+      <img src="images/building progress (4).jpg" alt="Scanner kiosk — finished housing in black" />
+    </div>
+    <div class="popup-image-grid">
+      <img src="images/prototype.jpg" alt="Early prototype of the scanner station" />
+      <img src="images/testing the projection.jpg" alt="Testing the projection output in the exhibition space" />
     </div>
 
     <p>
-      <strong>animal garden</strong> is an interactive media installation created together with ricci liguori for
-      videoreality gmbh. it was exhibited at timeleapvr artworld – mona lisa's geheimnis in frankfurt am main.
+      The frame was built from timber, then clad in black-painted MDF panels for the final exhibition finish.
+      We went through several prototypes to get the camera angle, diffusion, and registration accuracy
+      right before the opening. The kiosk needed to be self-explanatory for visitors — no staff required —
+      so the interaction flow (place sheet, wait, see it appear on the wall) had to be immediate and clear.
     </p>
+
+    <h3>The projection scene</h3>
 
     <p>
-      the installation was developed in a real exhibition context and focused on creating an accessible, responsive,
-      and engaging visitor experience for a public audience.
+      The live Unity scene ran on a dedicated PC and received incoming creature assets as they were processed.
+      Each new creature would enter the garden with a short entrance animation, wander around for a set duration,
+      then gently fade out as newer contributions replaced it. The background was a stylised interpretation
+      of Bosch's painting, keeping the visual language of the exhibition consistent.
     </p>
 
-    <h3>my contribution</h3>
+    <img src="images/scene view.png" alt="Unity scene view of the Animal Garden projection" />
+    <img src="images/exhibit place (1).jpg" alt="Animal Garden installation in the exhibition space during setup" />
+
+    <h3>My contribution</h3>
     <ul>
-      <li>co-created the concept and interaction structure of the installation.</li>
-      <li>implemented and tested interactive behavior using unity and c#.</li>
-      <li>supported refinement for exhibition use and public visitor interaction.</li>
-      <li>worked on balancing playful discovery with clear interaction feedback.</li>
+      <li>Co-created the concept and interaction structure of the installation.</li>
+      <li>Designed and built the physical scanner kiosk together with Riccardo Liguori.</li>
+      <li>Developed the camera capture, image processing, and asset pipeline in Unity using C#.</li>
+      <li>Built the live projection scene including asset import, animation, and timed fade logic.</li>
+      <li>Iterated through multiple hardware prototypes to achieve reliable, unsupervised operation.</li>
+      <li>Supported testing, calibration, and refinement for exhibition use across the full run.</li>
     </ul>
 
-    <h3>context</h3>
+    <h3>Context</h3>
     <p>
-      shown as part of timeleapvr artworld – mona lisa's geheimnis, a large-scale immersive exhibition blending
-      virtual reality, ai, and interactive art experiences inspired by leonardo da vinci and hieronymus bosch.
+      Animal Garden was part of Room 4 — the immersive Bosch world — within TimeLeapVR ArtWorld –
+      Mona Lisa's Geheimnis, a large-scale exhibition at The Squaire, Frankfurt Airport. The exhibition
+      blended VR experiences, AI-driven talking paintings, interactive installations, and art-historical
+      content across 600+ m² and six themed rooms. Animal Garden served as the participatory, family-friendly
+      creative station within that space.
     </p>
+
+    <h3>Credits</h3>
+    <p>Concept and realisation: Antonela Matanović, Riccardo Liguori<br>
+    Technical support: Linus Steffens<br>
+    Exhibition: TimeLeapVR ArtWorld – Mona Lisa's Geheimnis, videoreality GmbH, 2025</p>
   `,
 
   insects: `
-    <h2 id="popup-title">insect's delegate: brumble's journey</h2>
+    <h2 id="popup-title">Insect's Delegate: Brumble's Journey</h2>
 
     <div class="popup-meta">
-      <span>virtual reality</span>
-      <span>unity</span>
-      <span>c#</span>
-      <span>interaction design</span>
-      <span>university project</span>
+      <span>Virtual Reality</span>
+      <span>Unity</span>
+      <span>C#</span>
+      <span>Interaction Design</span>
+      <span>University Project</span>
     </div>
 
     <p>
-      this virtual reality experience was created during winter semester 2024 in the project module
-      "discover space and time" at darmstadt university of applied sciences.
+      This virtual reality experience was created during Winter Semester 2024 in the project module
+      "Discover Space and Time" at Darmstadt University of Applied Sciences.
     </p>
 
     <p>
-      the experience introduces young audiences aged 12–16 to the vital role of insects through storytelling,
+      The experience introduces young audiences aged 12–16 to the vital role of insects through storytelling,
       exploration, and interactive learning.
     </p>
 
-    <h3>my contribution</h3>
+    <h3>My contribution</h3>
     <ul>
-      <li>implemented core interaction systems and gameplay logic in unity using c#.</li>
-      <li>designed player interaction flows supporting exploration and learning.</li>
-      <li>managed scene logic, triggers, and state progression across the experience.</li>
-      <li>supported project organization and team coordination.</li>
+      <li>Implemented core interaction systems and gameplay logic in Unity using C#.</li>
+      <li>Designed player interaction flows supporting exploration and learning.</li>
+      <li>Managed scene logic, triggers, and state progression across the experience.</li>
+      <li>Supported project organisation and team coordination.</li>
     </ul>
 
-    <h3>team</h3>
-    <p>jacopo perilli · lara heß · mutlu yakubov · antonela matanović · himanshu dahiya</p>
+    <h3>Team</h3>
+    <p>Jacopo Perilli · Lara Heß · Mutlu Yakubov · Antonela Matanović · Himanshu Dahiya</p>
 
-    <img src="images/main image.png" alt="insect's delegate cover image" />
+    <img src="images/main image.png" alt="Insect's Delegate cover image" />
 
     <div class="video-container">
       <iframe
         src="https://www.youtube.com/embed/hUOfJCqo2rE"
-        title="insect's delegate trailer"
+        title="Insect's Delegate trailer"
         allowfullscreen>
       </iframe>
     </div>

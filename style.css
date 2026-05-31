@@ -66,9 +66,7 @@ main {
   margin-bottom: 1rem;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   letter-spacing: -0.04em;
   line-height: 1.06;
 }
@@ -217,11 +215,7 @@ p {
   padding: 10px 20px;
   font-size: 0.9rem;
   cursor: pointer;
-  transition:
-    background 0.18s ease,
-    color 0.18s ease,
-    transform 0.18s ease,
-    border-color 0.18s ease;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
 }
 
 .button:hover,
@@ -299,17 +293,90 @@ p {
   font-size: 0.75rem;
 }
 
-/* ─── Experience + Education ─── */
+/* ─── Experience — employer blocks ─── */
 
-.two-col-section {
+.experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 32px;
+  align-items: start;
 }
 
-.two-col-block .section-label {
-  margin-bottom: 24px;
+.employer-block {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
+
+.employer-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none;
+  transition: background 0.18s ease;
+}
+
+.employer-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.employer-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.employer-logo--light {
+  filter: invert(1) brightness(0.75);
+}
+
+.employer-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.employer-meta {
+  font-size: 0.78rem;
+  color: var(--soft);
+}
+
+/* Timeline inside employer block */
+
+.employer-block .timeline {
+  padding: 20px 24px;
+  display: grid;
+  gap: 0;
+}
+
+.employer-block .timeline-item {
+  border-left: 1px solid var(--line);
+  padding: 0 0 24px 18px;
+  position: relative;
+}
+
+.employer-block .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--soft);
+}
+
+.employer-block .timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Standalone timeline (education secondary) */
 
 .timeline {
   display: grid;
@@ -350,8 +417,33 @@ p {
   color: var(--text);
 }
 
-/* Company link with logo */
+.timeline-item p:not(.timeline-date):not(.timeline-company) {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
 
+.timeline-company {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Sub-link inside timeline item (e.g. exhibition name) */
+.timeline-sub-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--soft);
+  margin-bottom: 8px;
+  transition: color 0.18s ease;
+  text-decoration: none;
+}
+
+.timeline-sub-link:hover {
+  color: var(--muted);
+}
+
+/* Company link with logo (used in education) */
 .timeline-company-link {
   display: inline-flex;
   align-items: center;
@@ -375,21 +467,106 @@ p {
   border-radius: 3px;
 }
 
-/* h_da logo is black on white — invert it for dark background */
 .timeline-logo--light {
   filter: invert(1) brightness(0.75);
 }
 
-.timeline-company {
-  color: var(--muted);
-  font-size: 0.88rem;
-  margin-bottom: 10px;
-  display: block;
+/* ─── Education ─── */
+
+.edu-grid {
+  display: grid;
+  gap: 48px;
 }
 
-.timeline-item p:not(.timeline-date):not(.timeline-company) {
+.edu-main {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.edu-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+}
+
+.edu-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+  margin: 0;
+  border: none;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+
+.edu-main:hover .edu-image {
+  filter: brightness(0.95);
+}
+
+.edu-content {
+  padding: 28px 32px 32px;
+}
+
+.edu-header {
+  margin-bottom: 16px;
+}
+
+.edu-degree {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.edu-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.edu-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edu-fact-label {
+  font-size: 0.7rem;
+  color: var(--soft);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.edu-fact-value {
   font-size: 0.9rem;
-  line-height: 1.65;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.edu-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.edu-focus span {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--soft);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
 }
 
 /* ─── Contact ─── */
@@ -447,13 +624,8 @@ p {
   display: none;
 }
 
-.contact-form-toggle[open] > summary::after {
-  content: ' ↑';
-}
-
-.contact-form-toggle:not([open]) > summary::after {
-  content: ' ↓';
-}
+.contact-form-toggle[open] > summary::after { content: ' ↑'; }
+.contact-form-toggle:not([open]) > summary::after { content: ' ↓'; }
 
 #contact-form {
   display: grid;
@@ -687,12 +859,17 @@ p {
 
 /* ─── Responsive ─── */
 
-@media (max-width: 860px) {
-  .two-col-section {
+@media (max-width: 900px) {
+  .experience-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
   }
 
+  .edu-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
   .project-row {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -785,5 +962,13 @@ p {
 
   .popup-image-grid {
     grid-template-columns: 1fr;
+  }
+
+  .edu-content {
+    padding: 20px;
+  }
+
+  .edu-facts {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

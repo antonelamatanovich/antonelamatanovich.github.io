@@ -166,11 +166,17 @@ p {
 
 .hero {
   min-height: 94vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 64px;
+  align-items: end;
   padding-top: 140px;
   padding-bottom: 88px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-text {
@@ -202,6 +208,30 @@ p {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 32px;
+}
+
+/* ─── Hero profile photo ─── */
+
+.hero-profile {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+}
+
+.hero-profile-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  filter: grayscale(15%);
+  transition: filter 0.3s ease;
+}
+
+.hero-profile-img:hover {
+  filter: grayscale(0%);
 }
 
 /* ─── Buttons ─── */
@@ -376,7 +406,7 @@ p {
   padding-bottom: 0;
 }
 
-/* Standalone timeline (education secondary) */
+/* Standalone timeline */
 
 .timeline {
   display: grid;
@@ -429,7 +459,6 @@ p {
   display: block;
 }
 
-/* Sub-link inside timeline item (e.g. exhibition name) */
 .timeline-sub-link {
   display: inline-block;
   font-size: 0.8rem;
@@ -443,7 +472,6 @@ p {
   color: var(--muted);
 }
 
-/* Company link with logo (used in education) */
 .timeline-company-link {
   display: inline-flex;
   align-items: center;
@@ -469,104 +497,6 @@ p {
 
 .timeline-logo--light {
   filter: invert(1) brightness(0.75);
-}
-
-/* ─── Education ─── */
-
-.edu-grid {
-  display: grid;
-  gap: 48px;
-}
-
-.edu-main {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface);
-}
-
-.edu-image-wrap {
-  width: 100%;
-  aspect-ratio: 16 / 7;
-  overflow: hidden;
-}
-
-.edu-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  border-radius: 0;
-  margin: 0;
-  border: none;
-  filter: brightness(0.85);
-  transition: filter 0.3s ease;
-}
-
-.edu-main:hover .edu-image {
-  filter: brightness(0.95);
-}
-
-.edu-content {
-  padding: 28px 32px 32px;
-}
-
-.edu-header {
-  margin-bottom: 16px;
-}
-
-.edu-degree {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 16px;
-  letter-spacing: -0.03em;
-}
-
-.edu-facts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin: 20px 0;
-  padding: 16px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.edu-fact {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.edu-fact-label {
-  font-size: 0.7rem;
-  color: var(--soft);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.edu-fact-value {
-  font-size: 0.9rem;
-  color: var(--text);
-  font-weight: 500;
-}
-
-.edu-focus {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.edu-focus span {
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--soft);
-  border-radius: 999px;
-  padding: 5px 12px;
-  font-size: 0.78rem;
 }
 
 /* ─── Contact ─── */
@@ -860,12 +790,26 @@ p {
 /* ─── Responsive ─── */
 
 @media (max-width: 900px) {
-  .experience-grid {
+  .hero {
     grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 120px;
+    gap: 40px;
   }
 
-  .edu-facts {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-profile {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .hero-profile-img {
+    width: 140px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -962,13 +906,5 @@ p {
 
   .popup-image-grid {
     grid-template-columns: 1fr;
-  }
-
-  .edu-content {
-    padding: 20px;
-  }
-
-  .edu-facts {
-    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -167,16 +167,17 @@ p {
 .hero {
   min-height: 94vh;
   display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 64px;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
   align-items: end;
   padding-top: 140px;
-  padding-bottom: 88px;
+  padding-bottom: 0;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
+  padding-bottom: 88px;
 }
 
 .hero-text {
@@ -213,10 +214,20 @@ p {
 /* ─── Hero profile photo ─── */
 
 .hero-profile {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 4px;
+  position: relative;
+  align-self: end;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.hero-profile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, transparent 40%, var(--bg) 100%),
+    linear-gradient(to right, var(--bg) 0%, transparent 20%);
+  pointer-events: none;
 }
 
 .hero-profile-img {
@@ -224,14 +235,13 @@ p {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  filter: grayscale(15%);
-  transition: filter 0.3s ease;
+  display: block;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.5s ease;
 }
 
-.hero-profile-img:hover {
-  filter: grayscale(0%);
+.hero-profile:hover .hero-profile-img {
+  filter: grayscale(20%) contrast(1.02);
 }
 
 /* ─── Buttons ─── */
@@ -794,18 +804,28 @@ p {
     grid-template-columns: 1fr;
     min-height: auto;
     padding-top: 120px;
-    gap: 40px;
+    padding-bottom: 0;
+    gap: 0;
+  }
+
+  .hero-content {
+    padding-bottom: 48px;
   }
 
   .hero-profile {
-    order: -1;
-    justify-content: flex-start;
+    border-radius: 0;
+    max-height: 280px;
+  }
+
+  .hero-profile::after {
+    background:
+      linear-gradient(to bottom, transparent 30%, var(--bg) 100%),
+      linear-gradient(to top, var(--bg) 0%, transparent 30%);
   }
 
   .hero-profile-img {
-    width: 140px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
+    aspect-ratio: 16 / 7;
+    object-position: center 20%;
   }
 
   .experience-grid {

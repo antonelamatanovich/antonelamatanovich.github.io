@@ -72,18 +72,37 @@
       <p class="section-label">Selected projects</p>
       <h2>Work and university projects with real context.</h2>
 
+      <div class="project-category-selector" aria-label="Project categories">
+        <button type="button" class="project-category-button active" data-category-filter="university" aria-pressed="true">university projects</button>
+        <button type="button" class="project-category-button" data-category-filter="work" aria-pressed="false">work projects</button>
+        <button type="button" class="project-category-button" data-category-filter="personal" aria-pressed="false">personal projects</button>
+      </div>
+
       <ul class="project-list" role="list">
 
-        <li class="project-row">
+        <li class="project-row" data-category="university">
+          <div class="project-row-main">
+            <h3>Blade of the Dawn</h3>
+            <p>Third-person Unity action-adventure game featuring melee combat, AI-driven enemies, exploration, NPC interaction, reusable gameplay systems, and event-driven architecture.</p>
+          </div>
+          <div class="project-row-right">
+            <div class="project-tags"><span>Unity</span><span>C#</span><span>Gameplay</span><span>AI</span><span>University</span></div>
+            <button class="project-link" type="button" data-project="blade-of-the-dawn">View case study &rarr;</button>
+          </div>
+        </li>
+
+
+        <li class="project-row" data-category="university">
           <div class="project-row-main">
             <h3>Discovering Barite</h3>
-            <p>Educational mobile AR experience for the Spatschlucht near Schriesheim, developed in collaboration with Geo-Naturpark Bergstraße-Odenwald.</p>
+            <p>A place-based mobile AR experience that reveals the hidden geological history of the Spatschlucht through spatial reconstruction, image tracking and interactive cross-section exploration.</p>
           </div>
           <div class="project-row-right">
             <div class="project-tags">
               <span>AR</span>
               <span>Unity</span>
               <span>Vuforia</span>
+              <span>Mobile</span>
               <span>University</span>
             </div>
             <button class="project-link" type="button" data-project="discovering-barite">
@@ -92,7 +111,7 @@
           </div>
         </li>
 
-        <li class="project-row">
+        <li class="project-row" data-category="work">
           <div class="project-row-main">
             <h3>Animal Garden</h3>
             <p>Interactive media installation co-created for videoreality GmbH and exhibited at TimeLeapVR ArtWorld – Mona Lisa's Geheimnis, Frankfurt.</p>
@@ -100,7 +119,8 @@
           <div class="project-row-right">
             <div class="project-tags">
               <span>Installation</span>
-              <span>Unity / C#</span>
+              <span>Unity</span>
+              <span>C#</span>
               <span>Work</span>
             </div>
             <button class="project-link" type="button" data-project="animal-garden">
@@ -109,15 +129,17 @@
           </div>
         </li>
 
-        <li class="project-row">
+        <li class="project-row" data-category="university">
           <div class="project-row-main">
-            <h3>Insect's Delegate: Brumble's Journey</h3>
-            <p>Educational VR experience for young audiences (ages 12–16), combining storytelling, exploration, and interactive learning.</p>
+            <h3>Insect&rsquo;s Delegate: Brumble&rsquo;s Journey</h3>
+            <p>An educational VR experience for young audiences that combines storytelling, exploration and interactive learning to communicate the importance of insects and pollinators.</p>
           </div>
           <div class="project-row-right">
             <div class="project-tags">
               <span>VR</span>
-              <span>Unity / C#</span>
+              <span>Unity</span>
+              <span>C#</span>
+              <span>Educational</span>
               <span>University</span>
             </div>
             <button class="project-link" type="button" data-project="insects">
@@ -127,6 +149,8 @@
         </li>
 
       </ul>
+
+      <p id="project-empty-state" class="project-empty-state" hidden>Personal projects will be added soon.</p>
     </section>
 
     <!-- EXPERIENCE -->

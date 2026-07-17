@@ -22,7 +22,7 @@ const projectsData = {
     <h3>My Contribution</h3><p>This was an individual project. I created the game concept and gameplay structure and implemented the complete experience in Unity and C#, including the player controller, combat, enemy AI, interactions, collectibles, scene progression, UI, animation and audio integration, testing, and refinement.</p>
     <h3>Challenges</h3><p>The main challenges were integrating independent systems into one stable experience, synchronising animation with hit detection and combat timing, coordinating AI states with NavMesh navigation, and keeping communication between UI, collectibles, combat, and scenes reusable.</p>
     <h3>What I Learned</h3><p>The project strengthened my Unity gameplay programming, component-based architecture, object-oriented programming, NavMesh, Animator state machines, event-driven systems, Scriptable Objects, scene management, and UI and audio integration skills while completing a full game rather than an isolated prototype.</p>
-    <h3>Project Links</h3><div class="project-external-links"><a href="https://github.com/antonelamatanovich/Blade-Of-The-Dawn" target="_blank" rel="noopener" class="project-external-link">GitHub &nearr;</a><!-- TODO: add Gameplay Walkthrough URL. --></div>  `,
+    <h3>Project Links</h3><div class="project-external-links"><a href="https://github.com/antonelamatanovich/Blade-Of-The-Dawn" target="_blank" rel="noopener" class="project-external-link">github &nearr;</a><!-- TODO: add Gameplay Walkthrough URL. --></div>  `,
 
   "discovering-barite": `
     <img class="project-hero-image project-hero-image--contain" src="images/third person view.png" alt="Visitor using the Discovering Barite mobile AR experience at the Spatschlucht" />

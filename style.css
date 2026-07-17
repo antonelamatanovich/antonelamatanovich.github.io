@@ -820,8 +820,19 @@ p {
 .quick-facts-grid dt { margin-bottom: 4px; color: var(--soft); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .quick-facts-grid dd { margin: 0; color: var(--text); font-size: 0.88rem; line-height: 1.45; }
 .popup-image-grid--single { grid-template-columns: 1fr; }
+.popup-media { margin: 14px 0 24px; }
+.popup-media img, .popup-gallery img { display: block; width: 100%; height: auto; object-fit: contain; }
+.popup-media--contained img { background: var(--surface); }
+.popup-media figcaption, .popup-gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.popup-gallery--four { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 14px 0 24px; }
+.popup-gallery--four figure { min-width: 0; margin: 0; }
 .popup-image-grid img.gallery-image--contain { object-fit: contain; background: var(--surface); }
 .project-media-note { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; }
+.project-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; margin-bottom: 16px; border-radius: 12px; background: var(--line); }
+.project-controls > div { display: grid; grid-template-columns: minmax(90px, auto) 1fr; gap: 12px; padding: 12px 14px; background: var(--surface); }
+.project-controls dt { color: var(--text); font-weight: 600; }
+.project-controls dd { margin: 0; color: var(--muted); }
+#popup-inner-content pre { max-width: 100%; overflow-x: auto; margin: 12px 0 22px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--text); font-size: 0.86rem; line-height: 1.55; }
 .project-external-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 #popup-inner-content .project-external-link { display: inline-block; border: 1px solid var(--text); border-radius: 999px; padding: 10px 18px; color: var(--text); text-decoration: none; transition: color 0.18s ease, background 0.18s ease, transform 0.18s ease; }
 #popup-inner-content .project-external-link:hover { background: var(--text); color: var(--bg); transform: translateY(-2px); }
@@ -883,6 +894,8 @@ p {
 
 @media (max-width: 680px) {
   .quick-facts-grid { grid-template-columns: 1fr; }
+  .popup-gallery--four { grid-template-columns: 1fr; }
+  .project-controls { grid-template-columns: 1fr; }
   .project-category-selector { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
   .project-category-button { flex: 0 0 auto; }
   main {

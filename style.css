@@ -823,6 +823,7 @@ p {
 .popup-media { margin: 14px 0 24px; }
 .popup-media img, .popup-gallery img { display: block; width: 100%; height: auto; object-fit: contain; }
 .popup-media--contained img { background: var(--surface); }
+.popup-media--narrow { width: min(100%, 360px); margin-right: auto; margin-left: auto; }
 .popup-media figcaption, .popup-gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 .popup-gallery { display: grid; gap: 16px; margin: 14px 0 24px; }
 .popup-gallery--two, .popup-gallery--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }

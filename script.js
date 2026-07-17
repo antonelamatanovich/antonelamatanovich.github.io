@@ -7,7 +7,6 @@ const navList = document.getElementById("nav-links");
 
 const projectsData = {
   "blade-of-the-dawn": `
-    <img class="project-hero-image" onerror="this.hidden=true" src="images/blade-hero.jpg" alt="Blade of the Dawn Japanese-inspired game environment" />
     <h2 id="popup-title">Blade of the Dawn</h2>
     <div class="popup-meta"><span>Third-Person Game</span><span>Unity</span><span>C#</span><span>Gameplay Systems</span><span>Enemy AI</span><span>Individual Project</span></div>
     <section class="project-quick-facts" aria-labelledby="blade-facts-title"><h3 id="blade-facts-title">Quick Facts</h3><dl class="quick-facts-grid">
@@ -17,12 +16,11 @@ const projectsData = {
     </dl></section>
     <h3>Overview</h3><p><strong>Blade of the Dawn</strong> is a third-person 3D action-adventure game developed as the individual final project for ER-T2. Players explore a Japanese-inspired village and castle, interact with NPCs, collect items, fight enemy guards, and progress towards a final boss. Multiple gameplay systems form one complete playable experience.</p>
     <h3>Video</h3><!-- TODO: add the Gameplay Walkthrough when the YouTube URL is available. --><p class="project-media-note">Gameplay walkthrough coming soon.</p>
-    <h3>Gallery</h3><div class="popup-image-grid"><img onerror="this.hidden=true" src="images/blade-01.jpg" alt="Blade of the Dawn third-person gameplay" /><img onerror="this.hidden=true" src="images/blade-02.jpg" alt="Exploration in Blade of the Dawn" /><img onerror="this.hidden=true" src="images/blade-03.jpg" alt="Boss encounter in Blade of the Dawn" /><img onerror="this.hidden=true" src="images/blade-04.jpg" alt="Blade of the Dawn gameplay UI and environment" /></div>
     <h3>Technical Highlights</h3><p>A third-person character controller supports a three-stage melee combo through Animator integration and trigger-based hit detection. NavMesh enemies use idle, patrol, chase, attack, damage, and death states. Collectible and health pickups use Scriptable Objects and Unity Events for communication across combat, UI, audio, and three connected scenes.</p>
     <h3>My Contribution</h3><p>This was an individual project. I created the game concept and gameplay structure and implemented the complete experience in Unity and C#, including the player controller, combat, enemy AI, interactions, collectibles, scene progression, UI, animation and audio integration, testing, and refinement.</p>
     <h3>Challenges</h3><p>The main challenges were integrating independent systems into one stable experience, synchronising animation with hit detection and combat timing, coordinating AI states with NavMesh navigation, and keeping communication between UI, collectibles, combat, and scenes reusable.</p>
     <h3>What I Learned</h3><p>The project strengthened my Unity gameplay programming, component-based architecture, object-oriented programming, NavMesh, Animator state machines, event-driven systems, Scriptable Objects, scene management, and UI and audio integration skills while completing a full game rather than an isolated prototype.</p>
-    <h3>Project Links</h3><div class="project-external-links"><a href="https://github.com/antonelamatanovich/Blade-Of-The-Dawn" target="_blank" rel="noopener" class="project-external-link">github &nearr;</a><!-- TODO: add Gameplay Walkthrough URL. --></div>  `,
+    <h3>Project Links</h3><div class="project-external-links"><a href="https://github.com/antonelamatanovich/Blade-Of-The-Dawn" target="_blank" rel="noopener" class="project-external-link">GitHub &nearr;</a><!-- TODO: add Gameplay Walkthrough URL. --></div>  `,
 
   "retro-snake": `
     <h2 id="popup-title">Retro Snake</h2>
@@ -221,7 +219,7 @@ function filterProjects(category) {
     if (isVisible) visibleProjects += 1;
   });
 
-  projectEmptyState.hidden = visibleProjects > 0;
+  if (projectEmptyState) projectEmptyState.hidden = visibleProjects > 0;
 }
 
 categoryButtons.forEach((button) => {
@@ -229,7 +227,7 @@ categoryButtons.forEach((button) => {
 });
 
 filterProjects("university");
-document.querySelectorAll(".project-link").forEach((button) => {
+document.querySelectorAll(".project-trigger, .project-link").forEach((button) => {
   button.addEventListener("click", () => openPopup(button.dataset.project));
 });
 

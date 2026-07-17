@@ -827,6 +827,8 @@ p {
 .popup-gallery { display: grid; gap: 16px; margin: 14px 0 24px; }
 .popup-gallery--two, .popup-gallery--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .popup-gallery figure { min-width: 0; margin: 0; }
+.popup-gallery--characters figure { padding: 14px; border-radius: 12px; background: var(--surface); }
+.popup-gallery--characters img { max-height: 220px; margin-inline: auto; }
 .popup-image-grid img.gallery-image--contain { object-fit: contain; background: var(--surface); }
 .project-media-note { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; }
 .project-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; margin-bottom: 16px; border-radius: 12px; background: var(--line); }

@@ -1,4 +1,4 @@
-const popup = document.getElementById("project-popup");
+﻿const popup = document.getElementById("project-popup");
 const popupContent = document.getElementById("popup-inner-content");
 const closeBtn = document.getElementById("popup-close");
 const scrollProgress = document.getElementById("scroll-progress");
@@ -48,10 +48,10 @@ const projectsData = {
   `,
   "discovering-barite": `
     <h2 id="popup-title">Discovering Barite</h2>
-    <div class="popup-meta"><span>Mobile AR</span><span>Unity</span><span>Vuforia</span><span>Image tracking</span><span>Spatial interaction</span><span>University team project</span></div>
+    <div class="popup-meta"><span>Mobile Augmented Reality</span><span>Unity</span><span>Vuforia</span><span>Image tracking</span><span>Spatial interaction</span><span>University Team Project</span></div>
 
     <section class="project-quick-facts" aria-labelledby="barite-facts-title"><h3 id="barite-facts-title">Quick facts</h3><dl class="quick-facts-grid">
-      <div><dt>University</dt><dd>Darmstadt University of Applied Sciences (h_da), Germany</dd></div><div><dt>Faculty</dt><dd>Faculty of Media</dd></div><div><dt>Study Programme</dt><dd>Bachelor of Arts (B.A.) &ndash; Expanded Realities</dd></div><div><dt>Course</dt><dd>Project 5</dd></div><div><dt>Semester</dt><dd>Winter Semester 2025/2026</dd></div><div><dt>Project Type</dt><dd>University team project</dd></div><div><dt>Context</dt><dd>UNESCO Global Geopark / Geo-Naturpark Bergstra&szlig;e-Odenwald</dd></div><div><dt>Location</dt><dd>Spatschlucht near Schriesheim, Germany</dd></div><div><dt>Format</dt><dd>Place-Based Mobile AR Experience</dd></div><div><dt>Engine</dt><dd>Unity 6.2</dd></div><div><dt>Tracking</dt><dd>Vuforia 11.4.4</dd></div><div><dt>Render Pipeline</dt><dd>Universal Render Pipeline (URP)</dd></div><div><dt>Platform</dt><dd>Android</dd></div>
+      <div><dt>University</dt><dd>Darmstadt University of Applied Sciences (h_da), Germany</dd></div><div><dt>Faculty</dt><dd>Faculty of Media</dd></div><div><dt>Study Programme</dt><dd>Bachelor of Arts (B.A.) &ndash; Expanded Realities</dd></div><div><dt>Course</dt><dd>Project 5</dd></div><div><dt>Semester</dt><dd>Winter Semester 2025/2026</dd></div><div><dt>Project Type</dt><dd>University Team Project</dd></div><div><dt>Context</dt><dd>UNESCO Global Geopark / Geo-Naturpark Bergstra&szlig;e-Odenwald</dd></div><div><dt>Location</dt><dd>Spatschlucht near Schriesheim, Germany</dd></div><div><dt>Format</dt><dd>Place-Based Mobile AR Experience</dd></div><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Tracking</dt><dd>Vuforia</dd></div><div><dt>Render Pipeline</dt><dd>Universal Render Pipeline (URP)</dd></div><div><dt>Platform</dt><dd>Android</dd></div>
     </dl></section>
 
     <h3>Overview</h3>
@@ -83,7 +83,7 @@ const projectsData = {
     <p>The first prototype placed content between two opposing tracked walls and focused on a freely sliced rock sample. Testing shifted the concept towards one complete, readable rock face controlled by a guided slider. This changed the project from a technically driven AR demonstration into an experience-led interpretation of the site, while preserving the central idea: use AR to look inside the landscape.</p>
 
     <h3>Technical architecture</h3>
-    <p>The final Android build uses Unity 6.2, Vuforia 11.4.4 and the Universal Render Pipeline. Vuforia recognises the physical image target and anchors the reconstructed gorge; Unity manages the question sequence, progress feedback, UI states and the shader-driven reveal. The final project moved away from the earlier Unity 2022.3, AR Foundation and ARCore prototype stack.</p>
+    <p>The final Android build uses Unity, Vuforia and the Universal Render Pipeline. Vuforia recognises the physical image target and anchors the reconstructed gorge; Unity manages the question sequence, progress feedback, UI states and the shader-driven reveal. The final project moved away from the earlier Unity 2022.3, AR Foundation and ARCore prototype stack.</p>
 
     <h3>Image-based anchoring</h3>
     <p>Early research considered GPS placement, but unreliable precision and limited connectivity at the gorge made it unsuitable for a tightly aligned experience. Image tracking provided a local, repeatable reference that works without depending on a network connection. The target was tested across different lighting conditions, viewing angles and surfaces to improve recognition and alignment.</p>
@@ -93,7 +93,7 @@ const projectsData = {
     <figure class="popup-media popup-media--contained popup-media--narrow"><img loading="lazy" src="images/third person view.png" alt="Indoor test of the Discovering Barite mobile application using an image marker to anchor the simulated gorge content" class="popup-image popup-image--contained" /><figcaption>Image-tracking and placement could be tested repeatedly indoors before returning to the real Spatschlucht.</figcaption></figure>
 
     <h3>Technical highlights</h3>
-    <ul><li>Local image-target anchoring designed for a site with limited connectivity and unreliable GPS precision.</li><li>A real-time clipping-plane shader controlled by an accessible mobile UI slider.</li><li>A guided state flow connecting tutorial steps, three questions, progress feedback and the final geological reveal.</li><li>A 3D-scanned virtual gorge used for repeatable indoor iteration and spatial calibration.</li><li>Migration to Unity 6.2 and URP, including material, shader and mobile-performance adjustments.</li></ul>
+    <ul><li>Local image-target anchoring designed for a site with limited connectivity and unreliable GPS precision.</li><li>A real-time clipping-plane shader controlled by an accessible mobile UI slider.</li><li>A guided state flow connecting tutorial steps, three questions, progress feedback and the final geological reveal.</li><li>A 3D-scanned virtual gorge used for repeatable indoor iteration and spatial calibration.</li><li>Migration to Unity and URP, including material, shader and mobile-performance adjustments.</li></ul>
 
     <h3>My contribution</h3>
     <h4>UI &amp; interaction</h4><ul><li>Designed, refined and optimised the mobile UI layout, including the question interface and progress flow.</li><li>Connected interface elements to the experience state handler and guided user journey.</li></ul>
@@ -140,7 +140,7 @@ const projectsData = {
     <h2 id="popup-title">Insect&rsquo;s Delegate: Brumble&rsquo;s Journey</h2>
     <div class="popup-meta"><span>Virtual Reality</span><span>Unity</span><span>C#</span><span>Educational Experience</span><span>Interaction Design</span><span>University Team Project</span></div>
     <section class="project-quick-facts" aria-labelledby="insects-facts-title"><h3 id="insects-facts-title">Quick facts</h3><dl class="quick-facts-grid">
-      <div><dt>University</dt><dd>Darmstadt University of Applied Sciences (h_da), Germany</dd></div><div><dt>Faculty</dt><dd>Faculty of Media</dd></div><div><dt>Study Programme</dt><dd>Bachelor of Arts (B.A.) &ndash; Expanded Realities</dd></div><div><dt>Course</dt><dd>Project 3 &ndash; Discover Space and Time: Hidden Ventures Beyond the Spotlight</dd></div><div><dt>Semester</dt><dd>Winter Semester 2024/2025</dd></div><div><dt>Project Type</dt><dd>University team project</dd></div><div><dt>Target Audience</dt><dd>Ages 12&ndash;16</dd></div><div><dt>Format</dt><dd>Virtual Reality Experience</dd></div><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Language</dt><dd>C#</dd></div>
+      <div><dt>University</dt><dd>Darmstadt University of Applied Sciences (h_da), Germany</dd></div><div><dt>Faculty</dt><dd>Faculty of Media</dd></div><div><dt>Study Programme</dt><dd>Bachelor of Arts (B.A.) &ndash; Expanded Realities</dd></div><div><dt>Course</dt><dd>Project 3 &ndash; Discover Space and Time: Hidden Ventures Beyond the Spotlight</dd></div><div><dt>Semester</dt><dd>Winter Semester 2024/2025</dd></div><div><dt>Project Type</dt><dd>University Team Project</dd></div><div><dt>Target Audience</dt><dd>Ages 12&ndash;16</dd></div><div><dt>Format</dt><dd>Virtual Reality Experience</dd></div><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Language</dt><dd>C#</dd></div>
     </dl></section>
     <h3>Overview</h3>
     <p><strong>Insect&rsquo;s Delegate: Brumble&rsquo;s Journey</strong> is an educational virtual reality narrative created for audiences aged 12&ndash;16. Inspired by the Senckenberg Naturmuseum Frankfurt exhibition <em>City Insects: Frankfurt&rsquo;s Tiny Helpers</em>, the experience combines storytelling, exploration and hands-on learning to introduce the ecological importance of insects without presenting itself as a museum application.</p>

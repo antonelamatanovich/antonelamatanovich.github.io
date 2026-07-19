@@ -258,11 +258,14 @@ main, .site-footer {
   display: grid;
   gap: var(--space-3);
   align-content: start;
-  min-height: 290px;
-  padding: clamp(1.5rem, 3vw, 2.25rem);
+  min-height: 0;
+  padding: clamp(1.1rem, 2vw, 1.5rem);
   border-top: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255,255,255,.025), transparent 65%);
 }
+.additional-project__media { overflow: hidden; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); cursor: pointer; }
+.additional-project__media img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 350ms var(--ease), filter 350ms ease; }
+.additional-project__media:hover img, .additional-project__media:focus-visible img { transform: scale(1.018); }
 .additional-project h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); }
 .additional-project .text-action { margin-top: auto; }
 
@@ -464,6 +467,10 @@ main, .site-footer {
   border: 1px solid var(--line);
 }
 
+.project-video-block { margin-top: 14px; }
+#popup-inner-content .project-video-block h4 { margin-bottom: 0; color: var(--text); font-size: 1rem; }
+.project-links-section .video-container { margin-bottom: 20px; }
+
 .video-container iframe {
   width: 100%;
   height: 100%;
@@ -554,6 +561,8 @@ main, .site-footer {
 .experience-journey--compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-study-card-grid, .contribution-grid, .challenge-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 14px 0 24px; }
 .case-study-card-grid article, .contribution-grid article, .challenge-grid article { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.02); }
+.case-study-card-grid article .popup-media { margin-bottom: 0; }
+.case-study-card-grid article .popup-media img { aspect-ratio: 16 / 9; object-fit: cover; }
 #popup-inner-content .case-study-card-grid h4, #popup-inner-content .contribution-grid h4, #popup-inner-content .challenge-grid h4 { margin: 0 0 7px; color: var(--text); font-size: .94rem; }
 #popup-inner-content .case-study-card-grid p, #popup-inner-content .contribution-grid p, #popup-inner-content .challenge-grid p { margin: 0; font-size: .9rem; }
 #popup-inner-content .experience-stage-number { margin-bottom: 7px; color: var(--soft); font-size: .72rem; letter-spacing: .1em; }
@@ -598,6 +607,7 @@ main, .site-footer {
 .popup-media figcaption, .popup-gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 .popup-gallery { display: grid; gap: 16px; margin: 14px 0 24px; }
 .popup-gallery--two, .popup-gallery--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.popup-gallery--single { grid-template-columns: 1fr; }
 .popup-gallery figure { min-width: 0; margin: 0; }
 .popup-gallery--characters figure { padding: 14px; border-radius: 12px; background: var(--surface); }
 .popup-gallery--characters img { max-height: 220px; margin-inline: auto; }

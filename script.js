@@ -173,6 +173,111 @@ const projectsData = {
     <h3>Project links</h3><div class="project-external-links"><a href="https://www.youtube.com/watch?v=hUOfJCqo2rE" target="_blank" rel="noopener" class="project-external-link">Watch project video &nearr;</a><a href="https://museumfrankfurt.senckenberg.de/en/" target="_blank" rel="noopener" class="project-external-link" aria-label="Exhibition Inspiration: Senckenberg Naturmuseum Frankfurt">Senckenberg Naturmuseum Frankfurt &nearr;</a></div>  `
 };
 
+const caseStudyEnhancements = {
+  "blade-of-the-dawn": {
+    decisions: [["Readable Combat", "A three-stage combo gives attacks clear rhythm and feedback."], ["System-Led Progression", "Exploration, pickups, NPCs and combat support one complete journey."]],
+    results: ["Complete Playable Game", "Three Connected Scenes", "Individual Delivery"]
+  },
+  "retro-snake": {
+    decisions: [["Grid-Based Movement", "Fixed steps preserve the rhythm of classic Snake."], ["Guided Onboarding", "Dedicated controls and rules screens prepare first-time players."], ["Reliable Replay", "Every gameplay value resets together for a consistent new run."]],
+    results: ["Complete Desktop Game", "Five Interface States", "Individual Delivery"]
+  },
+  "discovering-barite": {
+    results: ["Working Android Prototype", "On-Site Validation", "Three-Person Team Delivery"]
+  },
+  "animal-garden": {
+    decisions: [["Scanner Over Touchscreen", "Paper colouring is familiar, tactile and visible in the exhibition space."], ["Preserve the Drawing", "Character silhouettes and rigs keep visitor marks recognisable in motion."], ["Shared Projection", "A large garden rewards each visitor while remaining social for the room."], ["Continuous Operation", "Animal recycling supports a stable, long-running public installation."]],
+    results: ["Public Exhibition", "Production Installation", "Visitor Testing", "Team Delivery"]
+  },
+  insects: {
+    decisions: [["Learning Through Action", "Conservation ideas are embedded in placing, riding, climbing and pollinating."], ["Brumble as a Guide", "A friendly character and voice-acted dialogue structure the journey for young players."], ["Scale as Storytelling", "Moving from city scale to insect scale makes a hidden ecosystem tangible."], ["Guided and Direct Movement", "Mounted flight alternates with hands-on tasks to balance comfort and agency."]],
+    results: ["Completed University Project", "Working VR Experience", "User-Tested Interactions", "Five-Person Team Delivery"]
+  }
+};
+
+function buildDecisionSection(items) {
+  if (!items) return null;
+  const section = document.createElement("section");
+  section.className = "case-study-section";
+  section.innerHTML = `<h3>Design Decisions</h3><div class="decision-grid">${items.map(([title, copy]) => `<article><h4>${title}</h4><p>${copy}</p></article>`).join("")}</div>`;
+  return section;
+}
+
+function unifyCaseStudy(projectKey) {
+  const enhancement = caseStudyEnhancements[projectKey];
+  const headingAliases = {
+    "Quick facts": "Quick Facts", "Project links": "Project Links", "Gameplay": "The Experience", "Gameplay preview": "The Experience", "Interface & game states": "The Experience", "Controls": "The Experience", "User journey": "The Experience", "Experience journey": "The Experience",
+    "Design objectives": "Design Decisions", "Concept evolution": "Design Decisions", "Image-based anchoring": "Design Decisions",
+    "Technical highlights": "Technical Implementation", "Technical architecture": "Technical Implementation", "Interactive geological cross-section": "Technical Implementation", "Indoor Spatschlucht simulation": "Technical Implementation",
+    "My contribution": "My Contribution", "What I learned": "Reflection", "Future improvements": "Reflection",
+    "Testing & exhibition": "Gallery", "Animal character set": "Gallery", "Building the scanner station": "Gallery",
+    "Team": "Results", "Team & credits": "Results", "Collaboration": "Results", "Video": "Project Links"
+  };
+  popupContent.querySelectorAll("h3").forEach((heading) => {
+    const replacement = headingAliases[heading.textContent.trim()];
+    if (replacement) heading.textContent = replacement;
+  });
+  popupContent.querySelectorAll("h4").forEach((heading) => {
+    const name = heading.textContent.trim().toLowerCase();
+    if (name.includes("design") || name.includes("art") || name.includes("environment")) heading.textContent = "Design";
+    else if (name.includes("develop") || name.includes("program")) heading.textContent = "Development";
+    else if (name.includes("integrat") || name.includes("hardware")) heading.textContent = "Integration";
+    else if (name.includes("test")) heading.textContent = "Testing";
+    else if (name.includes("production") || name.includes("planning") || name.includes("coordination")) heading.textContent = "Coordination";
+  });
+  const quickFacts = popupContent.querySelector(".project-quick-facts");
+  const firstFigure = popupContent.querySelector("figure");
+  if (quickFacts && firstFigure && !quickFacts.contains(firstFigure)) {
+    firstFigure.classList.add("case-study-hero-media");
+    quickFacts.insertAdjacentElement("afterend", firstFigure);
+  }
+  if (enhancement?.decisions && ![...popupContent.querySelectorAll("h3")].some((h) => h.textContent === "Design Decisions")) {
+    const experience = [...popupContent.querySelectorAll("h3")].find((h) => h.textContent === "The Experience");
+    const technical = [...popupContent.querySelectorAll("h3")].find((h) => h.textContent === "Technical Implementation");
+    const section = buildDecisionSection(enhancement.decisions);
+    (technical || experience)?.parentNode.insertBefore(section, technical || experience.nextSibling);
+  }
+  const reflection = [...popupContent.querySelectorAll("h3")].find((h) => h.textContent === "Reflection");
+  if (enhancement && reflection) {
+    const results = document.createElement("section");
+    results.className = "case-study-section";
+    results.innerHTML = `<h3>Results</h3><div class="result-strip">${enhancement.results.map((item) => `<span>${item}</span>`).join("")}</div>`;
+    reflection.parentNode.insertBefore(results, reflection);
+  }
+  popupContent.querySelectorAll("h3").forEach((heading) => {
+    if (heading.closest("section")) heading.closest("section").classList.add("case-study-section");
+  });
+  const chapterOrder = ["Overview", "The Experience", "Design Decisions", "Technical Implementation", "My Contribution", "Challenges", "Results", "Gallery", "Reflection", "Project Links"];
+  const children = [...popupContent.children];
+  const prelude = [];
+  const blocks = [];
+  let currentBlock = null;
+  children.forEach((child) => {
+    const directHeading = child.matches("h3") ? child : child.matches("section") ? child.querySelector(":scope > h3") : null;
+    if (directHeading) {
+      currentBlock = { title: directHeading.textContent.trim(), nodes: [child] };
+      blocks.push(currentBlock);
+    } else if (currentBlock) currentBlock.nodes.push(child);
+    else prelude.push(child);
+  });
+  if (blocks.length) {
+    const fragment = document.createDocumentFragment();
+    prelude.forEach((node) => fragment.appendChild(node));
+    chapterOrder.forEach((title) => blocks.filter((block) => block.title === title).forEach((block) => block.nodes.forEach((node) => fragment.appendChild(node))));
+    blocks.filter((block) => !chapterOrder.includes(block.title)).forEach((block) => block.nodes.forEach((node) => fragment.appendChild(node)));
+    popupContent.appendChild(fragment);
+  }
+  const challengeHeading = [...popupContent.querySelectorAll("h3")].find((h) => h.textContent === "Challenges");
+  if (challengeHeading?.nextElementSibling?.matches("ul")) challengeHeading.nextElementSibling.classList.add("challenge-list");
+  const title = popupContent.querySelector("#popup-title");
+  if (title) {
+    const label = document.createElement("p");
+    label.className = "case-study-label";
+    label.textContent = projectKey === "animal-garden" ? "PROFESSIONAL WORK · PUBLIC EXHIBITION" : "UNIVERSITY PROJECT";
+    title.insertAdjacentElement("beforebegin", label);
+  }
+}
+
 let lastFocusedElement = null;
 
 function openPopup(projectKey) {
@@ -180,6 +285,7 @@ function openPopup(projectKey) {
   if (!content) return;
   lastFocusedElement = document.activeElement;
   popupContent.innerHTML = content;
+  unifyCaseStudy(projectKey);
   popup.classList.add("active");
   popup.setAttribute("aria-hidden", "false");
   document.body.classList.add("no-scroll");

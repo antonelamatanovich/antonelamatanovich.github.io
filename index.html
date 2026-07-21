@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
       <div class="hero-content">
         <p class="eyebrow">Antonela Matanović · XR Developer &amp; Designer</p>
         <h1 id="hero-title">Immersive experiences built through real-time interaction and physical-digital systems.</h1>
-        <p class="hero-text">B.A. Expanded Realities student at Darmstadt University of Applied Sciences, currently working at videoreality GmbH across XR prototyping, AI-driven immersive systems and interactive exhibition experiences.</p>
+        <p class="hero-text">B.A. Augmented and Virtual Reality Design student (programme formerly known as Expanded Realities) at Darmstadt University of Applied Sciences, currently working at videoreality GmbH across XR prototyping, AI-driven immersive systems and interactive exhibition experiences.</p>
         <div class="hero-actions">
           <a href="#work" class="button button--primary">View selected work</a>
           <a href="#contact" class="button button--secondary">Contact me</a>
@@ -50,16 +50,8 @@
 
       <div class="featured-projects">
         <article class="featured-project featured-project--primary">
-          <button class="featured-project__media project-trigger" type="button" data-project="insects" aria-label="View Insect's Delegate: Brumble's Journey case study">
-            <img src="images/brumble.png" width="1474" height="829" fetchpriority="high" alt="Brumble the bee in the colourful insect-scale VR environment" />
-          </button>
-          <div class="featured-project__content">
-            <p class="project-kicker"></span>UNIVERSITY PROJECT</p>
-            <h3>Insect’s Delegate: Brumble’s Journey</h3>
-            <p>An educational VR experience for young audiences combining storytelling, exploration and interactive learning about insects and pollinators.</p>
-            <dl class="project-metadata"><div><dt>Role</dt><dd>XR Development · Interaction Design · Project Coordination</dd></div><div><dt>Format</dt><dd>VR Narrative Experience</dd></div><div><dt>Key technologies</dt><dd>Unity · C# · XR Interaction Toolkit</dd></div></dl>
-            <button class="text-action project-trigger" type="button" data-project="insects">View case study <span aria-hidden="true">↗</span></button>
-          </div>
+          <button class="featured-project__media project-trigger" type="button" data-project="arvi" aria-label="View ARVI case study"><img src="images/arvi.gif" loading="lazy" alt="ARVI, the mixed reality AI companion developed for the AVRD study programme." /></button>
+          <div class="featured-project__content"><p class="project-kicker">UNIVERSITY PROJECT</p><h3>ARVI &ndash; Autonomous Robotic Virtual Intelligence</h3><p>A mixed reality AI companion designed to welcome, support and coach the AVRD community through a fully local language model.</p><dl class="project-metadata"><div><dt>Role</dt><dd>AI System Design &middot; Dataset Development &middot; Model Deployment</dd></div><div><dt>Format</dt><dd>Mixed Reality AI Companion</dd></div><div><dt>Key technologies</dt><dd>Meta Quest 3 &middot; Unity &middot; Qwen 2.5 &middot; LoRA &middot; llama.cpp</dd></div></dl><button class="text-action project-trigger" type="button" data-project="arvi">View case study <span aria-hidden="true">&nearr;</span></button></div>
         </article>
         <article class="featured-project featured-project--primary featured-project--reverse">
           <button class="featured-project__media project-trigger" type="button" data-project="animal-garden" aria-label="View Animal Garden case study">
@@ -74,9 +66,18 @@
           </div>
         </article>
         <article class="featured-project featured-project--primary">
-          <button class="featured-project__media project-trigger" type="button" data-project="arvi" aria-label="View ARVI case study"><img src="images/arvi.gif" loading="lazy" alt="ARVI, the mixed reality AI companion developed for the AVRD study programme." /></button>
-          <div class="featured-project__content"><p class="project-kicker">UNIVERSITY PROJECT</p><h3>ARVI &ndash; Autonomous Robotic Virtual Intelligence</h3><p>A mixed reality AI companion designed to welcome, support and coach the AVRD community through a fully local language model.</p><dl class="project-metadata"><div><dt>Role</dt><dd>AI System Design &middot; Dataset Development &middot; Model Deployment</dd></div><div><dt>Format</dt><dd>Mixed Reality AI Companion</dd></div><div><dt>Key technologies</dt><dd>Meta Quest 3 &middot; Unity &middot; Qwen 2.5 &middot; LoRA &middot; llama.cpp</dd></div></dl><button class="text-action project-trigger" type="button" data-project="arvi">View case study <span aria-hidden="true">&nearr;</span></button></div>
-        </article>        <article class="featured-project featured-project--supporting">
+          <button class="featured-project__media project-trigger" type="button" data-project="insects" aria-label="View Insect's Delegate: Brumble's Journey case study">
+            <img src="images/brumble.png" width="1474" height="829" fetchpriority="high" alt="Brumble the bee in the colourful insect-scale VR environment" />
+          </button>
+          <div class="featured-project__content">
+            <p class="project-kicker"></span>UNIVERSITY PROJECT</p>
+            <h3>Insect’s Delegate: Brumble’s Journey</h3>
+            <p>An educational VR experience for young audiences combining storytelling, exploration and interactive learning about insects and pollinators.</p>
+            <dl class="project-metadata"><div><dt>Role</dt><dd>XR Development · Interaction Design · Project Coordination</dd></div><div><dt>Format</dt><dd>VR Narrative Experience</dd></div><div><dt>Key technologies</dt><dd>Unity · C# · XR Interaction Toolkit</dd></div></dl>
+            <button class="text-action project-trigger" type="button" data-project="insects">View case study <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
+        <article class="featured-project featured-project--supporting featured-project--reverse">
           <button class="featured-project__media project-trigger" type="button" data-project="discovering-barite" aria-label="View Discovering Barite case study">
             <img src="images/discovering barite.gif" width="1280" height="720" loading="lazy" alt="Discovering Barite mobile AR experience revealing the geology of the Spatschlucht" />
           </button>
@@ -136,10 +137,10 @@
         <h2 id="capabilities-title">Designing and building across the complete XR experience.</h2>
       </header>
       <div class="capabilities-grid">
-        <article><p class="capability-number">01</p><h3>XR Development</h3><ul><li>Unity and C#</li><li>XR Interaction Toolkit</li><li>AR Foundation and Vuforia</li><li>Real-time interaction systems</li></ul></article>
-        <article><p class="capability-number">02</p><h3>Experience &amp; interaction design</h3><ul><li>User journeys and onboarding</li><li>Interaction prototyping</li><li>Spatial interface design</li><li>User testing and iteration</li></ul></article>
-        <article><p class="capability-number">03</p><h3>Real-time &amp; spatial production</h3><ul><li>Mobile AR and VR</li><li>Real-time 3D</li><li>Physical-digital installations</li><li>Projection and exhibition integration</li></ul></article>
-        <article><p class="capability-number">04</p><h3>Production tools</h3><ul><li>Unity and Git/GitHub</li><li>Adobe Photoshop</li><li>Blender</li><li>OpenCV integration</li></ul></article>
+        <article><p class="capability-number">01</p><h3>XR Development</h3><ul><li>Unity application development</li><li>AR, VR and Mixed Reality systems</li><li>Gameplay and interaction programming</li><li>Real-time XR prototyping</li></ul></article>
+        <article><p class="capability-number">02</p><h3>Interaction &amp; Experience Design</h3><ul><li>Spatial interaction design</li><li>User journey design</li><li>Rapid experience prototyping</li><li>User testing and iteration</li></ul></article>
+        <article><p class="capability-number">03</p><h3>AI &amp; Interactive Systems</h3><ul><li>Local LLM integration</li><li>AI personality design</li><li>Knowledge architecture</li><li>Fine-tuning workflows</li></ul></article>
+        <article><p class="capability-number">04</p><h3>Immersive Production</h3><ul><li>Interactive installations</li><li>Mobile AR and WebXR</li><li>Exhibition deployment</li><li>Physical-digital experiences</li></ul></article>
       </div>
     </section>
 
@@ -157,7 +158,7 @@
           <div class="timeline">
             <article class="timeline-item"><p class="timeline-date">Aug 2025 – Present · Work study · Hybrid</p><h3>XR Project &amp; Prototyping Assistant</h3><p>Supporting the development of internal tools and AI-driven systems for interactive museum and exhibition experiences. Focus on prototyping, pipeline integration, technical workflow development, system testing, and validation processes for production pipelines.</p></article>
             <article class="timeline-item"><p class="timeline-date">Jun 2025 – Jul 2026 · Work study · On-site</p><h3>Exhibition Support</h3><a href="https://videoreality.de/monalisasgeheimnis" target="_blank" rel="noopener" class="timeline-sub-link">TimeLeapVR ArtWorld – Mona Lisa’s Geheimnis ↗</a><p>On-site operation, supervision, and maintenance of immersive installations in a large-scale exhibition blending VR, AI, and interactive art.</p></article>
-            <article class="timeline-item"><p class="timeline-date">Feb 2025 – Jun 2025 · Internship · On-site</p><h3>XR Developer &amp; Designer Intern</h3><p>Development of interactive XR exhibition content as part of the Expanded Realities internship semester. Co-creator of Animal Garden, an interactive digital installation exhibited at TimeLeapVR ArtWorld. Testing and refinement of immersive experiences for exhibition use.</p></article>
+            <article class="timeline-item"><p class="timeline-date">Feb 2025 – Jun 2025 · Internship · On-site</p><h3>XR Developer &amp; Designer Intern</h3><p>Development of interactive XR exhibition content as part of the Augmented and Virtual Reality Design internship semester (programme formerly known as Expanded Realities). Co-creator of Animal Garden, an interactive digital installation exhibited at TimeLeapVR ArtWorld. Testing and refinement of immersive experiences for exhibition use.</p></article>
           </div>
         </article>
         <article class="employer-block">
@@ -187,7 +188,7 @@
         <div class="timeline timeline--education">
           <article class="timeline-item">
             <p class="timeline-date">Oct 2023 – Feb 2027</p>
-            <h3>B.A. Augmented and Virtual Reality Design — Expanded Realities</h3>
+            <h3>B.A. Augmented and Virtual Reality Design (formerly known as Expanded Realities)</h3>
             <a href="https://mediencampus.h-da.de/studieren/studienangebot/bachelor/augmented-and-virtual-reality-design/profile" target="_blank" rel="noopener" class="timeline-company-link"><img src="images/h_da logo.png" width="900" height="900" alt="" class="timeline-logo timeline-logo--light" /><span>Darmstadt University of Applied Sciences</span></a>
             <p>International, project-based programme taught in English, integrating artistic, technological, cultural, and methodological dimensions of immersive media production. Led by lecturers with industry backgrounds, the programme includes an internship semester and real-client projects. Facilities include a motion capture studio, VR/AR lab, film and sound studios, and a usability testing lab. 7 semesters · Dieburg, Germany.</p>
           </article>

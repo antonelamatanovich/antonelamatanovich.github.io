@@ -52,7 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 body.no-scroll { overflow: hidden; }
-img, iframe { display: block; max-width: 100%; }
+:is(img, video:where(.motion-media)), iframe { display: block; max-width: 100%; }
 button, input, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { color: inherit; }
@@ -234,24 +234,24 @@ main, .site-footer {
   background: var(--surface);
   cursor: pointer;
 }
-.featured-project__media img {
+.featured-project__media :is(img, video:where(.motion-media)) {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   transition: transform 350ms var(--ease), filter 350ms ease;
 }
-.featured-project--ai .featured-project__media img {
+.featured-project--ai .featured-project__media :is(img, video:where(.motion-media)) {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   transform: scale(1.35);
 }
-.featured-project--ai .featured-project__media:hover img,
-.featured-project--ai .featured-project__media:focus-visible img { transform: scale(1.375); }
-.featured-project--reverse .featured-project__media img,
-.featured-project--supporting .featured-project__media img { aspect-ratio: 16 / 9; }
-.featured-project__media:hover img,
-.featured-project__media:focus-visible img { transform: scale(1.018); }
+.featured-project--ai .featured-project__media:hover :is(img, video:where(.motion-media)),
+.featured-project--ai .featured-project__media:focus-visible :is(img, video:where(.motion-media)) { transform: scale(1.375); }
+.featured-project--reverse .featured-project__media :is(img, video:where(.motion-media)),
+.featured-project--supporting .featured-project__media :is(img, video:where(.motion-media)) { aspect-ratio: 16 / 9; }
+.featured-project__media:hover :is(img, video:where(.motion-media)),
+.featured-project__media:focus-visible :is(img, video:where(.motion-media)) { transform: scale(1.018); }
 .featured-project__content { display: grid; gap: var(--space-3); align-content: center; }
 .featured-project__content > p:not(.project-kicker) { max-width: 48ch; font-size: 1rem; }
 .ai-project-visual {
@@ -306,12 +306,12 @@ main, .site-footer {
   background: linear-gradient(180deg, rgba(255,255,255,.025), transparent 65%);
 }
 .additional-project__media { overflow: hidden; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); cursor: pointer; }
-.additional-project__media img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 350ms var(--ease), filter 350ms ease; }
-.additional-project__media--contained img { object-fit: contain; background: var(--surface); }
-.additional-project__media:hover img, .additional-project__media:focus-visible img { transform: scale(1.018); }
+.additional-project__media :is(img, video:where(.motion-media)) { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 350ms var(--ease), filter 350ms ease; }
+.additional-project__media--contained :is(img, video:where(.motion-media)) { object-fit: contain; background: var(--surface); }
+.additional-project__media:hover :is(img, video:where(.motion-media)), .additional-project__media:focus-visible :is(img, video:where(.motion-media)) { transform: scale(1.018); }
 .additional-project h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); }
 .additional-project .text-action { margin-top: auto; }
-.project-video-hero video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--black); }
+.project-video-hero video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--black); }
 
 /* NDA-safe AI systems case study */
 .confidentiality-note { margin: 24px 0 8px; padding: 16px 18px; border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: 12px; background: rgba(255,255,255,.02); }
@@ -520,7 +520,7 @@ main, .site-footer {
   font-size: 0.78rem;
 }
 
-#popup-inner-content img {
+#popup-inner-content :is(img, video:where(.motion-media)) {
   width: 100%;
   height: auto;
   border-radius: 16px;
@@ -617,7 +617,7 @@ main, .site-footer {
   margin: 14px 0;
 }
 
-.popup-image-grid img {
+.popup-image-grid :is(img, video:where(.motion-media)) {
   width: 100%;
   margin: 0 !important;
   aspect-ratio: 4 / 3;
@@ -637,13 +637,13 @@ main, .site-footer {
 .case-study-section { margin-top: 34px; padding-top: 6px; }
 .case-study-section + .case-study-section { border-top: 1px solid var(--line); }
 .popup-media--hero { margin: 24px 0 34px; }
-.popup-media--hero img { aspect-ratio: 16 / 9; object-fit: cover; }
+.popup-media--hero :is(img, video:where(.motion-media)) { aspect-ratio: 16 / 9; object-fit: cover; }
 .popup-media--hero .project-hero-image--contain { object-fit: contain; }
 .experience-journey--compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-study-card-grid, .contribution-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 14px 0 24px; }
 .case-study-card-grid article, .contribution-grid article { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.02); }
 .case-study-card-grid article .popup-media { margin-bottom: 0; }
-.case-study-card-grid article .popup-media img { aspect-ratio: 16 / 9; object-fit: cover; }
+.case-study-card-grid article .popup-media :is(img, video:where(.motion-media)) { aspect-ratio: 16 / 9; object-fit: cover; }
 #popup-inner-content .case-study-card-grid h4, #popup-inner-content .contribution-grid h4 { margin: 0 0 7px; color: var(--text); font-size: .94rem; }
 #popup-inner-content .case-study-card-grid p, #popup-inner-content .contribution-grid p { margin: 0; font-size: .9rem; }
 #popup-inner-content .experience-stage-number { margin-bottom: 7px; color: var(--soft); font-size: .72rem; letter-spacing: .1em; }
@@ -680,19 +680,19 @@ main, .site-footer {
 .quick-facts-grid dd { margin: 0; color: var(--text); font-size: 0.88rem; line-height: 1.45; }
 .popup-image-grid--single { grid-template-columns: 1fr; }
 .popup-media { margin: 14px 0 24px; }
-.popup-media img, .popup-gallery img { display: block; width: 100%; height: auto; object-fit: contain; background: var(--surface); }
-.popup-media--contained img { background: var(--surface); }
+.popup-media :is(img, video:where(.motion-media)), .popup-gallery :is(img, video:where(.motion-media)) { display: block; width: 100%; height: auto; object-fit: contain; background: var(--surface); }
+.popup-media--contained :is(img, video:where(.motion-media)) { background: var(--surface); }
 .popup-media--narrow { width: min(100%, 360px); margin-right: auto; margin-left: auto; }
 .experience-stage-media--portrait { width: min(100%, 44rem); margin-right: auto; margin-left: auto; }
-.experience-stage-media--portrait img { width: 100%; max-height: 34rem; object-fit: contain; border: 1px solid var(--line); border-radius: 12px; background: #000; }
+.experience-stage-media--portrait :is(img, video:where(.motion-media)) { width: 100%; max-height: 34rem; object-fit: contain; border: 1px solid var(--line); border-radius: 12px; background: #000; }
 .popup-media figcaption, .popup-gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 .popup-gallery { display: grid; gap: 16px; margin: 14px 0 24px; }
 .popup-gallery--two, .popup-gallery--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .popup-gallery--single { grid-template-columns: 1fr; }
 .popup-gallery figure { min-width: 0; margin: 0; }
 .popup-gallery--characters figure { padding: 14px; border-radius: 12px; background: var(--surface); }
-.popup-gallery--characters img { max-height: 220px; margin-inline: auto; }
-.popup-image-grid img.gallery-image--contain { object-fit: contain; background: var(--surface); }
+.popup-gallery--characters :is(img, video:where(.motion-media)) { max-height: 220px; margin-inline: auto; }
+.popup-image-grid :is(img, video:where(.motion-media)).gallery-image--contain { object-fit: contain; background: var(--surface); }
 .project-media-note { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; }
 .project-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; margin-bottom: 16px; border-radius: 12px; background: var(--line); }
 .project-controls > div { display: grid; grid-template-columns: minmax(90px, auto) 1fr; gap: 12px; padding: 12px 14px; background: var(--surface); }

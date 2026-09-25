@@ -241,13 +241,6 @@ main, .site-footer {
   object-fit: cover;
   transition: transform 350ms var(--ease), filter 350ms ease;
 }
-.featured-project--ai .featured-project__media :is(img, video:where(.motion-media)) {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  transform: scale(1.35);
-}
-.featured-project--ai .featured-project__media:hover :is(img, video:where(.motion-media)),
-.featured-project--ai .featured-project__media:focus-visible :is(img, video:where(.motion-media)) { transform: scale(1.375); }
 .featured-project--reverse .featured-project__media :is(img, video:where(.motion-media)),
 .featured-project--supporting .featured-project__media :is(img, video:where(.motion-media)) { aspect-ratio: 16 / 9; }
 .featured-project__media:hover :is(img, video:where(.motion-media)),
@@ -313,21 +306,25 @@ main, .site-footer {
 .additional-project .text-action { margin-top: auto; }
 .project-video-hero video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--black); }
 
-/* NDA-safe AI systems case study */
+/* AI project presentation */
+/* Abstract engineering visual: no workflow ordering or product UI. */
+.ai-project-visual { display: flex; flex-direction: column; justify-content: center; gap: var(--space-4); min-height: 340px; padding: clamp(24px, 4vw, 56px); text-align: left; color: var(--text); background: radial-gradient(ellipse at top right, rgba(255,255,255,.055), transparent 65%), var(--surface); }
+.ai-project-visual__label, .ai-project-visual__caption { color: var(--muted); font-size: .72rem; line-height: 1.6; }
+.ai-project-visual__label { letter-spacing: .12em; }
+.ai-project-visual__title { font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 500; line-height: 1.15; letter-spacing: -.04em; }
+.ai-project-visual__domains { display: flex; flex-wrap: wrap; gap: 8px; }
+.ai-project-visual__domains > span { padding: 6px 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--muted); font-size: .72rem; line-height: 1.5; }
+.ai-engineering-map { margin: 20px 0 0; }
+#popup-inner-content .ai-engineering-domains { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ai-engineering-domains li { display: grid; align-content: start; gap: 10px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.ai-engineering-domains strong { color: var(--text); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+.ai-engineering-domains span { color: var(--muted); font-size: .84rem; line-height: 1.6; }
+#popup-inner-content .ai-engineering-map figcaption { margin-top: 16px; color: var(--muted); font-size: .82rem; line-height: 1.6; }
+
 .confidentiality-note { margin: 24px 0 8px; padding: 16px 18px; border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: 12px; background: rgba(255,255,255,.02); }
 .confidentiality-note strong { color: var(--text); font-size: .82rem; letter-spacing: .05em; text-transform: uppercase; }
 #popup-inner-content .confidentiality-note p { margin: 7px 0 0; color: var(--muted); font-size: .88rem; }
 .project-disclosure { margin-top: 24px; color: var(--soft); font-size: .82rem; }
-.ai-system-flow { display: grid; gap: 8px; margin: 18px 0 16px; padding: 0; list-style: none; }
-.ai-system-flow li { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center; min-height: 72px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 10px; background: linear-gradient(90deg, rgba(255,255,255,.025), transparent); }
-.ai-system-flow li:not(:last-child)::after { content: "↓"; position: absolute; z-index: 2; bottom: -13px; left: 29px; width: 18px; color: var(--accent); background: var(--surface-raised); text-align: center; }
-.ai-system-flow span { color: var(--accent); font-size: .68rem; letter-spacing: .08em; }
-.ai-system-flow li > div { display: grid; gap: 4px; }
-.ai-system-flow strong { color: var(--text); font-size: .76rem; font-weight: 600; letter-spacing: .045em; text-transform: uppercase; }
-.ai-system-flow small { color: var(--soft); font-size: .73rem; line-height: 1.45; }
-.ai-system-flow__feedback { border-color: color-mix(in srgb, var(--accent) 35%, var(--line)) !important; }
-.ai-system-flow__feedback::before { content: "REVIEW LOOP"; position: absolute; top: 50%; right: 16px; color: var(--accent); font-size: .58rem; letter-spacing: .08em; transform: translateY(-50%); }
-#popup-inner-content .system-flow-caption { margin: 0; padding-left: 2px; color: var(--soft); font-size: .82rem; }
 .platform-summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin-top: 20px; border: 1px solid var(--line); background: var(--line); }
 .platform-summary-grid article { padding: 15px; background: var(--surface); }
 #popup-inner-content .platform-summary-grid :is(h4, h5) { margin: 0 0 8px; color: var(--text); font-size: .86rem; }
@@ -722,11 +719,6 @@ main, .site-footer {
 
 @media (max-width: 900px) {
   .quick-facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ai-system-flow { grid-template-columns: 1fr; }
-  .ai-system-flow li { min-height: 0; grid-template-columns: 34px 1fr; align-items: center; border-right: 1px solid var(--line); border-bottom: 0; }
-  .ai-system-flow li:last-child { border-bottom: 1px solid var(--line); }
-  .ai-system-flow li:not(:last-child)::after { content: "↓"; top: auto; right: auto; bottom: -9px; left: 25px; transform: none; }
-  .ai-system-flow__feedback + .ai-system-flow__feedback::before { content: "FEEDBACK ↑"; top: 50%; right: 8px; bottom: auto; left: auto; writing-mode: vertical-rl; transform: translateY(-50%); }
   .engineering-challenges article { grid-template-columns: 34px 1fr; }
   .engineering-challenges dl { grid-column: 2; }
 }
@@ -836,3 +828,4 @@ main, .site-footer {
   .control-deck-time { justify-self: center; }
 }
 #popup-inner-content .control-deck-surface video.motion-media { margin: 0; border: 0; border-radius: 0; }
+.ai-confidentiality { border-left: 2px solid var(--line); padding-left: var(--space-3); }
